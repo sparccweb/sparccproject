@@ -1,0 +1,53 @@
+Resoconto pacchetto
+
+-----------------------------------------------------------------------------
+Documento: 
+Nome: 012 - final illustrations.ai
+Metodo colore: Colore RGB
+Profilo colore:  sRGB IEC61966-2.1
+Unità righelli: pixel
+Dimensioni tavola disegno: 1920 px x 1080 px
+Mostra immagini con metodo contorno: NO
+Evidenzia font sostituiti: NO
+Evidenzia glifi sostituiti: NO
+Mantieni testo modificabile
+Simula carta colorata: NO
+
+-----------------------------------------------------------------------------
+Oggetti in tinta piatta: 
+PANTONE 298 M (CMYK)
+eye (RGB)
+hair001 (RGB)
+skin001 (RGB)
+
+-----------------------------------------------------------------------------
+Font mancanti:NESSUNO
+
+-----------------------------------------------------------------------------
+Font protetti non inclusi nel pacchetto:NESSUNO
+
+-----------------------------------------------------------------------------
+Font: 
+Helvetica  (TrueType)
+
+-----------------------------------------------------------------------------
+Font incorporati:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Collegamenti mancanti:
+NESSUNO
+
+-----------------------------------------------------------------------------
+Immagini collegate: 
+
+C:\Users\stefa\OneDrive\Desktop\Final illustrations - SPARCC Project\Illustrator\012 - final illustrations\012 - final illustrations 2.0\Links\ChicagoFlag.eps
+Tipo: EPS
+
+C:\Users\stefa\OneDrive\Desktop\Final illustrations - SPARCC Project\Illustrator\012 - final illustrations\012 - final illustrations 2.0\Links\Flag_of_Los_Angeles,_California.svg.png
+Tipo: RGB
+Bit per pixel: 24
+Canali: 3
+Dimensione: 2812K, 1200 per 800 pixel
+Dimensioni: 25.187 per 16.791 punti 
+Risoluzione: 3430.345 per 3430.345 pixel per pollice

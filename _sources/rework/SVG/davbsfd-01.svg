@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2500 2500">
+  <rect x="1.7" y="3.2" width="2500" height="2500" fill="#2b4e83"/>
+  <g>
+    <rect x="1247.4" y="-2.7" width="1250" height="1250" fill="none" stroke="#000" stroke-miterlimit="10" stroke-dasharray="12"/>
+    <rect x="-2.6" y="1247.3" width="1250" height="1250" fill="none" stroke="#000" stroke-miterlimit="10" stroke-dasharray="12"/>
+    <rect x="-2.6" y="-2.7" width="1250" height="1250" fill="none" stroke="#000" stroke-miterlimit="10" stroke-dasharray="12"/>
+  </g>
+  <g>
+    <g>
+      <line x1="1787.3" y1="1321.6" x2="1790.8" y2="1321.6" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1798" y1="1321.6" x2="1996.3" y2="1321.6" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.21 7.21"/>
+      <line x1="1999.9" y1="1321.6" x2="2003.4" y2="1321.6" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1895.1" y1="1271.8" x2="1895.1" y2="1275.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1895.1" y1="1282.5" x2="1895.1" y2="1435.7" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.13 7.13"/>
+      <line x1="1895.1" y1="1439.2" x2="1895.1" y2="1442.7" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1899.6" y1="1504.3" x2="1902.9" y2="1503" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1909.6" y1="1500.3" x2="2013" y2="1458.9" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.19 7.19"/>
+      <line x1="2016.3" y1="1457.6" x2="2019.6" y2="1456.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="2019.9" y1="1418.8" x2="2019.9" y2="1422.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="2019.9" y1="1428.4" x2="2019.9" y2="1449.7" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="6.1 6.1"/>
+      <line x1="2019.9" y1="1452.8" x2="2019.9" y2="1456.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="2113.3" y1="1671.5" x2="2111.9" y2="1668.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="2109.2" y1="1662" x2="2022.7" y2="1462.6" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="6.9 6.9"/>
+      <line x1="2021.3" y1="1459.5" x2="2019.9" y2="1456.3" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="2010.2" y1="1460" x2="2010.2" y2="1463.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="2010.2" y1="1470.8" x2="2010.2" y2="1640.8" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.24 7.24"/>
+      <line x1="2010.2" y1="1644.5" x2="2010.2" y2="1648" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1983" y1="1648" x2="1986.5" y2="1648" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1993.9" y1="1648" x2="2049" y2="1648" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.36 7.36"/>
+      <line x1="2052.7" y1="1648" x2="2056.2" y2="1648" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1871.7" y1="1428.2" x2="1875.2" y2="1428.2" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1882.2" y1="1428.2" x2="1991.6" y2="1428.2" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.06 7.06"/>
+      <line x1="1995.1" y1="1428.2" x2="1998.6" y2="1428.2" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1822.5" y1="1281.5" x2="1826" y2="1281.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1834.5" y1="1281.5" x2="1847.2" y2="1281.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="8.48 8.48"/>
+      <line x1="1851.5" y1="1281.5" x2="1855" y2="1281.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1855" y1="1281.5" x2="1857.4" y2="1284" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1862.6" y1="1289.1" x2="1993.1" y2="1419.7" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.24 7.24"/>
+      <line x1="1995.7" y1="1422.2" x2="1998.2" y2="1424.7" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1959.8" y1="1634.5" x2="1963.3" y2="1634.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1970.1" y1="1634.5" x2="2089.9" y2="1634.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="6.84 6.84"/>
+      <line x1="2093.3" y1="1634.5" x2="2096.8" y2="1634.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="1983" y1="1648" x2="1983" y2="1651.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="1983" y1="1659.4" x2="1983" y2="1687.4" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.99 7.99"/>
+      <line x1="1983" y1="1691.4" x2="1983" y2="1694.9" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <g>
+      <line x1="2056.5" y1="1648" x2="2056.5" y2="1651.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+      <line x1="2056.5" y1="1658.7" x2="2056.5" y2="1727" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7.2 7.2"/>
+      <line x1="2056.5" y1="1730.6" x2="2056.5" y2="1734.1" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10"/>
+    </g>
+    <line x1="1895.1" y1="1509.9" x2="1895.1" y2="1561.9" fill="none" stroke="#fff" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="7"/>
+  </g>
+</svg>
