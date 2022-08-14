@@ -33,7 +33,7 @@ islands.forEach((island, islandIdx) => {
         if (view === views.m) {
             gsap.to(island.highlight, {
                 duration: .1,
-                attr: { opacity: .9 }
+                attr: { opacity: 1 }
             })
         }
     });
@@ -49,10 +49,14 @@ islands.forEach((island, islandIdx) => {
         activeIslandIdx = islandIdx;
         setIslandView();
         island.toIslandAnimation.play(0);
+        island.detailedViewLoopedAnimations.forEach(tl => tl.play());
     });    
 })
 
 document.querySelector('#go-to-map').addEventListener('click', () => {
     islands[activeIslandIdx].toMapAnimation.play(0);
-    gsap.delayedCall(islands[activeIslandIdx].toMapAnimation.duration() * .5, setMapView);
+    gsap.delayedCall(islands[activeIslandIdx].toMapAnimation.duration() * .5, () => {
+        setMapView();
+        islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
+    });
 });

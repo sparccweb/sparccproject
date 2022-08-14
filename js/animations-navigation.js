@@ -1,4 +1,5 @@
 let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
+
     .to(map, {
         duration: .7,
         attr: { 'viewBox': islands[idx].viewBox },
@@ -22,12 +23,9 @@ let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
         opacity: 0
     }, 0)
     
-    .to(islands[idx].highlight, {
+    .to(islands[idx].sea, {
         duration: .3,
-        attr: {
-            fill: '#cdeff9',
-            opacity: 1
-        }
+        attr: { opacity: 1 }
     }, .3);
 
 
@@ -45,12 +43,9 @@ let baseToMapAnimation = (idx) => gsap.timeline({ paused: true })
         duration: .4,
         background: '#8cceea'
     }, .4)
-    .to(islands[idx].highlight, {
+    .to(islands[idx].sea, {
         duration: .3,
-        attr: {
-            fill: '#ffffff',
-            opacity: 0
-        }
+        attr: { opacity: 0 }
     }, .4)
     .to([ mainRoad, crosswalks ], {
         duration: .5,
@@ -60,8 +55,7 @@ let baseToMapAnimation = (idx) => gsap.timeline({ paused: true })
     .to(mainMapPlane, {
         duration: .5,
         opacity: 1
-    }, .5)
-
+    }, .5);
 
 
 islands.forEach((island, islandIdx) => {
@@ -178,4 +172,15 @@ islands.forEach((island, islandIdx) => {
             }, .6)
     }
     
+
+    
+    // for performance
+    island.toIslandAnimation
+        .set(island.detailedViewContainer, {
+            display: 'block'
+        }, 0);
+    island.toMapAnimation
+        .set(island.detailedViewContainer, {
+            display: 'block'
+        }, island.toMapAnimation.duration())
 });

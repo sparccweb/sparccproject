@@ -23,3 +23,23 @@ function planeOverMap() {
         onComplete: planeOverMap
     })
 }
+
+
+
+
+// Chicago
+
+// islands[6].detailedViewLoopedAnimations[0] = gsap.timeline({ 
+//     paused: true,
+//     repeat: -1
+// })
+//     .to(islands[6].detailedViewEls.ship, {
+//         duration: 1.5,
+//         y: 10,
+//         ease: 'none'
+//     })
+//     .to(islands[6].detailedViewEls.ship, {
+//         duration: 2.5,
+//         y: 0,
+//         ease: 'power2.out'
+//     });

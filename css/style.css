@@ -38,7 +38,7 @@ svg path {
     /*opacity: .3;*/
     display: none;
 }
-
+.detailed-view,
 .island-details {
     display: none;
 }
