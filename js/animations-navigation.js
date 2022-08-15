@@ -1,5 +1,4 @@
 let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
-
     .to(map, {
         duration: .7,
         attr: { 'viewBox': islands[idx].viewBox },
@@ -22,40 +21,82 @@ let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
         duration: .3,
         opacity: 0
     }, 0)
-    
     .to(islands[idx].sea, {
         duration: .3,
         attr: { opacity: 1 }
-    }, .3);
+    }, .3)
+    .to(islands.filter((v, i) => (i !== idx)).map(v => v.land), {
+        duration: .3,
+        attr: { fill: '#a4def7' }
+    }, .3)
+    .to(islands.filter((v, i) => (i !== idx)).map(v => v.landShadow), {
+        duration: .3,
+        attr: { fill: '#8cceea' }
+    }, .3)
+    .to(islands.filter((v, i) => (i !== idx)).map(v => v.content), {
+        duration: .3,
+        opacity: 0
+    }, .3)
+
+let baseToMapAnimation = (idx) => {
+    const tl = gsap.timeline({ paused: true })
+        .to(map, {
+            duration: 1,
+            attr: { 'viewBox': initViewBox },
+            ease: 'power1.inOut'
+        }, .2)
+        .to(mapBack, {
+            duration: .3,
+            opacity: 1
+        }, .4)
+        .to(container, {
+            duration: .4,
+            background: '#8cceea'
+        }, .4)
+        .to(islands[idx].sea, {
+            duration: .3,
+            attr: { opacity: 0 }
+        }, .4)
+        .to([ mainRoad, crosswalks ], {
+            duration: .5,
+            opacity: 1,
+            ease: 'power1.in'
+        }, .4)
+        .to(mainMapPlane, {
+            duration: .5,
+            opacity: 1
+        }, .5)
+        .to(islands.filter((v, i) => (i !== idx)).map(v => v.content), {
+            duration: .3,
+            opacity: 1
+        }, .3);
+
+    islands.forEach(island => {
+        island.land.forEach(land => {
+            tl
+                .to(land, {
+                    duration: .3,
+                    attr: {
+                        fill: land.getAttribute('fill')
+                    }
+                }, .3)
+        })
+        island.landShadow.forEach(landShadow => {
+            tl
+                .to(landShadow, {
+                    duration: .3,
+                    attr: {
+                        fill: landShadow.getAttribute('fill')
+                    }
+                }, .3)
+        });
+    });
+    
+    return tl;
+}
 
 
-let baseToMapAnimation = (idx) => gsap.timeline({ paused: true })
-    .to(map, {
-        duration: 1,
-        attr: { 'viewBox': initViewBox },
-        ease: 'power1.inOut'
-    }, .2)
-    .to(mapBack, {
-        duration: .3,
-        opacity: 1
-    }, .4)
-    .to(container, {
-        duration: .4,
-        background: '#8cceea'
-    }, .4)
-    .to(islands[idx].sea, {
-        duration: .3,
-        attr: { opacity: 0 }
-    }, .4)
-    .to([ mainRoad, crosswalks ], {
-        duration: .5,
-        opacity: 1,
-        ease: 'power1.in'
-    }, .4)
-    .to(mainMapPlane, {
-        duration: .5,
-        opacity: 1
-    }, .5);
+
 
 
 islands.forEach((island, islandIdx) => {
@@ -87,7 +128,10 @@ islands.forEach((island, islandIdx) => {
             }, .5)
             .from(island.detailedViewEls.toScale, {
                 duration: .5,
-                stagger: .01,
+                stagger: {
+                    from: "random",
+                    amount: .8
+                },
                 scale: .5,
                 transformOrigin: '50% 100%',
                 opacity: 0,
@@ -138,11 +182,14 @@ islands.forEach((island, islandIdx) => {
             }, .5)
             .to(island.detailedViewEls.toScale, {
                 duration: .25,
-                stagger: .01,
+                stagger: {
+                    from: "random",
+                    amount: .5
+                },
                 scale: .2,
                 transformOrigin: '50% 100%',
                 opacity: 0,
-                ease: 'back.in(3)'
+                ease: 'back.in(2)'
             }, 0)
 
             .set(island.mapViewEls.toFade, {

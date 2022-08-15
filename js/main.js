@@ -29,26 +29,11 @@ function setIslandView() {
 }
 
 islands.forEach((island, islandIdx) => {
-    island.highlight.addEventListener('mouseenter', () => {
-        if (view === views.m) {
-            gsap.to(island.highlight, {
-                duration: .1,
-                attr: { opacity: 1 }
-            })
-        }
-    });
-    island.highlight.addEventListener('mouseleave', () => {
-        if (view === views.m) {
-            gsap.to(island.highlight, {
-                duration: .1,
-                attr: { opacity: 0 }
-            })
-        }
-    });
     island.highlight.addEventListener('click', () => {
         activeIslandIdx = islandIdx;
         setIslandView();
         island.toIslandAnimation.play(0);
+        console.log(island.detailedViewLoopedAnimations)
         island.detailedViewLoopedAnimations.forEach(tl => tl.play());
     });    
 })
