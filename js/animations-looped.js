@@ -1,3 +1,5 @@
+gsap.registerPlugin(MotionPathPlugin);
+
 let planeOverMapDirectionFlag = false;
 planeOverMap();
 function planeOverMap() {
@@ -25,6 +27,65 @@ function planeOverMap() {
 }
 
 
+const ferrisWheelAnimation = gsap.timeline({ 
+    defaults: {
+        duration: 7,
+    },
+    repeat: -1
+})
+    .to(ferrisWheelRotatingPart, {
+        rotation: 360,
+        svgOrigin: '820.4 1595.8',
+        ease: 'none'
+    });
+ferrisWheelCabins.forEach(c => {
+    ferrisWheelAnimation.to(c, {
+        rotation: -360,
+        transformOrigin: '50% 0%',
+        ease: 'none'
+    }, 0)
+});
+
+
+mapViewAnimations[0] = gsap.timeline({ repeat: -1 })
+    .to(beesWrappers[0], {
+        duration: 5,
+        ease: 'none',
+        motionPath: {
+            path: beesTrajectories[0],
+            align: beesTrajectories[0],
+            autoRotate: true,
+            alignOrigin: [0.5, 0.5]
+        }
+    }, 0)
+    .set(bees[0], {
+        scaleY: -1,
+        transformOrigin: 'center center'
+    }, 0)
+    .set(bees[0], {
+        scaleY: 1,
+        transformOrigin: 'center center'
+    }, 2.1)
+
+mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
+    .to(beesWrappers[1], {
+        duration: 6,
+        ease: 'none',
+        motionPath: {
+            path: beesTrajectories[1],
+            align: beesTrajectories[1],
+            autoRotate: true,
+            alignOrigin: [0.5, 0.5]
+        }
+    }, 0)
+    .set(bees[1], {
+        scaleY: -1,
+        transformOrigin: 'center center'
+    }, 2.35)
+    .set(bees[1], {
+        scaleY: 1,
+        transformOrigin: 'center center'
+    }, 5.5)
 
 
 // Chicago

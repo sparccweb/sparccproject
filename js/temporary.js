@@ -51,7 +51,7 @@
 
 const shapesToBeBoxed = Array.from(document.querySelectorAll('.test > *'));
 let outputString = '';
-const symbolName = 'chi-landscape-symbol';
+const symbolName = 'bee-symbol';
 shapesToBeBoxed.forEach(b => {
     const box = b.getBBox();
     outputString +=

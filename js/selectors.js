@@ -7,7 +7,20 @@ const mainMapPlaneContainer = map.querySelector('.main-map-plane-container');
 const mainMapPlane = map.querySelector('.main-map-plane');
 const crosswalks = map.querySelector('.crosswalks');
 
+const ferrisWheelAnimated = map.querySelector('.ferris-wheel-animated');
+const ferrisWheelRotatingPart = ferrisWheelAnimated.querySelector('.ferris-wheel-rotating');
+const ferrisWheelCabins = Array.from(ferrisWheelAnimated.querySelectorAll('.ferris-wheel-cabins > path'));
+
+const bees = Array.from(map.querySelectorAll('.bee'));
+const beesWrappers = Array.from(map.querySelectorAll('.bee-wrapper'));
+const beesTrajectories = Array.from(map.querySelectorAll('.bee-trajectory'));
+
 const initViewBox = '0 0 2500 2500';
+
+const mapViewAnimations = {
+    bees: []
+}
+
 const islands = [{
     name: 'central',
     viewBox: '850 750 800 1050',
@@ -52,7 +65,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'bay',
-    viewBox: '1450 420 600 1100',
+    viewBox: '1350 420 800 1100',
     sea: map.querySelector('.island-back.bay .sea'),
     highlight: map.querySelector('.island-back.bay .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.bay .land')),
@@ -120,7 +133,5 @@ const islands = [{
     toMapAnimation: null,
     toIslandAnimation: null,
 }];
-
-console.log(islands)
 
 

@@ -23,10 +23,11 @@ svg path {
     transform: translate(-50%, -50%);
     width: 124%;
     max-height: 200%;
+    font-family: sans-serif;
 }
 @media (max-aspect-ratio: 1/1) {
     .full-page .map {
-        height: 100%;
+        height: 150%;
     }
 }
 
