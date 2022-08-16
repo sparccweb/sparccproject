@@ -1,5 +1,8 @@
 const container = document.querySelector('.full-page');
 
+const mainMap = document.querySelector('.main-map');
+const loaderMap = document.querySelector('.loader-map');
+
 const map = document.querySelector('svg.map');
 const mainRoad = map.querySelector('.main-road');
 const mapBack = map.querySelector('.map-back');
@@ -40,108 +43,141 @@ const viewBoxCenter = {
     y: 1250
 }
 
+const views = {
+    m: 'map',
+    i: 'island'
+}
+let view = views.m;
+let activeIslandIdx = null;
+
 const mapViewAnimations = {
     bees: []
 }
 
 const islands = [{
     name: 'central',
-    // selected: false,
-    viewBox: '850 750 800 1050',
     sea: map.querySelector('.island-back.central .sea'),
     highlight: map.querySelector('.island-back.central .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.central .land')),
     landShadow: Array.from(map.querySelectorAll('.island-back.central .land-shadow')),
+    landColors: [
+        map.querySelector('.island-back.central .land').getAttribute('fill'),
+        map.querySelector('.island-back.central .land-shadow').getAttribute('fill'),
+    ],
     content: map.querySelector('.island-content.central'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.central .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'denver',
-    // selected: false,
-    viewBox: '200 620 800 1100',
     sea: map.querySelector('.island-back.denver .sea'),
     highlight: map.querySelector('.island-back.denver .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.denver .land')),
+    landColors: [
+        map.querySelector('.island-back.denver .land').getAttribute('fill'),
+        map.querySelector('.island-back.denver .land-shadow').getAttribute('fill'),
+    ],
     landShadow: Array.from(map.querySelectorAll('.island-back.denver .land-shadow')),
     content: map.querySelector('.island-content.denver'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.denver .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'atlanta',
-    // selected: false,
-    viewBox: '455 900 600 1200',
     sea: map.querySelector('.island-back.atlanta .sea'),
     highlight: map.querySelector('.island-back.atlanta .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.atlanta .land')),
     landShadow: Array.from(map.querySelectorAll('.island-back.atlanta .land-shadow')),
+    landColors: [
+        map.querySelector('.island-back.atlanta .land').getAttribute('fill'),
+        map.querySelector('.island-back.atlanta .land-shadow').getAttribute('fill'),
+    ],
     content: map.querySelector('.island-content.atlanta'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.atlanta .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'bay',
-    // selected: false,
-    viewBox: '1350 420 800 1100',
     sea: map.querySelector('.island-back.bay .sea'),
     highlight: map.querySelector('.island-back.bay .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.bay .land')),
     landShadow: Array.from(map.querySelectorAll('.island-back.bay .land-shadow')),
+    landColors: [
+        map.querySelector('.island-back.bay .land').getAttribute('fill'),
+        map.querySelector('.island-back.bay .land-shadow').getAttribute('fill'),
+    ],
     content: map.querySelector('.island-content.bay'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.bay .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'memphis',
-    // selected: false,
-    viewBox: '1000 1250 900 750',
     sea: map.querySelector('.island-back.memphis .sea'),
     highlight: map.querySelector('.island-back.memphis .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.memphis .land')),
     landShadow: Array.from(map.querySelectorAll('.island-back.memphis .land-shadow')),
+    landColors: [
+        map.querySelector('.island-back.memphis .land').getAttribute('fill'),
+        map.querySelector('.island-back.memphis .land-shadow').getAttribute('fill'),
+    ],
     content: map.querySelector('.island-content.memphis'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.memphis .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'LA',
-    // selected: false,
-    viewBox: '620 500 850 800',
     sea: map.querySelector('.island-back.LA .sea'),
     highlight: map.querySelector('.island-back.LA .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.LA .land')),
     landShadow: Array.from(map.querySelectorAll('.island-back.LA .land-shadow')),
+    landColors: [
+        map.querySelector('.island-back.LA .land').getAttribute('fill'),
+        map.querySelector('.island-back.LA .land-shadow').getAttribute('fill'),
+    ],
     content: map.querySelector('.island-content.LA'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.LA .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'chicago',
-    // selected: false,
-    viewBox: '1600 900 700 1200',
     sea: map.querySelector('.island-back.chicago .sea'),
     highlight: map.querySelector('.island-back.chicago .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.chicago .land')),
     landShadow: Array.from(map.querySelectorAll('.island-back.chicago .land-shadow')),
+    landColors: [
+        map.querySelector('.island-back.chicago .land').getAttribute('fill'),
+        map.querySelector('.island-back.chicago .land-shadow').getAttribute('fill'),
+    ],
     content: map.querySelector('.island-content.chicago'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.chicago .map-view .to-scale > *')),
@@ -160,8 +196,10 @@ const islands = [{
     detailedViewLoopedAnimations: [
         
     ],
-    toMapAnimation: null,
-    toIslandAnimation: null,
+    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    hideIslandToMapAnimation: gsap.timeline({ paused: true }),
+    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
+    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }];
 
 

@@ -6,12 +6,19 @@ function setupLayout() {
     })
 }
 
-const views = {
-    m: 'map',
-    i: 'island'
-}
-let view = views.m;
-let activeIslandIdx = null;
+
+gsap.set(mainMap, {
+    display: 'block'
+})
+gsap.to(loaderMap, {
+    duration: .3,
+    opacity: 0
+})
+gsap.to(mainMap, {
+    duration: .3,
+    opacity: 1
+})
+
 
 
 const zoom = d3.zoom()
@@ -31,8 +38,6 @@ function resetZoom(dur) {
     );
 }
 
-d3Svg.call(zoom);
-
 zoomInBtn.addEventListener('click', () => {
     d3Svg.transition().call(zoom.scaleBy, 2);
 });
@@ -49,13 +54,11 @@ islands.forEach((island, islandIdx) => {
         activeIslandIdx = islandIdx;
         updateIslandSelection();
         
-
         if (view === views.m) {
-            view = views.i;
+            d3Svg.call(zoom);
             resetZoom(0);
             zoom.on("zoom", zoomed);
         }
-        
         
         gsap.set(island.highlight, {
             attr: { opacity: 0 }
@@ -86,19 +89,27 @@ islands.forEach((island, islandIdx) => {
             d3.pointer(e, d3Svg.node())
         );
 
-        island.toIslandAnimation.play(0);
+        if (view === views.m) {
+            island.showIslandFromMapAnimation.play(0);
+        } else {
+            island.showIslandFromIslandAnimation.play(0);
+        }
         island.detailedViewLoopedAnimations.forEach(tl => tl.play());
+
+        if (view === views.m) {
+            view = views.i;
+        }
     });
 })
 
 toMapBtn.addEventListener('click', () => {
     resetZoom(.5);
-    islands[activeIslandIdx].toMapAnimation.play(0);
+    islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
     gsap.delayedCall(.5, () => {
+        d3Svg.on(".zoom", null);
         view = views.m;
-        zoom.on("zoom", null);
     });
-    gsap.delayedCall(islands[activeIslandIdx].toMapAnimation.duration() * .5, () => {
+    gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {
         islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
         activeIslandIdx = null;
         updateIslandSelection();
