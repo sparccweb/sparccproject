@@ -14,8 +14,31 @@ const ferrisWheelCabins = Array.from(ferrisWheelAnimated.querySelectorAll('.ferr
 const bees = Array.from(map.querySelectorAll('.bee'));
 const beesWrappers = Array.from(map.querySelectorAll('.bee-wrapper'));
 const beesTrajectories = Array.from(map.querySelectorAll('.bee-trajectory'));
+const titles = Array.from(map.querySelectorAll('.titles'));
 
-const initViewBox = '0 0 2500 2500';
+const d3Svg = d3.select("svg.map");
+const d3SvgMainMap = d3Svg.select(".main-map");
+
+const zoomingControls = document.querySelector('.zooming-controls');
+const toMapBtn = document.querySelector('#go-to-map-btn');
+const zoomInBtn = document.querySelector('#zoom-in-btn');
+const zoomOutBtn = document.querySelector('#zoom-out-btn');
+
+let currentZoomTransform = d3.zoomIdentity;
+const maxZoomingLevel = 12;
+
+const viewBox = {
+    x0: 200,
+    y0: 600,
+    width: 2100,
+    height: 1300
+}
+const viewBoxRatio = viewBox.width / viewBox.height;
+
+const viewBoxCenter = {
+    x: 1250, 
+    y: 1250
+}
 
 const mapViewAnimations = {
     bees: []
@@ -23,6 +46,7 @@ const mapViewAnimations = {
 
 const islands = [{
     name: 'central',
+    // selected: false,
     viewBox: '850 750 800 1050',
     sea: map.querySelector('.island-back.central .sea'),
     highlight: map.querySelector('.island-back.central .highlight'),
@@ -37,6 +61,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'denver',
+    // selected: false,
     viewBox: '200 620 800 1100',
     sea: map.querySelector('.island-back.denver .sea'),
     highlight: map.querySelector('.island-back.denver .highlight'),
@@ -51,6 +76,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'atlanta',
+    // selected: false,
     viewBox: '455 900 600 1200',
     sea: map.querySelector('.island-back.atlanta .sea'),
     highlight: map.querySelector('.island-back.atlanta .highlight'),
@@ -65,6 +91,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'bay',
+    // selected: false,
     viewBox: '1350 420 800 1100',
     sea: map.querySelector('.island-back.bay .sea'),
     highlight: map.querySelector('.island-back.bay .highlight'),
@@ -79,6 +106,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'memphis',
+    // selected: false,
     viewBox: '1000 1250 900 750',
     sea: map.querySelector('.island-back.memphis .sea'),
     highlight: map.querySelector('.island-back.memphis .highlight'),
@@ -93,6 +121,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'LA',
+    // selected: false,
     viewBox: '620 500 850 800',
     sea: map.querySelector('.island-back.LA .sea'),
     highlight: map.querySelector('.island-back.LA .highlight'),
@@ -107,6 +136,7 @@ const islands = [{
     toIslandAnimation: null,
 }, {
     name: 'chicago',
+    // selected: false,
     viewBox: '1600 900 700 1200',
     sea: map.querySelector('.island-back.chicago .sea'),
     highlight: map.querySelector('.island-back.chicago .highlight'),

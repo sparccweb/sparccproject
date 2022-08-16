@@ -1,8 +1,8 @@
 let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
-    .to(map, {
-        duration: .7,
-        attr: { 'viewBox': islands[idx].viewBox },
-    }, 0)
+    // .to(map, {
+    //     duration: .7,
+    //     attr: { 'viewBox': islands[idx].viewBox },
+    // }, 0)
     .to(mainMapPlane, {
         duration: .7,
         opacity: 0
@@ -25,6 +25,10 @@ let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
         duration: .3,
         attr: { opacity: 1 }
     }, .3)
+    .to(titles, {
+        duration: .3,
+        attr: { opacity: .5 }
+    }, .3)
     .to(islands.filter((v, i) => (i !== idx)).map(v => v.land), {
         duration: .3,
         attr: { fill: '#a4def7' }
@@ -37,14 +41,32 @@ let baseToIslandAnimation = (idx) => gsap.timeline({ paused: true })
         duration: .3,
         opacity: 0
     }, .3)
+    .set(zoomingControls, {
+        display: 'block'
+    }, .4)
+    .fromTo(zoomingControls, {
+        opacity: 0
+    }, {
+        duration: .2,
+        opacity: 1
+    }, .4)
 
 let baseToMapAnimation = (idx) => {
     const tl = gsap.timeline({ paused: true })
-        .to(map, {
-            duration: 1,
-            attr: { 'viewBox': initViewBox },
-            ease: 'power1.inOut'
-        }, .2)
+        .fromTo(zoomingControls, {
+            opacity: 1
+        }, {
+            duration: .2,
+            opacity: 0
+        }, 0)
+        .set(zoomingControls, {
+            display: 'none'
+        }, '>')
+        // .to(map, {
+        //     duration: 1,
+        //     attr: { 'viewBox': initViewBox },
+        //     ease: 'power1.inOut'
+        // }, .2)
         .to(mapBack, {
             duration: .3,
             opacity: 1
@@ -56,6 +78,10 @@ let baseToMapAnimation = (idx) => {
         .to(islands[idx].sea, {
             duration: .3,
             attr: { opacity: 0 }
+        }, .4)
+        .to(titles, {
+            duration: .3,
+            attr: { opacity: 1 }
         }, .4)
         .to([ mainRoad, crosswalks ], {
             duration: .5,

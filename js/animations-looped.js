@@ -65,7 +65,8 @@ mapViewAnimations[0] = gsap.timeline({ repeat: -1 })
     .set(bees[0], {
         scaleY: 1,
         transformOrigin: 'center center'
-    }, 2.1)
+    }, 2.4)
+    .progress(.2)
 
 mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
     .to(beesWrappers[1], {
@@ -81,11 +82,11 @@ mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
     .set(bees[1], {
         scaleY: -1,
         transformOrigin: 'center center'
-    }, 2.35)
+    }, 3.3)
     .set(bees[1], {
         scaleY: 1,
         transformOrigin: 'center center'
-    }, 5.5)
+    }, 5.9)
 
 
 // Chicago
