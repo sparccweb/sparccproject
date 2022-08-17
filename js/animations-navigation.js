@@ -1,31 +1,62 @@
-islands.forEach((island, islandIdx) => {
-    addMapHidingToTimeline(island.showIslandFromMapAnimation);
-    addIslandSelectionToTimeline(island.showIslandFromMapAnimation, islandIdx);
+function creatMapNavigationAnimations() {
+    islands.forEach((island, islandIdx) => {
+        updateMapToIslandAnimation(islandIdx);
+        updateIslandToMapAnimation(islandIdx);
+    });
+}
 
+function updateMapToIslandAnimation(islandIdx) {
+    const island = islands[islandIdx];
+    
+    island.mapToIslandAnimation.clear();
+    addMapHidingToTimeline(island.mapToIslandAnimation);
+
+    if (island.name === 'chicago') {
+        addChicagoDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
+    }
+    islands.forEach((isl, idx) => {
+        if (idx !== islandIdx) {
+            addIslandDeselectionToTimeline(island.mapToIslandAnimation, idx);
+        }
+    });
+    
+    island.mapToIslandAnimation
+        .set(island.detailedViewContainer, {
+            display: 'block'
+        }, 0);
+}
+
+function updateIslandToMapAnimation(islandIdx) {
+    const island = islands[islandIdx];
+    
+    island.hideIslandToMapAnimation.clear();
     addMapShowingToTimeline(island.hideIslandToMapAnimation, islandIdx);
-
-    addIslandSelectionToTimeline(island.showIslandFromIslandAnimation, islandIdx);
     
     if (island.name === 'chicago') {
-        addChicagoAppearingToTimeline(island.showIslandFromMapAnimation, islandIdx);
-        addChicagoAppearingToTimeline(island.showIslandFromIslandAnimation, islandIdx);
-        addChicagoDisappearingToTimeline(island.hideIslandToMapAnimation, islandIdx);
+        hideChicagoDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     }
-    
-    // for performance
-    island.showIslandFromMapAnimation
-        .set(island.detailedViewContainer, {
+}
+
+function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
+    islandToIslandAnimation.clear();
+    addIslandDeselectionToTimeline(islandToIslandAnimation, startIslandIdx);
+    addIslandSelectionToTimeline(islandToIslandAnimation, endIslandIdx);
+    if (islands[endIslandIdx].name === 'chicago') {
+        addChicagoDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
+    }
+    if (islands[startIslandIdx].name === 'chicago') {
+        hideChicagoDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
+    }
+
+    islandToIslandAnimation
+        .set(islands[endIslandIdx].detailedViewContainer, {
             display: 'block'
-        }, 0);
-    island.showIslandFromIslandAnimation
-        .set(island.detailedViewContainer, {
-            display: 'block'
-        }, 0);
-    island.hideIslandToMapAnimation
-        .set(island.detailedViewContainer, {
+        }, 0)
+        .set(islands[startIslandIdx].detailedViewContainer, {
             display: 'none'
-        }, island.hideIslandToMapAnimation.duration())
-});
+        }, islandToIslandAnimation.duration())
+}
+
 
 
 function addMapHidingToTimeline(tl) {
@@ -60,43 +91,63 @@ function addMapHidingToTimeline(tl) {
         }, {
             duration: .2,
             opacity: 1
-        }, .4);
+        }, .4)
+        .set(islands.map(v => v.highlight), {
+            attr: { 'stroke-width': 10 }
+        }, .2);
 }
 
 function addIslandSelectionToTimeline(tl, idx) {
+    const island = islands[idx];
     tl
-        .to(islands[idx].sea, {
+        .to(island.sea, {
             duration: .3,
-            attr: {opacity: 1}
+            attr: {
+                opacity: 1
+            }
         }, .3)
-        .to(islands.filter((v, i) => (i !== idx)).map(v => v.sea), {
+        .to(island.land, {
             duration: .3,
-            attr: {opacity: 0}
+            attr: {
+                fill: islands[idx].landColors[0]
+            }
         }, .3)
-        .to(islands[idx].land, {
+        .to(island.landShadow, {
             duration: .3,
-            attr: {fill: islands[idx].landColors[0]}
+            attr: {
+                fill: islands[idx].landColors[1]
+            }
         }, .3)
-        .to(islands.filter((v, i) => (i !== idx)).map(v => v.land), {
-            duration: .3,
-            attr: {fill: '#a4def7'}
-        }, .3)
-        .to(islands[idx].landShadow, {
-            duration: .3,
-            attr: {fill: islands[idx].landColors[1]}
-        }, .3)
-        .to(islands.filter((v, i) => (i !== idx)).map(v => v.landShadow), {
-            duration: .3,
-            attr: {fill: '#8cceea'}
-        }, .3)
-        .to(islands[idx].content, {
+        .to(island.content, {
             duration: .3,
             opacity: 1
         }, .3)
-        .to(islands.filter((v, i) => (i !== idx)).map(v => v.content), {
+}
+function addIslandDeselectionToTimeline(tl, idx) {
+    const island = islands[idx];
+    tl
+        .to(island.sea, {
+            duration: .3,
+            attr: {
+                opacity: 0
+            }
+        }, .3)
+        .to(island.land, {
+            duration: .3,
+            attr: {
+                fill: '#a4def7'
+            }
+        }, .3)
+        .to(island.landShadow, {
+            duration: .3,
+            attr: {
+                fill: '#a4def7'
+            }
+        }, .3)
+        .to(island.content, {
             duration: .3,
             opacity: 0
-        }, .3);
+        }, .3)
 }
 
 function addMapShowingToTimeline(tl, idx) {
@@ -110,6 +161,9 @@ function addMapShowingToTimeline(tl, idx) {
         .set(zoomingControls, {
             display: 'none'
         }, '>')
+        .set(islands.map(v => v.highlight), {
+            attr: {'stroke-width': 30}
+        }, .2)
         .to(mapBack, {
             duration: .3,
             opacity: 1
@@ -136,15 +190,10 @@ function addMapShowingToTimeline(tl, idx) {
             duration: .3,
             attr: {opacity: 0}
         }, .4)
-        .to(islands.filter((v, i) => (i !== idx)).map(v => v.content), {
+        .to(islands.map(v => v.content), {
             duration: .3,
             opacity: 1
-        }, .3)
-
-        .to(islands.filter((v, i) => (i !== idx)).map(v => v.land), {
-            duration: .3,
-            opacity: 1
-        }, .3)
+        }, .3);
 
     islands.forEach(island => {
         tl

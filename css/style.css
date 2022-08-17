@@ -39,7 +39,9 @@ svg path {
 }
 .main-map,
 .zooming-controls,
-.detailed-view,
+.detailed-view {
+    display: none;
+}
 .island-details {
     display: none;
 }

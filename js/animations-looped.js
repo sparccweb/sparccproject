@@ -66,7 +66,7 @@ mapViewAnimations[0] = gsap.timeline({ repeat: -1 })
         scaleY: 1,
         transformOrigin: 'center center'
     }, 2.4)
-    .progress(.2)
+    .progress(.8)
 
 mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
     .to(beesWrappers[1], {

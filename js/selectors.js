@@ -54,6 +54,8 @@ const mapViewAnimations = {
     bees: []
 }
 
+const islandToIslandAnimation = gsap.timeline({ paused: true });
+
 const islands = [{
     name: 'central',
     sea: map.querySelector('.island-back.central .sea'),
@@ -69,10 +71,8 @@ const islands = [{
     detailedViewContainer: map.querySelector('.central .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'denver',
     sea: map.querySelector('.island-back.denver .sea'),
@@ -88,10 +88,8 @@ const islands = [{
     detailedViewContainer: map.querySelector('.denver .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'atlanta',
     sea: map.querySelector('.island-back.atlanta .sea'),
@@ -107,10 +105,8 @@ const islands = [{
     detailedViewContainer: map.querySelector('.atlanta .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'bay',
     sea: map.querySelector('.island-back.bay .sea'),
@@ -126,10 +122,8 @@ const islands = [{
     detailedViewContainer: map.querySelector('.bay .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'memphis',
     sea: map.querySelector('.island-back.memphis .sea'),
@@ -145,10 +139,8 @@ const islands = [{
     detailedViewContainer: map.querySelector('.memphis .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'LA',
     sea: map.querySelector('.island-back.LA .sea'),
@@ -164,10 +156,8 @@ const islands = [{
     detailedViewContainer: map.querySelector('.LA .detailed-view'),
     detailedViewEls: {},
     detailedViewLoopedAnimations: [],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'chicago',
     sea: map.querySelector('.island-back.chicago .sea'),
@@ -196,10 +186,6 @@ const islands = [{
     detailedViewLoopedAnimations: [
         
     ],
-    showIslandFromMapAnimation: gsap.timeline({ paused: true }),
+    mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
-    showIslandFromIslandAnimation: gsap.timeline({ paused: true }),
-    hideIslandToIslandAnimation: gsap.timeline({ paused: true }),
 }];
-
-

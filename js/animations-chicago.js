@@ -1,4 +1,4 @@
-function addChicagoAppearingToTimeline(tl, idx) {
+function addChicagoDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
         .to(island.mapViewEls.toFade, {
@@ -84,7 +84,7 @@ function addChicagoAppearingToTimeline(tl, idx) {
         }, 1);
 }
 
-function addChicagoDisappearingToTimeline(tl, idx) {
+function hideChicagoDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
         .to([ island.detailedViewEls.toFade, island.detailedViewEls.toDrop, island.detailedViewEls.people ], {

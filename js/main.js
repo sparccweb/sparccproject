@@ -5,7 +5,7 @@ function setupLayout() {
         height: window.innerHeight
     })
 }
-
+creatMapNavigationAnimations();
 
 gsap.set(mainMap, {
     display: 'block'
@@ -51,8 +51,6 @@ islands.forEach((island, islandIdx) => {
     island.highlight.addEventListener('click', (e) => {
         e.stopPropagation();
 
-        activeIslandIdx = islandIdx;
-        updateIslandSelection();
         
         if (view === views.m) {
             d3Svg.call(zoom);
@@ -78,7 +76,6 @@ islands.forEach((island, islandIdx) => {
             }
         }
         scale *= .8;
-
         
         d3Svg.transition().duration(500).call(
             zoom.transform,
@@ -90,11 +87,15 @@ islands.forEach((island, islandIdx) => {
         );
 
         if (view === views.m) {
-            island.showIslandFromMapAnimation.play(0);
+            island.mapToIslandAnimation.play(0);
         } else {
-            island.showIslandFromIslandAnimation.play(0);
+            updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
+            islandToIslandAnimation.play(0);
         }
         island.detailedViewLoopedAnimations.forEach(tl => tl.play());
+
+        activeIslandIdx = islandIdx;
+        updateIslandSelection();
 
         if (view === views.m) {
             view = views.i;
