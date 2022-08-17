@@ -35,6 +35,11 @@ function updateIslandToMapAnimation(islandIdx) {
     if (island.name === 'chicago') {
         hideChicagoDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     }
+    
+    island.hideIslandToMapAnimation
+        .set(island.detailedViewContainer, {
+            display: 'none'
+        }, island.hideIslandToMapAnimation.duration());
 }
 
 function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
