@@ -1,10 +1,14 @@
 const shapesToBeBoxed = Array.from(document.querySelectorAll('.test > *'));
 let outputString = '';
-const symbolName = 'ata-landscape-symbol';
+const symbolName = 'LA-house-3-symbol';
 shapesToBeBoxed.forEach(b => {
     const box = b.getBBox();
+
     outputString +=
-        ('<use xlink:href="#' + symbolName + '" x="' + box.x.toFixed(0) + '" y="' + box.y.toFixed(0) + '" width="' + box.width.toFixed(0) + '" height="' + box.height.toFixed(0) + '"/>');
+        ('<g><use xlink:href="#' + symbolName + '" x="' + box.x.toFixed(0) + '" y="' + box.y.toFixed(0) + '" width="' + box.width.toFixed(0) + '" height="' + box.height.toFixed(0) + '"/></g>');
+
+    // outputString +=
+    //     ('<use xlink:href="#' + symbolName + '" x="' + box.x.toFixed(0) + '" y="' + box.y.toFixed(0) + '" width="' + box.width.toFixed(0) + '" height="' + box.height.toFixed(0) + '"/>');
 })
 
 console.log('<g>' + outputString + '</g>');

@@ -10,7 +10,7 @@ const mainMapPlaneContainer = map.querySelector('.main-map-plane-container');
 const mainMapPlane = map.querySelector('.main-map-plane');
 const crosswalks = map.querySelector('.crosswalks');
 
-const ferrisWheelAnimated = map.querySelector('.ferris-wheel-animated');
+const ferrisWheelAnimated = document.querySelector('.ferris-wheel-animated');
 const ferrisWheelRotatingPart = ferrisWheelAnimated.querySelector('.ferris-wheel-rotating');
 const ferrisWheelCabins = Array.from(ferrisWheelAnimated.querySelectorAll('.ferris-wheel-cabins > path'));
 
@@ -103,7 +103,9 @@ const islands = [{
     content: map.querySelector('.island-content.atlanta'),
     mapViewEls: {},
     detailedViewContainer: map.querySelector('.atlanta .detailed-view'),
-    detailedViewEls: {},
+    detailedViewEls: {
+        cableCarCabin: map.querySelector('.atlanta .cable-car-cabin')
+    },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),

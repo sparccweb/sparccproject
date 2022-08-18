@@ -4,7 +4,7 @@ let planeOverMapDirectionFlag = false;
 planeOverMap();
 function planeOverMap() {
     planeOverMapDirectionFlag = !planeOverMapDirectionFlag;
-    const delay = 2 + Math.random() * 3;
+    const delay = 3 + Math.random() * 3;
     gsap.set(mainMapPlane, {
         delay: delay,
         scale: .7 + .5 * Math.random(),
@@ -19,7 +19,7 @@ function planeOverMap() {
     })
     gsap.to(mainMapPlaneContainer, {
         delay: delay,
-        duration: 6,
+        duration: 11,
         x: planeOverMapDirectionFlag ? 5000 : -5000,
         ease: 'none',
         onComplete: planeOverMap
@@ -35,7 +35,7 @@ const ferrisWheelAnimation = gsap.timeline({
 })
     .to(ferrisWheelRotatingPart, {
         rotation: 360,
-        svgOrigin: '820.4 1595.8',
+        svgOrigin: '70.8 63.7',
         ease: 'none'
     });
 ferrisWheelCabins.forEach(c => {
@@ -88,6 +88,25 @@ mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
         transformOrigin: 'center center'
     }, 5.9)
 
+
+
+// Atlanta
+
+islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({ 
+    // paused: true,
+    repeat: -1,
+    yoyo: true,
+    repeatDelay: 3
+})
+    .fromTo(islands[2].detailedViewEls.cableCarCabin, {
+        x: -12,
+        y: -32
+    }, {
+        duration: 4,
+        x: 25,
+        y: 45,
+        ease: 'power2.inOut'
+    })
 
 // Chicago
 

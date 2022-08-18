@@ -38,16 +38,20 @@ svg path {
     height: 0;
 }
 .main-map,
-.zooming-controls,
+.zooming-controls {
+    display: none;
+}
+.map-view {
+    /*display: none;*/
+}
 .detailed-view {
     display: none;
 }
 .island-details {
     display: none;
 }
-.map {
-    /*pointer-events: none;*/
-}
+
+
 .map * {
     pointer-events: none;
 }
