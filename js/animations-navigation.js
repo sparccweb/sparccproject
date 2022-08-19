@@ -15,7 +15,10 @@ function updateMapToIslandAnimation(islandIdx) {
         addChicagoDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     } else if (island.name === 'LA') {
         addLADetailsToTimeline(island.mapToIslandAnimation, islandIdx);
+    } else if (island.name === 'bay') {
+        addBayDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     }
+    
     islands.forEach((isl, idx) => {
         if (idx !== islandIdx) {
             addIslandDeselectionToTimeline(island.mapToIslandAnimation, idx);
@@ -38,6 +41,8 @@ function updateIslandToMapAnimation(islandIdx) {
         hideChicagoDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     } else if (island.name === 'LA') {
         hideLADetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
+    } else if (island.name === 'bay') {
+        hideBayDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     }
     
     island.hideIslandToMapAnimation
@@ -52,9 +57,18 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
     addIslandSelectionToTimeline(islandToIslandAnimation, endIslandIdx);
     if (islands[endIslandIdx].name === 'chicago') {
         addChicagoDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
+    } else if (islands[endIslandIdx].name === 'LA') {
+        addLADetailsToTimeline(islandToIslandAnimation, endIslandIdx);
+    } else if (islands[endIslandIdx].name === 'bay') {
+        addBayDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
     }
+
     if (islands[startIslandIdx].name === 'chicago') {
         hideChicagoDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
+    } else if (islands[startIslandIdx].name === 'LA') {
+        hideLADetailsToTimeline(islandToIslandAnimation, startIslandIdx);
+    } else if (islands[startIslandIdx].name === 'bay') {
+        hideBayDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
     }
 
     islandToIslandAnimation

@@ -59,6 +59,9 @@ svg path {
     pointer-events: auto;
     cursor: pointer;
 }
+.map .balloon .balloon-interact {
+    pointer-events: auto;
+}
 @media (hover: hover) and (pointer: fine) {
     .map .highlight:hover {
         opacity: 1;

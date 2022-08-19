@@ -213,3 +213,54 @@ islands[5].detailedViewLoopedAnimations[5] = gsap.timeline({
 //         y: 0,
 //         ease: 'power2.out'
 //     });
+
+
+
+
+
+
+
+
+let balloonsTravelTls = [], balloonsSwingTls = [];
+
+islands[3].balloons.forEach((b, idx) => {
+    let balloon = {
+        travel: b,
+        swing: b.querySelector('.balloon-swing'),
+    };
+    gsap.set(balloon.swing, {
+        transformOrigin: '50% 25%',
+    });
+
+    // balloon traveling animation
+    balloonsTravelTls[idx] =
+        gsap.timeline({
+            repeat: -1,
+        })
+            .to(balloon.travel, {
+                duration: 20,
+                motionPath: {
+                    path: islands[3].balloonsTrajectories[idx],
+                    align: islands[3].balloonsTrajectories[idx],
+                    alignOrigin: [0.5, 0.5]
+                },
+                ease: 'none'
+            });
+
+    // balloon swing animation
+    balloonsSwingTls[idx] =
+        gsap.timeline({
+            repeat: -1,
+            yoyo: true,
+        })
+            .to(balloon.travel, {
+                duration: 1,
+                rotation: -5,
+                ease: 'power1.inOut'
+            })
+            .to(balloon.travel, {
+                duration: 1,
+                rotation: 5,
+                ease: 'power1.inOut'
+            }, '>');
+});
