@@ -92,7 +92,7 @@ islands.forEach((island, islandIdx) => {
             updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
             islandToIslandAnimation.play(0);
         }
-        island.detailedViewLoopedAnimations.forEach(tl => tl.play());
+        island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
 
         activeIslandIdx = islandIdx;
         updateIslandSelection();

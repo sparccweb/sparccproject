@@ -13,6 +13,8 @@ function updateMapToIslandAnimation(islandIdx) {
 
     if (island.name === 'chicago') {
         addChicagoDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
+    } else if (island.name === 'LA') {
+        addLADetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     }
     islands.forEach((isl, idx) => {
         if (idx !== islandIdx) {
@@ -34,6 +36,8 @@ function updateIslandToMapAnimation(islandIdx) {
     
     if (island.name === 'chicago') {
         hideChicagoDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
+    } else if (island.name === 'LA') {
+        hideLADetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     }
     
     island.hideIslandToMapAnimation

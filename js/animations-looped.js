@@ -106,7 +106,96 @@ islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({
         x: 25,
         y: 45,
         ease: 'power2.inOut'
-    })
+    });
+
+// LA
+islands[5].detailedViewLoopedAnimations[5] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+})
+    .set(islands[5].detailedViewEls.whale, {
+        y: 20,
+    }, 0)
+    .set(islands[5].detailedViewEls.whaleContainer, {
+        x: 600,
+        y: -100,
+    }, 0)
+    .to(islands[5].detailedViewEls.whale, {
+        duration: .4,
+        y: 0
+    }, 4)
+    .to(islands[5].detailedViewEls.whaleContainer, {
+        duration: 3,
+        x: '-=100',
+        ease: 'none'
+    }, 4)
+    .to(islands[5].detailedViewEls.whale, {
+        duration: .3,
+        y: 20
+    }, '>-.3')
+
+    .set(islands[5].detailedViewEls.whaleContainer, {
+        x: 0,
+        y: -200,
+        scaleX: -1
+    }, '>')
+    .fromTo(islands[5].detailedViewEls.whale, {
+        y: 20,
+    }, {
+        duration: .4,
+        y: 0
+    }, 8)
+    .to(islands[5].detailedViewEls.whaleContainer, {
+        duration: 6,
+        x: '+=300',
+        ease: 'none'
+    }, 8)
+    .to(islands[5].detailedViewEls.whale, {
+        duration: .3,
+        y: 20
+    }, '>-.3')
+
+    .set(islands[5].detailedViewEls.whaleContainer, {
+        x: 700,
+        y: 100,
+        scaleX: 1
+    }, '>')
+    .fromTo(islands[5].detailedViewEls.whale, {
+        y: 20,
+    }, {
+        duration: .4,
+        y: 0
+    }, 16)
+    .to(islands[5].detailedViewEls.whaleContainer, {
+        duration: 4,
+        x: '-=250',
+        ease: 'none'
+    }, 16)
+    .to(islands[5].detailedViewEls.whale, {
+        duration: .3,
+        y: 20
+    }, '>-.3')
+
+    .set(islands[5].detailedViewEls.whaleContainer, {
+        scaleX: -1,
+        x: -100,
+        y: 0,
+    }, 23)
+    .to(islands[5].detailedViewEls.whale, {
+        duration: .4,
+        y: 0
+    }, 23)
+    .to(islands[5].detailedViewEls.whaleContainer, {
+        duration: 4,
+        x: 150,
+        ease: 'none'
+    }, 23)
+    .to(islands[5].detailedViewEls.whale, {
+        duration: .3,
+        y: 20
+    }, '>-.3')
+
+
 
 // Chicago
 
