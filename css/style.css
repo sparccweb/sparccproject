@@ -44,8 +44,9 @@ svg path {
 .map-view {
     /*display: none;*/
 }
+.loader-map,
 .detailed-view {
-    display: none;
+    /*display: none;*/
 }
 .island-details {
     display: none;

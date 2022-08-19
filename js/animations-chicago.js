@@ -58,18 +58,21 @@ function addChicagoDetailsToTimeline(tl, idx) {
             opacity: 1,
             y: 0
         }, .9)
-        .set(island.detailedViewEls.plane, {
+        .fromTo(island.detailedViewEls.plane, {
+            opacity: 0
+        }, {
+            duration: .1,
             opacity: 1
-        }, 0)
+        }, .3)
         .fromTo(island.detailedViewEls.plane, {
             x: -1000,
             y: -200,
         }, {
-            duration: 2,
+            duration: 1.5,
             x: 0,
             y: 0,
             ease: 'power3.out'
-        }, 0)
+        }, .3)
         .fromTo(island.detailedViewEls.ship, {
             x: 300
         }, {
@@ -95,7 +98,16 @@ function hideChicagoDetailsToTimeline(tl, idx) {
             duration: .4,
             opacity: 0
         }, .3)
-        .to([ island.detailedViewEls.plane, island.detailedViewEls.ship ], {
+        .to(island.detailedViewEls.plane, {
+            duration: 1,
+            x: 1000,
+            y: -200,
+            ease: 'power3.in'
+        }, 0)
+        .set(island.detailedViewEls.plane, {
+            opacity: 0
+        }, 1)
+        .to(island.detailedViewEls.ship, {
             duration: .5,
             opacity: 0
         }, .5)

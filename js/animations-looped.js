@@ -96,7 +96,7 @@ islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({
     // paused: true,
     repeat: -1,
     yoyo: true,
-    repeatDelay: 3
+    repeatDelay: 1
 })
     .fromTo(islands[2].detailedViewEls.cableCarCabin, {
         x: -12,

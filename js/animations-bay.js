@@ -77,7 +77,10 @@ function addBayDetailsToTimeline(tl, idx) {
             y: 0
         }, .9)
         
-        .set(island.detailedViewEls.plane, {
+        .fromTo(island.detailedViewEls.plane, {
+            opacity: 0
+        }, {
+            duration: .3,
             opacity: 1
         }, 0)
         .fromTo(island.detailedViewEls.plane, {

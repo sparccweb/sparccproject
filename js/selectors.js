@@ -101,10 +101,20 @@ const islands = [{
         map.querySelector('.island-back.atlanta .land-shadow').getAttribute('fill'),
     ],
     content: map.querySelector('.island-content.atlanta'),
-    mapViewEls: {},
+    mapViewEls: {
+        toScale: Array.from(map.querySelectorAll('.atlanta .map-view .to-scale > *')),
+        toFade: Array.from(map.querySelectorAll('.atlanta .map-view .to-fade > *')),
+        toDrop: Array.from(map.querySelectorAll('.atlanta .map-view .to-drop > *')),
+    },
     detailedViewContainer: map.querySelector('.atlanta .detailed-view'),
     detailedViewEls: {
-        cableCarCabin: map.querySelector('.atlanta .cable-car-cabin')
+        roads: map.querySelector('.atlanta .detailed-view .roads'),
+        toScale: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-scale > *')),
+        toFade: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-fade > *')),
+        toDrop: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-drop > *')),
+        cableCarCabin: map.querySelector('.atlanta .detailed-view .cable-car-cabin'),
+        plane: map.querySelector('.atlanta .detailed-view .plane'),
+        bird: map.querySelector('.atlanta .detailed-view .bird'),
     },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
