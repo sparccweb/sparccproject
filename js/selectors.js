@@ -19,6 +19,11 @@ const beesWrappers = Array.from(map.querySelectorAll('.bee-wrapper'));
 const beesTrajectories = Array.from(map.querySelectorAll('.bee-trajectory'));
 const titles = Array.from(map.querySelectorAll('.titles'));
 
+const bird = map.querySelector('.bird');
+const birdWrapper = document.querySelector('.bird-symbol-wrapper');
+const birdWing = document.querySelector('.bird-wing');
+const birdTrajectories = Array.from(map.querySelectorAll('.bird-trajectories > *'));
+
 const d3Svg = d3.select("svg.map");
 const d3SvgMainMap = d3Svg.select(".main-map");
 
@@ -51,7 +56,7 @@ let view = views.m;
 let activeIslandIdx = null;
 
 const mapViewAnimations = {
-    bees: []
+    bees: [],
 }
 
 const islandToIslandAnimation = gsap.timeline({ paused: true });
@@ -84,9 +89,21 @@ const islands = [{
     ],
     landShadow: Array.from(map.querySelectorAll('.island-back.denver .land-shadow')),
     content: map.querySelector('.island-content.denver'),
-    mapViewEls: {},
+    mapViewEls: {
+        toScale: Array.from(map.querySelectorAll('.denver .map-view .to-scale > *')),
+        toFade: Array.from(map.querySelectorAll('.denver .map-view .to-fade > *')),
+        toDrop: Array.from(map.querySelectorAll('.denver .map-view .to-drop > *')),
+    },
     detailedViewContainer: map.querySelector('.denver .detailed-view'),
-    detailedViewEls: {},
+    detailedViewEls: {
+        roads: map.querySelector('.denver .detailed-view .roads'),
+        toScale: Array.from(map.querySelectorAll('.denver .detailed-view .to-scale > *')),
+        toFade: Array.from(map.querySelectorAll('.denver .detailed-view .to-fade > *')),
+        toDrop: Array.from(map.querySelectorAll('.denver .detailed-view .to-drop > *')),
+        planes: Array.from(map.querySelectorAll('.denver .detailed-view .plane')),
+        bear: map.querySelector('.denver .detailed-view .bear'),
+        ball: map.querySelector('.denver .detailed-view .ball'),
+    },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -161,9 +178,19 @@ const islands = [{
         map.querySelector('.island-back.memphis .land-shadow').getAttribute('fill'),
     ],
     content: map.querySelector('.island-content.memphis'),
-    mapViewEls: {},
+    mapViewEls: {
+        toScale: Array.from(map.querySelectorAll('.memphis .map-view .to-scale > *')),
+        toFade: Array.from(map.querySelectorAll('.memphis .map-view .to-fade > *')),
+        neon: map.querySelector('.memphis .detailed-view .neon'),
+    },
     detailedViewContainer: map.querySelector('.memphis .detailed-view'),
-    detailedViewEls: {},
+    detailedViewEls: {
+        roads: map.querySelector('.memphis .detailed-view .roads'),
+        toScale: Array.from(map.querySelectorAll('.memphis .detailed-view .to-scale > *')),
+        toFade: Array.from(map.querySelectorAll('.memphis .detailed-view .to-fade > *')),
+        toDrop: Array.from(map.querySelectorAll('.memphis .detailed-view .to-drop > *')),
+        plane: map.querySelector('.memphis .detailed-view .plane'),
+    },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),

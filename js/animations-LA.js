@@ -166,11 +166,13 @@ function hideLADetailsToTimeline(tl, idx) {
             opacity: 1
         }, .2)
         
-        .set(island.mapViewEls.toScale, {
-            scale: .2,
+        .to(island.mapViewEls.toScale, {
+            duration: .9,
+            stagger: .04,
             transformOrigin: '50% 100%',
-            opacity: 1
-        }, 0)
+            opacity: 1,
+            ease: 'power4.out'
+        }, .1)
         .to(island.mapViewEls.toScale, {
             duration: .9,
             stagger: .04,

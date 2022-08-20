@@ -1,5 +1,8 @@
 gsap.registerPlugin(MotionPathPlugin);
 
+
+// Main map plane animation
+
 let planeOverMapDirectionFlag = false;
 planeOverMap();
 function planeOverMap() {
@@ -25,6 +28,55 @@ function planeOverMap() {
         onComplete: planeOverMap
     })
 }
+
+// Bird animations
+gsap.timeline({ repeat: -1 })
+    .to(bird, {
+        duration: 5,
+        ease: 'none',
+        motionPath: {
+            path: birdTrajectories[0],
+            align: birdTrajectories[0],
+            alignOrigin: [0.5, 0.5]
+        }
+    }, 0)
+    .to(birdWrapper, {
+        duration: 5,
+        rotation: -10,
+        transformOrigin: 'center center',
+        ease: 'none',
+    }, 0)
+    .set(birdWrapper, {
+        rotation: 0,
+        scaleX: -1,
+        transformOrigin: 'center center',
+    }, 6)
+    .to(bird, {
+        duration: 5,
+        ease: 'none',
+        motionPath: {
+            path: birdTrajectories[1],
+            align: birdTrajectories[1],
+            alignOrigin: [0.5, 0.5]
+        }
+    }, 6)
+    .to(bird, {
+        duration: 4,
+        ease: 'none',
+        motionPath: {
+            path: birdTrajectories[2],
+            align: birdTrajectories[2],
+            alignOrigin: [0.5, 0.5]
+        }
+    }, 12)
+gsap.timeline({ repeat: -1, yoyo: true })
+    .to(birdWing, {
+        duration: .15,
+        rotation: -90,
+        svgOrigin: '52.3 42.2',
+        ease: 'power1.inOut',
+    }, 0)
+
 
 
 const ferrisWheelAnimation = gsap.timeline({ 

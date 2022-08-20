@@ -10,6 +10,7 @@ function updateMapToIslandAnimation(islandIdx) {
     
     island.mapToIslandAnimation.clear();
     addMapHidingToTimeline(island.mapToIslandAnimation);
+    addIslandSelectionToTimeline(island.mapToIslandAnimation, islandIdx);
 
     if (island.name === 'chicago') {
         addChicagoDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
@@ -19,6 +20,10 @@ function updateMapToIslandAnimation(islandIdx) {
         addBayDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     } else if (island.name === 'atlanta') {
         addAtlantaDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
+    } else if (island.name === 'denver') {
+        addDenverDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
+    } else if (island.name === 'memphis') {
+        addMemphisDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     }
     
     islands.forEach((isl, idx) => {
@@ -47,6 +52,10 @@ function updateIslandToMapAnimation(islandIdx) {
         hideBayDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     } else if (island.name === 'atlanta') {
         hideAtlantaDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
+    } else if (island.name === 'denver') {
+        hideDenverDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
+    } else if (island.name === 'memphis') {
+        hideMemphisDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     }
     
     island.hideIslandToMapAnimation
@@ -59,6 +68,7 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
     islandToIslandAnimation.clear();
     addIslandDeselectionToTimeline(islandToIslandAnimation, startIslandIdx);
     addIslandSelectionToTimeline(islandToIslandAnimation, endIslandIdx);
+    
     if (islands[endIslandIdx].name === 'chicago') {
         addChicagoDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
     } else if (islands[endIslandIdx].name === 'LA') {
@@ -67,6 +77,10 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
         addBayDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
     } else if (islands[endIslandIdx].name === 'atlanta') {
         addAtlantaDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
+    } else if (islands[endIslandIdx].name === 'denver') {
+        addDenverDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
+    } else if (islands[endIslandIdx].name === 'memphis') {
+        addMemphisDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
     }
 
     if (islands[startIslandIdx].name === 'chicago') {
@@ -77,6 +91,10 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
         hideBayDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
     } else if (islands[startIslandIdx].name === 'atlanta') {
         hideAtlantaDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
+    } else if (islands[startIslandIdx].name === 'denver') {
+        hideDenverDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
+    } else if (islands[startIslandIdx].name === 'memphis') {
+        hideMemphisDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
     }
 
     islandToIslandAnimation
