@@ -1,9 +1,17 @@
 const container = document.querySelector('.full-page');
 
-const mainMap = document.querySelector('.main-map');
-const loaderMap = document.querySelector('.loader-map');
-
 const map = document.querySelector('svg.map');
+
+const loaderMap = map.querySelector('.loader-map');
+const loaderSea = map.querySelector('.loader-sea');
+const loaderLand = map.querySelector('.loader-land');
+const loaderLandEls = Array.from(map.querySelectorAll('.loader-els g *'));
+const loaderStates = Array.from(map.querySelectorAll('.loader-states > g'));
+const loaderWhale = map.querySelector('.loader-whale');
+const loaderClouds = Array.from(map.querySelectorAll('.loader-clouds > *'));
+
+const mainMapWrapper = map.querySelector('.main-map');
+
 const mainRoad = map.querySelector('.main-road');
 const mapBack = map.querySelector('.map-back');
 const mainMapPlaneContainer = map.querySelector('.main-map-plane-container');

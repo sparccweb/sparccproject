@@ -1,4 +1,4 @@
-function creatMapNavigationAnimations() {
+function createMapNavigationAnimations() {
     islands.forEach((island, islandIdx) => {
         updateMapToIslandAnimation(islandIdx);
         updateIslandToMapAnimation(islandIdx);

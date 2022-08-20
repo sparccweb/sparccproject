@@ -5,19 +5,11 @@ function setupLayout() {
         height: window.innerHeight
     })
 }
-creatMapNavigationAnimations();
+createMapNavigationAnimations();
 
-gsap.set(mainMap, {
-    display: 'block'
-})
-gsap.to(loaderMap, {
-    duration: .3,
-    opacity: 0
-})
-gsap.to(mainMap, {
-    duration: .3,
-    opacity: 1
-})
+gsap.delayedCall(.3, () => {
+    loaderAnimation.play(0);
+});
 
 
 

@@ -37,12 +37,11 @@ svg path {
     width: 0;
     height: 0;
 }
-.main-map,
+.main-map {
+    opacity: 0;
+}
 .zooming-controls {
     display: none;
-}
-.map-view {
-    /*display: none;*/
 }
 .loader-map,
 .detailed-view {
@@ -56,12 +55,9 @@ svg path {
 .map * {
     pointer-events: none;
 }
-.map .highlight:not(.selected) {
+.map.loaded .highlight:not(.selected) {
     pointer-events: auto;
     cursor: pointer;
-}
-.map .balloon .balloon-interact {
-    pointer-events: auto;
 }
 @media (hover: hover) and (pointer: fine) {
     .map .highlight:hover {
