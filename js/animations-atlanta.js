@@ -67,7 +67,7 @@ function addAtlantaDetailsToTimeline(tl, idx) {
             x: -1000,
             y: -200,
         }, {
-            duration: 3,
+            duration: 2,
             x: 0,
             y: 0,
             ease: 'power3.out'
@@ -77,10 +77,13 @@ function addAtlantaDetailsToTimeline(tl, idx) {
 function hideAtlantaDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
-        .to(island.detailedViewEls.plane, {
-            duration: 1.2,
-            x: 1000,
-            y: -200,
+        .fromTo(island.detailedViewEls.plane, {
+            x: 0,
+            y: 0,
+        }, {
+            duration: 3,
+            x: 2000,
+            y: -400,
             ease: 'power3.in'
         }, 0)
         .to(island.detailedViewEls.plane, {

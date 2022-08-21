@@ -30,6 +30,7 @@ svg path {
     position: absolute;
     top: 10px;
     right: 10px;
+    display: none;
 }
 
 .common-symbols {
@@ -40,14 +41,7 @@ svg path {
 .main-map {
     opacity: 0;
 }
-.zooming-controls {
-    display: none;
-}
-.loader-map,
 .detailed-view {
-    /*display: none;*/
-}
-.island-details {
     display: none;
 }
 

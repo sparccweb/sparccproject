@@ -181,10 +181,7 @@ function hideLADetailsToTimeline(tl, idx) {
             ease: 'back.out(2)'
         }, .1)
 
-        .fromTo(island.mapViewEls.van, {
-            x: 100,
-            opacity: 0,
-        }, {
+        .to(island.mapViewEls.van, {
             duration: .7,
             x: 0,
             opacity: 1,

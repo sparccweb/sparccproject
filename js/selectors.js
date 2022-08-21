@@ -80,9 +80,21 @@ const islands = [{
         map.querySelector('.island-back.central .land-shadow').getAttribute('fill'),
     ],
     content: map.querySelector('.island-content.central'),
-    mapViewEls: {},
-    detailedViewContainer: map.querySelector('.central .detailed-view'),
-    detailedViewEls: {},
+    detailedViewContainer: map.querySelectorAll('.central .detailed-view'),
+    detailedViewEls: {
+        toScale: Array.from(map.querySelectorAll('.central .detailed-view .to-scale > *')),
+        toScaleCentered: Array.from(map.querySelectorAll('.central .detailed-view .to-scale-center > *')),
+        toFade: Array.from(map.querySelectorAll('.central .detailed-view .to-fade > *')),
+        corn: {
+            leaf: document.querySelector('.central-corn-leaf'),
+            cob: document.querySelector('.central-corn-cob'),
+            stem: document.querySelector('.central-corn-stem'),
+            curve: document.querySelector('.central-corn-curve'),
+            beans: Array.from(document.querySelectorAll('.central-corn-beans > g')),
+        },
+        cart: map.querySelector('.central .cart'),
+        tools: Array.from(map.querySelectorAll('.central .tools > *')),
+    },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -263,9 +275,7 @@ const islands = [{
         ship: map.querySelector('.chicago .detailed-view .ship'),
         plane: map.querySelector('.chicago .detailed-view .plane'),
     },
-    detailedViewLoopedAnimations: [
-        
-    ],
+    detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }];

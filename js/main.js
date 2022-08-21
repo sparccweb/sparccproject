@@ -69,7 +69,7 @@ islands.forEach((island, islandIdx) => {
         }
         scale *= .8;
         
-        d3Svg.transition().duration(500).call(
+        d3Svg.transition().duration(700).call(
             zoom.transform,
             d3.zoomIdentity
                 .translate(viewBoxCenter.x, viewBoxCenter.y)

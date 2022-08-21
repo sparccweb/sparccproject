@@ -24,6 +24,8 @@ function updateMapToIslandAnimation(islandIdx) {
         addDenverDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     } else if (island.name === 'memphis') {
         addMemphisDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
+    } else if (island.name === 'central') {
+        addCentralDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     }
     
     islands.forEach((isl, idx) => {
@@ -56,6 +58,8 @@ function updateIslandToMapAnimation(islandIdx) {
         hideDenverDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     } else if (island.name === 'memphis') {
         hideMemphisDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
+    } else if (island.name === 'central') {
+        hideCentralDetailsToTimeline(island.hideIslandToMapAnimation, islandIdx);
     }
     
     island.hideIslandToMapAnimation
@@ -66,6 +70,7 @@ function updateIslandToMapAnimation(islandIdx) {
 
 function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
     islandToIslandAnimation.clear();
+    
     addIslandDeselectionToTimeline(islandToIslandAnimation, startIslandIdx);
     addIslandSelectionToTimeline(islandToIslandAnimation, endIslandIdx);
     
@@ -81,6 +86,8 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
         addDenverDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
     } else if (islands[endIslandIdx].name === 'memphis') {
         addMemphisDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
+    } else if (islands[endIslandIdx].name === 'central') {
+        addCentralDetailsToTimeline(islandToIslandAnimation, endIslandIdx);
     }
 
     if (islands[startIslandIdx].name === 'chicago') {
@@ -95,6 +102,8 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
         hideDenverDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
     } else if (islands[startIslandIdx].name === 'memphis') {
         hideMemphisDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
+    } else if (islands[startIslandIdx].name === 'central') {
+        hideCentralDetailsToTimeline(islandToIslandAnimation, startIslandIdx);
     }
 
     islandToIslandAnimation
@@ -190,7 +199,7 @@ function addIslandDeselectionToTimeline(tl, idx) {
         .to(island.landShadow, {
             duration: .3,
             attr: {
-                fill: '#a4def7'
+                fill: '#8cceea'
             }
         }, .3)
         .to(island.content, {
