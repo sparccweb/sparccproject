@@ -7,7 +7,7 @@ modalCloseBtn.onclick = function () {
 }
 
 function updateModalContent() {
-    fetch('./_sources/website/chicago/community-ownership-incubation-lab.html').then((response) => {
+    fetch('./website-exported/chicago/community-ownership-incubation-lab.html').then((response) => {
         return response.text();
     }).then((html) => {
         const parser = new DOMParser();
