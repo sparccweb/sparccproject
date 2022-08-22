@@ -4,6 +4,14 @@ function setupLayout() {
     gsap.set(container, {
         height: window.innerHeight
     })
+    gsap.set(map, {
+        // width: window.innerWidth,
+        // height: window.innerHeight,
+        // attr: {
+        //     width: window.innerWidth,
+        //     height: window.innerHeight,
+        // }
+    })
 }
 createMapNavigationAnimations();
 
@@ -14,12 +22,18 @@ gsap.delayedCall(.3, () => {
 
 
 const zoom = d3.zoom()
-    .scaleExtent([2.5, maxZoomingLevel])
-    .on("zoom", null);
+    .scaleExtent([1, 15])
+    .on("zoom", zoomed);
 
+d3Svg.call(zoom);
 
-function zoomed({transform}) {
-    currentZoomTransform = transform;
+function zoomed(e) {
+    const t = e.transform;
+    if (view === views.m) {
+
+    } else {
+        currentZoomTransform = t;
+    }
     d3SvgMainMap.attr("transform", currentZoomTransform);
 }
 
@@ -43,11 +57,8 @@ islands.forEach((island, islandIdx) => {
     island.highlight.addEventListener('click', (e) => {
         e.stopPropagation();
 
-        
         if (view === views.m) {
-            d3Svg.call(zoom);
             resetZoom(0);
-            zoom.on("zoom", zoomed);
         }
         
         gsap.set(island.highlight, {
@@ -99,7 +110,6 @@ toMapBtn.addEventListener('click', () => {
     resetZoom(.5);
     islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
     gsap.delayedCall(.5, () => {
-        d3Svg.on(".zoom", null);
         view = views.m;
     });
     gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {

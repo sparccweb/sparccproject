@@ -1,6 +1,6 @@
 const shapesToBeBoxed = Array.from(document.querySelectorAll('.test > *'));
 let outputString = '';
-const symbolName = 'central-corn-symbol';
+const symbolName = 'mem-neon-symbol';
 shapesToBeBoxed.forEach(b => {
     const box = b.getBBox();
 

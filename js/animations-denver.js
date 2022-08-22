@@ -46,42 +46,84 @@ function addDenverDetailsToTimeline(tl, idx) {
             y: -50
         }, {
             duration: .3,
-            stagger: .03,
+            stagger: -.03,
             opacity: 1,
             y: 0
         }, 1)
         
-        .fromTo(island.detailedViewEls.plane, {
+        .fromTo(island.detailedViewEls.planes[1], {
             opacity: 0
         }, {
             duration: .3,
             opacity: 1
-        }, 1)
-        .fromTo(island.detailedViewEls.plane, {
-            x: -1000,
-            y: -200,
+        }, .7)
+        .fromTo(island.detailedViewEls.planes[1], {
+            x: -500,
+            y: -100,
         }, {
-            duration: 3,
+            duration: 1.6,
             x: 0,
             y: 0,
-            ease: 'power3.out'
-        }, 1)
+            ease: 'power4.out'
+        }, .7)
+        .fromTo(island.detailedViewEls.planes[0], {
+            opacity: 0
+        }, {
+            duration: .3,
+            opacity: 1
+        }, 1.2)
+        .fromTo(island.detailedViewEls.planes[0], {
+            x: -500,
+            y: -100,
+        }, {
+            duration: 1.6,
+            x: 0,
+            y: 0,
+            ease: 'power4.out'
+        }, 1.2)
+        
+        .fromTo(island.detailedViewEls.bear, {
+            opacity: 0
+        }, {
+            duration: .5,
+            opacity: 1
+        }, .2)
+        .fromTo(island.detailedViewEls.bear, {
+            x: 100,
+        }, {
+            duration: 1,
+            x: 0,
+        }, .2)
+        
+        .fromTo(island.detailedViewEls.ball, {
+            opacity: 0
+        }, {
+            duration: .7,
+            opacity: 1
+        }, .7)
+        .fromTo(island.detailedViewEls.ball, {
+            y: -120,
+        }, {
+            duration: 1.5,
+            y: 0,
+            ease: 'bounce'
+        }, .7)
 }
 
 function hideDenverDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
-        .to(island.detailedViewEls.plane, {
+        .to(island.detailedViewEls.planes, {
             duration: 1.2,
             x: 1000,
             y: -200,
             ease: 'power3.in'
         }, 0)
-        .to(island.detailedViewEls.plane, {
+        .to(island.detailedViewEls.planes, {
             duration: .2,
             opacity: 0
         }, '>-.2')
-        .to([ island.detailedViewEls.toFade, island.detailedViewEls.toDrop, island.detailedViewEls.people ], {
+        .to([ island.detailedViewEls.toFade, island.detailedViewEls.ball, island.detailedViewEls.toDrop, island.detailedViewEls.people ], {
             duration: .5,
             opacity: 0
         }, .1)
@@ -124,4 +166,10 @@ function hideDenverDetailsToTimeline(tl, idx) {
             transformOrigin: '50% 100%',
             ease: 'back.out(2)'
         }, .1)
+
+        .to(island.detailedViewEls.bear, {
+            duration: 1,
+            x: -100,
+            opacity: 0
+        }, 0)
 }

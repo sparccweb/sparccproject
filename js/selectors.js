@@ -203,7 +203,7 @@ const islands = [{
         toFade: Array.from(map.querySelectorAll('.memphis .map-view .to-fade > *')),
         neon: map.querySelector('.memphis .detailed-view .neon'),
     },
-    detailedViewContainer: map.querySelector('.memphis .detailed-view'),
+    detailedViewContainer: map.querySelectorAll('.memphis .detailed-view'),
     detailedViewEls: {
         roads: map.querySelector('.memphis .detailed-view .roads'),
         toScale: Array.from(map.querySelectorAll('.memphis .detailed-view .to-scale > *')),
@@ -211,6 +211,7 @@ const islands = [{
         toDrop: Array.from(map.querySelectorAll('.memphis .detailed-view .to-drop > *')),
         plane: map.querySelector('.memphis .detailed-view .plane'),
     },
+    neon: map.querySelector('.memphis .neon'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),

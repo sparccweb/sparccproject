@@ -3,9 +3,14 @@ html, body {
     margin: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
+    /*overscroll-behavior: none;*/
 }
 svg path {
     /*fill: inherit;*/
+}
+
+svg {
+    /*display: none;*/
 }
 
 .full-page {

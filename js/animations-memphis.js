@@ -1,6 +1,14 @@
 function addMemphisDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
+        .to(island.neon, {
+            duration: 1.5,
+            scale: .5,
+            x: 10,
+            y: -135,
+            ease: 'power2.inOut'
+        }, .3)
+
         .to(island.mapViewEls.toFade, {
             duration: .3,
             opacity: 0
@@ -71,6 +79,13 @@ function addMemphisDetailsToTimeline(tl, idx) {
 function hideMemphisDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
+        .to(island.neon, {
+            duration: .8,
+            scale: 1,
+            x: 0,
+            y: 0
+        }, 0)
+        
         .to(island.detailedViewEls.plane, {
             duration: 1.2,
             x: 1000,

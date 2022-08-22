@@ -1,0 +1,108 @@
+:root {
+    --text-color: black;
+    --container-color: #8E5FDD ;
+}
+
+*{color:var(--text-color);}
+
+.item {
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    border: 4px solid var(--container-color);
+    margin: 4rem auto;
+    max-width: 800px;
+    position: relative;
+}
+.item::before, .item::after {
+    background: #FFF;
+    box-sizing: border-box;
+    border: 4px solid var(--container-color);
+    display: block;
+    content: "";
+    position: absolute;
+}
+.item::before {
+    border-top-width: 3px;
+    border-bottom-width: 5px;
+    border-right: 0;
+    height: calc(100% + 8px);
+    width: 20px;
+    left: -24px;
+    top: -14px;
+    transform: skewY(45deg);
+}
+.item::after {
+    border-left-width: 3px;
+    border-right-width: 5px;
+    border-bottom: 0;
+    left: -14px;
+    top: -24px;
+    height: 20px;
+    width: calc(100% + 8px);
+    transform: skewX(45deg);
+}
+.item--shadow {
+    border-top: 0;
+    border-left: 0;
+}
+.item--shadow::before, .item--shadow::after {
+    background: var(--container-color);
+    border-color: #FFF;
+}
+.item--shadow::before {
+    border: 4px solid var(--container-color);
+    left: -24px;
+    height: calc(100% + 6px);
+    top: -12px;
+}
+.item--shadow::after {
+    border: 4px solid var(--container-color);
+    width: calc(100% + 4px);
+    top: -24px;
+    left: -10px;
+}
+.item__hed {
+    margin: 0;
+    background-color:var(--container-color);
+    color:white;
+    padding: 2rem;
+}
+.item__led {
+    line-height: 1.45;
+    margin: 1em 0 0 0;
+    padding: 2rem 2rem 0rem 2rem;
+}
+
+.login-button {
+    width: 14rem;
+    padding: 0.7rem;
+    margin: 0 2rem 2rem 2rem ;
+    border-radius: 0;
+    color: var(--container-color);
+    background-color: white;
+    border: 0.22rem solid var(--container-color);
+    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);
+    box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);
+
+}
+
+.login-button:link,
+.login-button:visited,
+.login-button:hover,
+.login-button:active {
+    color: white;
+    background-color: var(--container-color);
+    border: 0.22rem solid var(--container-color);
+    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);
+    box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);
+    cursor: pointer;
+
+}
+
+#emailHelp.form-text,
+#passwordHelp.form-text {
+    margin: 0.9rem 2.8rem 1.6rem 4.3rem;
+    padding: 0.2rem 0.4rem;
+    background-color: white;
+    font-size: 0.8rem;
+}
