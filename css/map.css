@@ -54,7 +54,8 @@ svg {
 .map * {
     pointer-events: none;
 }
-.map.loaded .highlight:not(.selected) {
+/*.map.loaded .highlight:not(.selected) {*/
+.map.loaded .highlight {
     pointer-events: auto;
     cursor: pointer;
 }

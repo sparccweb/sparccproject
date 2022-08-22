@@ -4,14 +4,6 @@ function setupLayout() {
     gsap.set(container, {
         height: window.innerHeight
     })
-    gsap.set(map, {
-        // width: window.innerWidth,
-        // height: window.innerHeight,
-        // attr: {
-        //     width: window.innerWidth,
-        //     height: window.innerHeight,
-        // }
-    })
 }
 createMapNavigationAnimations();
 
@@ -92,10 +84,14 @@ islands.forEach((island, islandIdx) => {
         if (view === views.m) {
             island.mapToIslandAnimation.play(0);
         } else {
-            updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
-            islandToIslandAnimation.play(0);
+            if (activeIslandIdx !== islandIdx) {
+                updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
+                islandToIslandAnimation.play(.5);
+                island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
+            } else {
+
+            }
         }
-        island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
 
         activeIslandIdx = islandIdx;
         updateIslandSelection();

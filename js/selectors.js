@@ -2,6 +2,9 @@ const container = document.querySelector('.full-page');
 
 const map = document.querySelector('svg.map');
 
+const modal = document.querySelector('.modal');
+const modalCloseBtn = document.querySelector('#close-modal-btn');
+
 const loaderMap = map.querySelector('.loader-map');
 const loaderSea = map.querySelector('.loader-sea');
 const loaderLand = map.querySelector('.loader-land');
@@ -31,6 +34,8 @@ const bird = map.querySelector('.bird');
 const birdWrapper = document.querySelector('.bird-symbol-wrapper');
 const birdWing = document.querySelector('.bird-wing');
 const birdTrajectories = Array.from(map.querySelectorAll('.bird-trajectories > *'));
+
+const mainMapBoat = map.querySelector('.main-map-boat');
 
 const d3Svg = d3.select("svg.map");
 const d3SvgMainMap = d3Svg.select(".main-map");
@@ -65,6 +70,7 @@ let activeIslandIdx = null;
 
 const mapViewAnimations = {
     bees: [],
+    mainBoat: gsap.timeline({ repeat: -1 })
 }
 
 const islandToIslandAnimation = gsap.timeline({ paused: true });
@@ -123,6 +129,7 @@ const islands = [{
         planes: Array.from(map.querySelectorAll('.denver .detailed-view .plane')),
         bear: map.querySelector('.denver .detailed-view .bear'),
         ball: map.querySelector('.denver .detailed-view .ball'),
+        boat: map.querySelector('.denver .detailed-view .yellow-boat'),
     },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
@@ -149,7 +156,6 @@ const islands = [{
         toScale: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-scale > *')),
         toFade: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-fade > *')),
         toDrop: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-drop > *')),
-        cableCarCabin: map.querySelector('.atlanta .detailed-view .cable-car-cabin'),
         plane: map.querySelector('.atlanta .detailed-view .plane'),
         bird: map.querySelector('.atlanta .detailed-view .bird'),
     },

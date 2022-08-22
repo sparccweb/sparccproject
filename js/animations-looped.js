@@ -30,7 +30,19 @@ function planeOverMap() {
 }
 
 // Bird animations
+gsap.timeline({ repeat: -1, yoyo: true })
+    .to(birdWing, {
+        duration: .15,
+        rotation: -90,
+        svgOrigin: '52.3 42.2',
+        ease: 'power1.inOut',
+    }, 0)
+
 gsap.timeline({ repeat: -1 })
+    .to(bird, {
+        duration: .1,
+        opacity: 1
+    }, 0)
     .to(bird, {
         duration: 5,
         ease: 'none',
@@ -46,10 +58,19 @@ gsap.timeline({ repeat: -1 })
         transformOrigin: 'center center',
         ease: 'none',
     }, 0)
+    .to(bird, {
+        duration: .1,
+        opacity: 0
+    }, '>-.1')
+    
     .set(birdWrapper, {
         rotation: 0,
         scaleX: -1,
         transformOrigin: 'center center',
+    }, 6)
+    .to(bird, {
+        duration: .1,
+        opacity: 1
     }, 6)
     .to(bird, {
         duration: 5,
@@ -61,6 +82,15 @@ gsap.timeline({ repeat: -1 })
         }
     }, 6)
     .to(bird, {
+        duration: .1,
+        opacity: 0
+    }, '>-.1')
+
+    .to(bird, {
+        duration: .1,
+        opacity: 1
+    }, 12)
+    .to(bird, {
         duration: 4,
         ease: 'none',
         motionPath: {
@@ -69,15 +99,31 @@ gsap.timeline({ repeat: -1 })
             alignOrigin: [0.5, 0.5]
         }
     }, 12)
-gsap.timeline({ repeat: -1, yoyo: true })
-    .to(birdWing, {
-        duration: .15,
-        rotation: -90,
-        svgOrigin: '52.3 42.2',
+    .to(bird, {
+        duration: .1,
+        opacity: 0
+    }, '>-.1')
+
+
+// Yellow boat
+mapViewAnimations.mainBoat
+    .fromTo(mainMapBoat, {
+        x: 0,
+        y: 750
+    }, {
+        duration: 6,
+        x: 600,
+        y: 750,
         ease: 'power1.inOut',
-    }, 0)
+    })
+    .to(mainMapBoat, {
+        duration: 6,
+        x: 0,
+        ease: 'power1.inOut',
+    })
 
 
+// Ferris Wheel (all symbols at once)
 
 const ferrisWheelAnimation = gsap.timeline({ 
     defaults: {
@@ -142,23 +188,72 @@ mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
 
 
 
-// Atlanta
+// Denver
 
-islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({ 
-    // paused: true,
+islands[1].detailedViewLoopedAnimations[0] = gsap.timeline({ 
+    repeat: -1,
+})
+    .to(islands[1].detailedViewEls.boat, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .fromTo(islands[1].detailedViewEls.boat, {
+        x: 1200,
+        y: 1180
+    }, {
+        duration: 8,
+        x: 700,
+        y: 1180,
+        ease: 'power1.inOut'
+    }, 0)
+    .to(islands[1].detailedViewEls.boat, {
+        duration: 8,
+        x: 1200,
+        y: 1180,
+        ease: 'power1.inOut'
+    })
+    .to(islands[1].detailedViewEls.boat, {
+        duration: .3,
+        opacity: 0
+    }, 7.7)
+    
+    .to(islands[1].detailedViewEls.boat, {
+        duration: .3,
+        opacity: 1
+    }, 10)
+    .fromTo(islands[1].detailedViewEls.boat, {
+        x: 0,
+        y: 950
+    }, {
+        duration: 8,
+        x: 560,
+        y: 950,
+        ease: 'power1.inOut'
+    }, 10)
+    .to(islands[1].detailedViewEls.boat, {
+        duration: 8,
+        x: 0,
+        y: 950,
+        ease: 'power1.inOut'
+    })
+    .to(islands[1].detailedViewEls.boat, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3');
+
+islands[1].detailedViewLoopedAnimations[1] = gsap.timeline({
     repeat: -1,
     yoyo: true,
-    repeatDelay: 1
 })
-    .fromTo(islands[2].detailedViewEls.cableCarCabin, {
-        x: -12,
-        y: -32
+    .fromTo(islands[1].detailedViewEls.boat, {
+        rotation: -1,
+        transformOrigin: '50% 100%',
     }, {
-        duration: 4,
-        x: 25,
-        y: 45,
-        ease: 'power2.inOut'
-    });
+        duration: .5,
+        rotation: 1,
+        transformOrigin: '50% 100%',
+        ease: 'power1.inOut',
+    }, 0)
 
 // LA
 islands[5].detailedViewLoopedAnimations[5] = gsap.timeline({

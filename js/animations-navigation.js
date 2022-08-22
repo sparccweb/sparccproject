@@ -70,7 +70,17 @@ function updateIslandToMapAnimation(islandIdx) {
 
 function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
     islandToIslandAnimation.clear();
-    
+
+    if (islands[endIslandIdx].name !== 'central') {
+        islandToIslandAnimation
+            .fromTo(islands[endIslandIdx].detailedViewContainer, {
+                opacity: 0
+            }, {
+                duration: 1,
+                opacity: 1
+            }, .3);
+    }
+        
     addIslandDeselectionToTimeline(islandToIslandAnimation, startIslandIdx);
     addIslandSelectionToTimeline(islandToIslandAnimation, endIslandIdx);
     
@@ -112,14 +122,14 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
         }, 0)
         .set(islands[startIslandIdx].detailedViewContainer, {
             display: 'none'
-        }, islandToIslandAnimation.duration())
+        }, islandToIslandAnimation.duration());
 }
 
 
 
 function addMapHidingToTimeline(tl) {
     tl
-        .to(mainMapPlane, {
+        .to([ mainMapBoat, mainMapPlane ], {
             duration: .7,
             opacity: 0
         }, 0)
@@ -185,25 +195,21 @@ function addIslandDeselectionToTimeline(tl, idx) {
     const island = islands[idx];
     tl
         .to(island.sea, {
-            duration: .3,
             attr: {
                 opacity: 0
             }
         }, .3)
         .to(island.land, {
-            duration: .3,
             attr: {
                 fill: '#a4def7'
             }
         }, .3)
         .to(island.landShadow, {
-            duration: .3,
             attr: {
                 fill: '#8cceea'
             }
         }, .3)
         .to(island.content, {
-            duration: .3,
             opacity: 0
         }, .3)
 }
@@ -239,7 +245,7 @@ function addMapShowingToTimeline(tl, idx) {
             opacity: 1,
             ease: 'power1.in'
         }, .4)
-        .to(mainMapPlane, {
+        .to([ mainMapPlane, mainMapBoat ], {
             duration: .5,
             opacity: 1
         }, .5)
