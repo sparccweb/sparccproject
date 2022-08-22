@@ -198,10 +198,10 @@ islands[1].detailedViewLoopedAnimations[0] = gsap.timeline({
         opacity: 1
     }, 0)
     .fromTo(islands[1].detailedViewEls.boat, {
-        x: 1200,
+        x: 950,
         y: 1180
     }, {
-        duration: 8,
+        duration: 6,
         x: 700,
         y: 1180,
         ease: 'power1.inOut'
