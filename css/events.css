@@ -1,0 +1,19 @@
+.full-page * {
+    pointer-events: none;
+}
+.modal .modal-content,
+.map {
+    pointer-events: auto;
+}
+.modal #main a,
+.modal #close-modal-btn,
+.map.loaded .highlight,
+.zooming-controls * {
+    pointer-events: auto;
+    cursor: pointer;
+}
+@media (hover: hover) and (pointer: fine) {
+    .map .highlight:hover {
+        opacity: 1;
+    }
+}

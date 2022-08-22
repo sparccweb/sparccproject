@@ -34,8 +34,20 @@ svg {
 .zooming-controls {
     position: absolute;
     top: 10px;
-    right: 10px;
+    left: 10px;
     display: none;
+}
+.zooming-controls .plus-minus-container {
+    display: flex;
+    justify-content: right;
+}
+.zooming-controls #go-to-map-btn {
+    width: 120px;
+}
+.zooming-controls #zoom-in-btn,
+.zooming-controls #zoom-out-btn {
+    width: 20px;
+    padding: 5px;
 }
 
 .common-symbols {
@@ -48,19 +60,4 @@ svg {
 }
 .detailed-view {
     display: none;
-}
-
-
-.map * {
-    pointer-events: none;
-}
-/*.map.loaded .highlight:not(.selected) {*/
-.map.loaded .highlight {
-    pointer-events: auto;
-    cursor: pointer;
-}
-@media (hover: hover) and (pointer: fine) {
-    .map .highlight:hover {
-        opacity: 1;
-    }
 }

@@ -87,12 +87,12 @@ islands.forEach((island, islandIdx) => {
             if (activeIslandIdx !== islandIdx) {
                 updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
                 islandToIslandAnimation.play(.5);
-                island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
             } else {
 
             }
         }
-
+        
+        island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
         activeIslandIdx = islandIdx;
         updateIslandSelection();
 

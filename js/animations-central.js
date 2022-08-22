@@ -136,13 +136,13 @@ function hideCentralDetailsToTimeline(tl, idx) {
             transformOrigin: '50% 50%',
             ease: 'back.out(5)'
         }, 0)
-        .to([ island.detailedViewEls.cart, island.detailedViewEls.tools ], {
+        .to(island.detailedViewEls.cart, {
             duration: 1,
             opacity: 0,
             x: 100,
         }, 0)
 
-        .to([ island.detailedViewEls.corn.leaf, island.detailedViewEls.corn.stem, island.detailedViewEls.corn.curve, island.detailedViewEls.corn.cob ], {
+        .to([ island.detailedViewEls.corn.leaf, island.detailedViewEls.tools, island.detailedViewEls.corn.stem, island.detailedViewEls.corn.curve, island.detailedViewEls.corn.cob ], {
             duration: .4,
             opacity: 0
         }, .8);

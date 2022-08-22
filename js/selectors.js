@@ -3,6 +3,7 @@ const container = document.querySelector('.full-page');
 const map = document.querySelector('svg.map');
 
 const modal = document.querySelector('.modal');
+const modalContentContainer = document.querySelector('.modal-content');
 const modalCloseBtn = document.querySelector('#close-modal-btn');
 
 const loaderMap = map.querySelector('.loader-map');
