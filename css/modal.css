@@ -29,7 +29,8 @@
 
 .modal img {
     display: block;
-    max-width: 100%;
+    width: calc(100% + 15px);
+    margin-left: -15px;
     height: auto;
 }
 .modal .modal-content {

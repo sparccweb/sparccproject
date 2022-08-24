@@ -7,3 +7,9 @@ function updateIslandSelection() {
         }
     })    
 }
+
+const isImgLink = (url) => {
+    url = '' + url;
+    return (url.match(/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i) !== null);
+}
+

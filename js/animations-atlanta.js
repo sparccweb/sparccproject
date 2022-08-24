@@ -1,10 +1,21 @@
 function addAtlantaDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
-        .to(bird, {
-            duration: .1,
-            fill: '#e55555',
-            color: '#af4141'
+        .to(birdWrapper, {
+            duration: .2,
+            opacity: 1
+        }, .6)
+        // .set(birdAnimations, {
+        //     progress: 0,
+        //     timeScale: 1
+        // }, 0)
+        .to('.bird-symbol-wrapper .fst-color', {
+            duration: .2,
+            fill: '#af4141'
+        }, 0)
+        .to('.bird-symbol-wrapper .scd-color', {
+            duration: .2,
+            fill: '#e55555'
         }, 0)
         
         .to(island.mapViewEls.toFade, {
@@ -133,4 +144,16 @@ function hideAtlantaDetailsToTimeline(tl, idx) {
             transformOrigin: '50% 100%',
             ease: 'back.out(2)'
         }, .1)
+
+        .to(birdWrapper, {
+            duration: .2,
+            opacity: 0
+        }, .5)
+        // .set(birdAnimations, {
+        //     timeScale: 0
+        // }, 1.5)
+        // .set(birdWrapper, {
+        //     duration: .2,
+        //     opacity: 0
+        // }, '>-.2')
 }

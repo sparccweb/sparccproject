@@ -153,13 +153,13 @@ function addMapHidingToTimeline(tl) {
         }, .3)
         .set(zoomingControls, {
             display: 'block'
-        }, .4)
+        }, 1.5)
         .fromTo(zoomingControls, {
             opacity: 0
         }, {
             duration: .2,
             opacity: 1
-        }, .4)
+        }, 1.5)
         .set(islands.map(v => v.highlight), {
             attr: { 'stroke-width': 10 }
         }, .2);
@@ -167,6 +167,22 @@ function addMapHidingToTimeline(tl) {
 
 function addIslandSelectionToTimeline(tl, idx) {
     const island = islands[idx];
+    if (island.name !== 'central') {
+        tl
+            .to(peopleFstColoredElements, {
+                duration: .1,
+                attr: { fill: island.peopleColors[0] }
+            }, 0)
+            .to(peopleScdColoredElements, {
+                duration: .1,
+                attr: { fill: island.peopleColors[1] }
+            }, 0)
+            .to(peopleTrdColoredElements, {
+                duration: .1,
+                attr: { fill: island.peopleColors[2] }
+            }, 0)
+    }
+
     tl
         .to(island.sea, {
             duration: .3,

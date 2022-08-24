@@ -22,7 +22,7 @@ function planeOverMap() {
     })
     gsap.to(mainMapPlaneContainer, {
         delay: delay,
-        duration: 11,
+        duration: 15,
         x: planeOverMapDirectionFlag ? 5000 : -5000,
         ease: 'none',
         onComplete: planeOverMap
@@ -30,7 +30,7 @@ function planeOverMap() {
 }
 
 // Bird animations
-gsap.timeline({ repeat: -1, yoyo: true })
+birdAnimations[0]
     .to(birdWing, {
         duration: .15,
         rotation: -90,
@@ -38,7 +38,7 @@ gsap.timeline({ repeat: -1, yoyo: true })
         ease: 'power1.inOut',
     }, 0)
 
-gsap.timeline({ repeat: -1 })
+birdAnimations[1]
     .to(bird, {
         duration: .1,
         opacity: 1
@@ -106,12 +106,12 @@ gsap.timeline({ repeat: -1 })
 
 
 // Yellow boat
-mapViewAnimations.mainBoat
+mainBoatAnimation
     .fromTo(mainMapBoat, {
         x: 0,
         y: 750
     }, {
-        duration: 6,
+        duration: 9,
         x: 600,
         y: 750,
         ease: 'power1.inOut',
@@ -125,19 +125,16 @@ mapViewAnimations.mainBoat
 
 // Ferris Wheel (all symbols at once)
 
-const ferrisWheelAnimation = gsap.timeline({ 
-    defaults: {
-        duration: 7,
-    },
-    repeat: -1
-})
+ferrisWheelAnimation
     .to(ferrisWheelRotatingPart, {
+        duration: 7,
         rotation: 360,
         svgOrigin: '70.8 63.7',
         ease: 'none'
     });
 ferrisWheelCabins.forEach(c => {
     ferrisWheelAnimation.to(c, {
+        duration: 7,
         rotation: -360,
         transformOrigin: '50% 0%',
         ease: 'none'
@@ -145,7 +142,7 @@ ferrisWheelCabins.forEach(c => {
 });
 
 
-mapViewAnimations[0] = gsap.timeline({ repeat: -1 })
+beesAnimations[0]
     .to(beesWrappers[0], {
         duration: 5,
         ease: 'none',
@@ -166,7 +163,7 @@ mapViewAnimations[0] = gsap.timeline({ repeat: -1 })
     }, 2.4)
     .progress(.8)
 
-mapViewAnimations[1] = gsap.timeline({ repeat: -1 })
+beesAnimations[1]
     .to(beesWrappers[1], {
         duration: 6,
         ease: 'none',
@@ -385,7 +382,7 @@ islands[3].balloons.forEach((b, idx) => {
             repeat: -1,
         })
             .to(balloon.travel, {
-                duration: 20,
+                duration: 30,
                 motionPath: {
                     path: islands[3].balloonsTrajectories[idx],
                     align: islands[3].balloonsTrajectories[idx],

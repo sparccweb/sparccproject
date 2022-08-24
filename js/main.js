@@ -10,7 +10,13 @@ createMapNavigationAnimations();
 gsap.delayedCall(.3, () => {
     loaderAnimation.play(0);
 });
-
+gsap.delayedCall(5, () => {
+    gsap.to(birdWrapper, {
+        duration: .2,
+        opacity: 0
+    })
+});
+ 
 
 
 const zoom = d3.zoom()

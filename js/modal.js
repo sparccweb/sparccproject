@@ -13,6 +13,16 @@ function updateModalContent() {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const main = doc.querySelector('#main');
+        
+        const links = Array.from(main.querySelectorAll('a'));
+        links.forEach(l => {
+            const imgURL = l.getAttribute('href');
+            if (isImgLink(imgURL)) {
+                const newImage = document.createElement('img');
+                newImage.setAttribute("src", './website-exported/' + imgURL);
+                l.parentNode.replaceChild(newImage, l);
+            }
+        })
 
         modalContentContainer.innerHTML = '';
         modalContentContainer.append(main);

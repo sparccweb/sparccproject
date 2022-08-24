@@ -47,7 +47,6 @@ const zoomInBtn = document.querySelector('#zoom-in-btn');
 const zoomOutBtn = document.querySelector('#zoom-out-btn');
 
 let currentZoomTransform = d3.zoomIdentity;
-const maxZoomingLevel = 12;
 
 const viewBox = {
     x0: 200,
@@ -69,12 +68,17 @@ const views = {
 let view = views.m;
 let activeIslandIdx = null;
 
-const mapViewAnimations = {
-    bees: [],
-    mainBoat: gsap.timeline({ repeat: -1 })
-}
+const beesAnimations = [ gsap.timeline({ repeat: -1 }), gsap.timeline({ repeat: -1 }) ];
+const mainBoatAnimation = gsap.timeline({ repeat: -1 });
+const ferrisWheelAnimation = gsap.timeline({ repeat: -1 });
+const birdAnimations = [ gsap.timeline({ repeat: -1, yoyo: true }), gsap.timeline({ repeat: -1 }) ];
+
 
 const islandToIslandAnimation = gsap.timeline({ paused: true });
+
+const peopleFstColoredElements = document.querySelectorAll('.fst-color');
+const peopleScdColoredElements = document.querySelectorAll('.scd-color');
+const peopleTrdColoredElements = document.querySelectorAll('.trd-color');
 
 const islands = [{
     name: 'central',
@@ -114,6 +118,7 @@ const islands = [{
         map.querySelector('.island-back.denver .land').getAttribute('fill'),
         map.querySelector('.island-back.denver .land-shadow').getAttribute('fill'),
     ],
+    peopleColors: [ '#324c93', '#4059ad', '#526eb2' ],
     landShadow: Array.from(map.querySelectorAll('.island-back.denver .land-shadow')),
     content: map.querySelector('.island-content.denver'),
     mapViewEls: {
@@ -145,6 +150,7 @@ const islands = [{
         map.querySelector('.island-back.atlanta .land').getAttribute('fill'),
         map.querySelector('.island-back.atlanta .land-shadow').getAttribute('fill'),
     ],
+    peopleColors: [ '#21505b', '#2e6171', '#327484' ],
     content: map.querySelector('.island-content.atlanta'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.atlanta .map-view .to-scale > *')),
@@ -173,6 +179,7 @@ const islands = [{
         map.querySelector('.island-back.bay .land').getAttribute('fill'),
         map.querySelector('.island-back.bay .land-shadow').getAttribute('fill'),
     ],
+    peopleColors: [ '#168c99', '#009fb7', '#05b7c9' ],
     content: map.querySelector('.island-content.bay'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.bay .map-view .to-scale > *')),
@@ -204,6 +211,7 @@ const islands = [{
         map.querySelector('.island-back.memphis .land').getAttribute('fill'),
         map.querySelector('.island-back.memphis .land-shadow').getAttribute('fill'),
     ],
+    peopleColors: [ '#ddb94a', '#ffdc5e', '#ffe180' ],
     content: map.querySelector('.island-content.memphis'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.memphis .map-view .to-scale > *')),
@@ -232,6 +240,7 @@ const islands = [{
         map.querySelector('.island-back.LA .land').getAttribute('fill'),
         map.querySelector('.island-back.LA .land-shadow').getAttribute('fill'),
     ],
+    peopleColors: [ '#a33636', '#b0413e', '#c15959' ],
     content: map.querySelector('.island-content.LA'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.LA .map-view .to-scale > *')),
@@ -268,6 +277,7 @@ const islands = [{
         map.querySelector('.island-back.chicago .land').getAttribute('fill'),
         map.querySelector('.island-back.chicago .land-shadow').getAttribute('fill'),
     ],
+    peopleColors: [ '#865ebf', '#9d75cb', '#b08de2' ],
     content: map.querySelector('.island-content.chicago'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.chicago .map-view .to-scale > *')),
