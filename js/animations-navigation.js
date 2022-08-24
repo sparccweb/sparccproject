@@ -242,7 +242,7 @@ function addMapShowingToTimeline(tl, idx) {
             display: 'none'
         }, '>')
         .set(islands.map(v => v.highlight), {
-            attr: {'stroke-width': 30}
+            attr: {'stroke-width': 20}
         }, .2)
         .to(mapBack, {
             duration: .3,
