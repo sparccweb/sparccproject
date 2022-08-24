@@ -288,7 +288,7 @@ const islands = [{
         toScale: Array.from(map.querySelectorAll('.chicago .detailed-view .to-scale > *')),
         toFade: Array.from(map.querySelectorAll('.chicago .detailed-view .to-fade > *')),
         toDrop: Array.from(map.querySelectorAll('.chicago .detailed-view .to-drop > *')),
-        people: Array.from(map.querySelectorAll('.chicago .detailed-view .person')),
+        people: Array.from(map.querySelectorAll('.LA .detailed-view .people > *')),
         roads: map.querySelector('.chicago .detailed-view .roads'),
         ship: map.querySelector('.chicago .detailed-view .ship'),
         plane: map.querySelector('.chicago .detailed-view .plane'),

@@ -8,7 +8,9 @@
 .modal #main a,
 .modal #close-modal-btn,
 .map.loaded .highlight,
-.zooming-controls * {
+.zooming-controls #go-to-map-btn,
+.zooming-controls #zoom-in-btn,
+.zooming-controls #zoom-out-btn {
     pointer-events: auto;
     cursor: pointer;
 }

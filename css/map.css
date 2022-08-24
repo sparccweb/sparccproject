@@ -43,11 +43,31 @@ svg {
 }
 .zooming-controls #go-to-map-btn {
     width: 120px;
+    position: relative;
 }
+.zooming-controls #go-to-map-btn > img:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+}
+.zooming-controls #go-to-map-btn:hover > img:nth-child(1) {
+    opacity: 1;
+}
+.zooming-controls #go-to-map-btn > img:nth-child(2) {
+    position: relative;
+}
+
 .zooming-controls #zoom-in-btn,
 .zooming-controls #zoom-out-btn {
     width: 20px;
     padding: 5px;
+}
+
+.zooming-controls #zoom-in-btn:hover,
+.zooming-controls #zoom-out-btn:hover {
+    opacity: .6;
 }
 
 .common-symbols {
@@ -61,3 +81,16 @@ svg {
 .detailed-view {
     display: none;
 }
+
+
+
+
+/*.detailed-view > * {*/
+/*    display: none !important;*/
+/*}*/
+/*.detailed-view > .people {*/
+/*    display: block !important;*/
+/*}*/
+/*.people {*/
+/*    pointer-events: auto !important;*/
+/*}*/
