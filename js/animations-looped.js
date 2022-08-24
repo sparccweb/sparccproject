@@ -183,6 +183,23 @@ beesAnimations[1]
         transformOrigin: 'center center'
     }, 5.9)
 
+// Atlanta
+
+islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({
+    // paused: true,
+    repeat: -1,
+    yoyo: true,
+    repeatDelay: 1
+})
+    .fromTo(islands[2].detailedViewEls.cableCarCabin, {
+        x: -12,
+        y: -32
+    }, {
+        duration: 4,
+        x: 25,
+        y: 45,
+        ease: 'power2.inOut'
+    });
 
 
 // Denver
