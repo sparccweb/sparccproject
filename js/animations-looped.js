@@ -278,8 +278,8 @@ islands[5].detailedViewLoopedAnimations[5] = gsap.timeline({
         y: 20,
     }, 0)
     .set(islands[5].detailedViewEls.whaleContainer, {
-        x: 600,
-        y: -100,
+        x: 650,
+        y: -110,
     }, 0)
     .to(islands[5].detailedViewEls.whale, {
         duration: .4,
