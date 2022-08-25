@@ -3,6 +3,13 @@
     --container-color: #8E5FDD ;
 }
 
+
+.marker circle:hover {
+    stroke-width: 3;
+    stroke: #fff;
+}
+
+
 *{color:var(--text-color);}
 
 .modal {

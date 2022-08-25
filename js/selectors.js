@@ -80,8 +80,15 @@ const peopleFstColoredElements = document.querySelectorAll('.fst-color');
 const peopleScdColoredElements = document.querySelectorAll('.scd-color');
 const peopleTrdColoredElements = document.querySelectorAll('.trd-color');
 
+
+const parser = new DOMParser();
+let popups = [];
+
+
 const islands = [{
     name: 'central',
+    popupCode: 'g',
+    popups: [],
     sea: map.querySelector('.island-back.central .sea'),
     highlight: map.querySelector('.island-back.central .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.central .land')),
@@ -91,7 +98,7 @@ const islands = [{
         map.querySelector('.island-back.central .land-shadow').getAttribute('fill'),
     ],
     content: map.querySelector('.island-content.central'),
-    detailedViewContainer: map.querySelectorAll('.central .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.central .detailed-view')),
     detailedViewEls: {
         toScale: Array.from(map.querySelectorAll('.central .detailed-view .to-scale > *')),
         toScaleCentered: Array.from(map.querySelectorAll('.central .detailed-view .to-scale-center > *')),
@@ -111,6 +118,8 @@ const islands = [{
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'denver',
+    popupCode: 'd',
+    popups: [],
     sea: map.querySelector('.island-back.denver .sea'),
     highlight: map.querySelector('.island-back.denver .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.denver .land')),
@@ -142,6 +151,8 @@ const islands = [{
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'atlanta',
+    popupCode: 'a',
+    popups: [],
     sea: map.querySelector('.island-back.atlanta .sea'),
     highlight: map.querySelector('.island-back.atlanta .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.atlanta .land')),
@@ -172,6 +183,8 @@ const islands = [{
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'bay',
+    popupCode: 'b',
+    popups: [],
     sea: map.querySelector('.island-back.bay .sea'),
     highlight: map.querySelector('.island-back.bay .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.bay .land')),
@@ -204,6 +217,8 @@ const islands = [{
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'memphis',
+    popupCode: 'm',
+    popups: [],
     sea: map.querySelector('.island-back.memphis .sea'),
     highlight: map.querySelector('.island-back.memphis .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.memphis .land')),
@@ -233,6 +248,8 @@ const islands = [{
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'LA',
+    popupCode: 'l',
+    popups: [],
     sea: map.querySelector('.island-back.LA .sea'),
     highlight: map.querySelector('.island-back.LA .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.LA .land')),
@@ -270,6 +287,8 @@ const islands = [{
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
 }, {
     name: 'chicago',
+    popupCode: 'c',
+    popups: [],
     sea: map.querySelector('.island-back.chicago .sea'),
     highlight: map.querySelector('.island-back.chicago .highlight'),
     land: Array.from(map.querySelectorAll('.island-back.chicago .land')),
@@ -289,7 +308,7 @@ const islands = [{
         toScale: Array.from(map.querySelectorAll('.chicago .detailed-view .to-scale > *')),
         toFade: Array.from(map.querySelectorAll('.chicago .detailed-view .to-fade > *')),
         toDrop: Array.from(map.querySelectorAll('.chicago .detailed-view .to-drop > *')),
-        people: Array.from(map.querySelectorAll('.LA .detailed-view .people > *')),
+        people: Array.from(map.querySelectorAll('.chicago .detailed-view .people > *')),
         roads: map.querySelector('.chicago .detailed-view .roads'),
         ship: map.querySelector('.chicago .detailed-view .ship'),
         plane: map.querySelector('.chicago .detailed-view .plane'),

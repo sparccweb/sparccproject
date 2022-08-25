@@ -5,7 +5,6 @@ function setupLayout() {
         height: window.innerHeight
     })
 }
-createMapNavigationAnimations();
 
 gsap.delayedCall(.3, () => {
     loaderAnimation.play(0);
@@ -16,6 +15,17 @@ gsap.delayedCall(5, () => {
         opacity: 0
     })
 });
+
+
+fetch('./website-exported/sitemap.html').then((response) => {
+    return response.text();
+}).then((html) => {
+    generateMarkers(html);
+    createMapNavigationAnimations();
+}).catch((err) => {
+    console.warn('Sitemap loader failed: ', err);
+});
+
  
 
 
