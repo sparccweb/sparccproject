@@ -4,8 +4,12 @@
 }
 
 
+.marker circle {
+    stroke-width: 2;
+    stroke: #000;
+}
+.marker circle.marker-circle-selected,
 .marker circle:hover {
-    stroke-width: 3;
     stroke: #fff;
 }
 

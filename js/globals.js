@@ -61,6 +61,10 @@ const viewBoxCenter = {
     y: 1250
 }
 
+const markerSize = [ 8, 12 ];
+
+let currentSvgScale = 1;
+
 const views = {
     m: 'map',
     i: 'island'

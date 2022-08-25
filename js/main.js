@@ -30,7 +30,7 @@ fetch('./website-exported/sitemap.html').then((response) => {
 
 
 const zoom = d3.zoom()
-    .scaleExtent([1, 15])
+    .scaleExtent([1, 18])
     .on("zoom", zoomed);
 
 d3Svg.call(zoom);
@@ -42,6 +42,7 @@ function zoomed(e) {
     } else {
         currentZoomTransform = t;
     }
+    currentSvgScale = currentZoomTransform.k;
     d3SvgMainMap.attr("transform", currentZoomTransform);
 }
 
@@ -73,26 +74,25 @@ islands.forEach((island, islandIdx) => {
             attr: { opacity: 0 }
         })
         
-        let scale;
         const box = island.highlight.getBBox();
         const boxRatio = box.width / box.height;
         const windowRatio = window.innerWidth / window.innerHeight;
         if (boxRatio > windowRatio) {
-            scale = viewBox.width / box.width;
+            currentSvgScale = viewBox.width / box.width;
         } else {
             if (windowRatio > viewBoxRatio) {
-                scale = viewBox.height / box.height;
+                currentSvgScale = viewBox.height / box.height;
             } else {
-                scale = viewBox.height / box.height * (viewBoxRatio / windowRatio);
+                currentSvgScale = viewBox.height / box.height * (viewBoxRatio / windowRatio);
             }
         }
-        scale *= .8;
+        currentSvgScale *= .8;
         
         d3Svg.transition().duration(700).call(
             zoom.transform,
             d3.zoomIdentity
                 .translate(viewBoxCenter.x, viewBoxCenter.y)
-                .scale(scale)
+                .scale(currentSvgScale)
                 .translate(-(box.x + box.x + box.width) / 2, -(box.y + box.y + box.height) / 2),
             d3.pointer(e, d3Svg.node())
         );
@@ -101,6 +101,9 @@ islands.forEach((island, islandIdx) => {
             island.mapToIslandAnimation.play(0);
         } else {
             if (activeIslandIdx !== islandIdx) {
+                closeModal();
+                deselectMarkers();
+
                 updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
                 islandToIslandAnimation.play(.5);
             } else {
@@ -119,7 +122,11 @@ islands.forEach((island, islandIdx) => {
 })
 
 toMapBtn.addEventListener('click', () => {
+    closeModal();
+    deselectMarkers();
+    
     resetZoom(.5);
+    
     islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
     gsap.delayedCall(.5, () => {
         view = views.m;

@@ -30,13 +30,13 @@ function generateMarkers(html) {
             dot.setAttributeNS(null, 'data-popup-name', contentName);
             dot.setAttributeNS(null, 'cx', 0);
             dot.setAttributeNS(null, 'cy', 0);
-            dot.setAttributeNS(null, 'r', 10);
+            dot.setAttributeNS(null, 'r', markerSize[0]);
             dot.setAttributeNS(null, 'fill', 'red');
             dot.style.pointerEvents = 'auto';
             dot.style.cursor = 'pointer';
             const dotTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
             dotTitle.setAttributeNS(null, 'x', 0);
-            dotTitle.setAttributeNS(null, 'y', -10);
+            dotTitle.setAttributeNS(null, 'y', -.5 * markerSize[0]);
             dotTitle.setAttributeNS(null, 'fill', '#000');
             dotTitle.innerHTML = popupData.name;
 
@@ -57,16 +57,45 @@ function generateMarkers(html) {
     islands.forEach(island => {
         island.popups.forEach(p => {
             p.el.querySelector('circle').onclick = function () {
-                const name = this.getAttribute('data-popup-name');
-                const URL = './website-exported/' + island.popups.find(p => p.name === name).url;
+                
+                d3Svg.transition().duration(700).call(
+                    zoom.transform,
+                    d3.zoomIdentity
+                        .translate(.9 * viewBoxCenter.x, viewBoxCenter.y)
+                        .scale(currentSvgScale)
+                        .translate(-gsap.getProperty(p.el, "x"), -gsap.getProperty(p.el, "y")),
+                );
+
+                deselectMarkers();
+                selectMarker(this);
+                const URL = './website-exported/' + p.url;
                 updateModalContent(URL);
             }
         })
     })
 }
 
+function deselectMarkers() {
+    Array.from(document.querySelectorAll('.marker-circle-selected')).forEach(c => {
+        c.classList.remove('marker-circle-selected');
+        gsap.to(c, {
+            duration: .4,
+            attr: { r: markerSize[0], fill: '#ff0000' }
+        })
+    });
+}
+function selectMarker(markerCircle) {
+    markerCircle.classList.add('marker-circle-selected');
+    gsap.to(markerCircle, {
+        duration: .4,
+        attr: { r: markerSize[1], fill: '#000000' },
+        ease: 'back(3).out'
+    })
+}
+
 modalCloseBtn.onclick = function () {
     closeModal();
+    deselectMarkers();
 }
 
 function updateModalContent(URL) {
@@ -105,7 +134,7 @@ function openModal() {
         duration: .25,
         y: 0,
         opacity: 1
-    })
+    });
 }
 
 function closeModal() {
