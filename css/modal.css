@@ -148,11 +148,12 @@
     position: absolute;
     right: 15px;
     top: 5px;
-    width: 32px;
-    height: 32px;
+    width: 33px;
+    height: 33px;
+    background-color: #ffffff;
     opacity: 1;
 }
-.modal #close-modal-btn:hover {
+.modal #close-modal-btn:hover:before, .modal #close-modal-btn:hover:after {
     opacity: .6;
 }
 .modal #close-modal-btn:before, .modal #close-modal-btn:after {
