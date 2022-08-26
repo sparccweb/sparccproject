@@ -139,7 +139,7 @@ const islands = [{
         toFade: Array.from(map.querySelectorAll('.denver .map-view .to-fade > *')),
         toDrop: Array.from(map.querySelectorAll('.denver .map-view .to-drop > *')),
     },
-    detailedViewContainer: map.querySelector('.denver .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.denver .detailed-view')),
     detailedViewEls: {
         roads: map.querySelector('.denver .detailed-view .roads'),
         toScale: Array.from(map.querySelectorAll('.denver .detailed-view .to-scale > *')),
@@ -172,7 +172,7 @@ const islands = [{
         toFade: Array.from(map.querySelectorAll('.atlanta .map-view .to-fade > *')),
         toDrop: Array.from(map.querySelectorAll('.atlanta .map-view .to-drop > *')),
     },
-    detailedViewContainer: map.querySelector('.atlanta .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.atlanta .detailed-view')),
     detailedViewEls: {
         roads: map.querySelector('.atlanta .detailed-view .roads'),
         toScale: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-scale > *')),
@@ -206,7 +206,7 @@ const islands = [{
     bayTowers: Array.from(map.querySelectorAll('.island-content.bay .bay-towers')),
     balloons: Array.from(map.querySelectorAll('.island-content.bay .balloon')),
     balloonsTrajectories: Array.from(map.querySelectorAll('.island-content.bay .balloon-trajectory')),
-    detailedViewContainer: map.querySelector('.bay .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.bay .detailed-view')),
     detailedViewEls: {
         roads: map.querySelector('.bay .detailed-view .roads'),
         toScale: Array.from(map.querySelectorAll('.bay .detailed-view .to-scale > *')),
@@ -238,7 +238,7 @@ const islands = [{
         toFade: Array.from(map.querySelectorAll('.memphis .map-view .to-fade > *')),
         neon: map.querySelector('.memphis .detailed-view .neon'),
     },
-    detailedViewContainer: map.querySelectorAll('.memphis .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.memphis .detailed-view')),
     detailedViewEls: {
         roads: map.querySelector('.memphis .detailed-view .roads'),
         toScale: Array.from(map.querySelectorAll('.memphis .detailed-view .to-scale > *')),
@@ -270,7 +270,7 @@ const islands = [{
         van: Array.from(map.querySelectorAll('.LA .map-view .van')),
         bench: Array.from(map.querySelectorAll('.LA .map-view .bench')),
     },
-    detailedViewContainer: map.querySelector('.LA .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.LA .detailed-view')),
     detailedViewEls: {
         roads: map.querySelector('.LA .detailed-view .roads'),
         toScale: Array.from(map.querySelectorAll('.LA .detailed-view .to-scale > *')),
@@ -307,7 +307,7 @@ const islands = [{
         toScale: Array.from(map.querySelectorAll('.chicago .map-view .to-scale > *')),
         toFade: Array.from(map.querySelectorAll('.chicago .map-view .to-fade > *')),
     },
-    detailedViewContainer: map.querySelector('.chicago .detailed-view'),
+    detailedViewContainer: Array.from(map.querySelectorAll('.chicago .detailed-view')),
     detailedViewEls: {
         toScale: Array.from(map.querySelectorAll('.chicago .detailed-view .to-scale > *')),
         toFade: Array.from(map.querySelectorAll('.chicago .detailed-view .to-fade > *')),
