@@ -68,8 +68,11 @@ function generateMarkers(html) {
 
                 deselectMarkers();
                 selectMarker(this);
-                const URL = './website-exported/' + p.url;
-                updateModalContent(URL);
+
+                const contentURL = './website-exported/' + p.url;
+                updateModalContent(contentURL);
+
+                updatePageUrl(p.name);
             }
         })
     })
@@ -123,6 +126,10 @@ function updateModalContent(URL) {
     });
 }
 
+function updatePageUrl(name) {
+    window.location.hash = name;
+}
+
 function openModal() {
     gsap.set(modal, {
         display: 'block'
@@ -147,5 +154,7 @@ function closeModal() {
                 display: 'none'
             });
         }
-    })
+    });
+
+    updatePageUrl('');
 }

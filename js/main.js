@@ -6,22 +6,57 @@ function setupLayout() {
     })
 }
 
-gsap.delayedCall(.3, () => {
-    loaderAnimation.play(0);
-});
-gsap.delayedCall(5, () => {
-    gsap.to(birdWrapper, {
-        duration: .2,
-        opacity: 0
-    })
-});
-
 
 fetch('./website-exported/sitemap.html').then((response) => {
     return response.text();
 }).then((html) => {
     generateMarkers(html);
     createMapNavigationAnimations();
+
+    loaderAnimation.play(0);
+    gsap.delayedCall(4.5, () => {
+        gsap.to(birdWrapper, {
+            duration: .2,
+            opacity: 0
+        })
+    });
+
+    const modalCodeFromUrl = window.location.hash.substring(1);
+    const islandCode = modalCodeFromUrl.slice(0, 1);
+    const contentName = modalCodeFromUrl.slice(0, 3);
+
+    const markerToFocus = document.querySelector('circle[data-popup-name="' + contentName + '"]');
+
+    const island = islands.find(i => i.popupCode.toUpperCase() === islandCode.toUpperCase());
+    if (markerToFocus && island) {
+
+        view = views.i;
+        const popup = island.popups.find(p => p.el === markerToFocus.parentElement);
+
+        d3Svg.call(
+            zoom.transform,
+            d3.zoomIdentity
+                .translate(.9 * viewBoxCenter.x, viewBoxCenter.y)
+                .scale(10)
+                .translate(-gsap.getProperty(popup.el, "x"), -gsap.getProperty(popup.el, "y")),
+        );
+
+        island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
+        activeIslandIdx = islands.indexOf(island);
+        updateIslandSelection();
+
+        island.mapToIslandAnimation.progress(1);
+
+        gsap.delayedCall(loaderAnimation.duration() / loaderAnimation.timeScale(), () => {
+            selectMarker(markerToFocus);
+            const contentURL = './website-exported/' + popup.url;
+            updateModalContent(contentURL);
+        });
+
+    } else {
+        updatePageUrl('');
+    }
+
 }).catch((err) => {
     console.warn('Sitemap loader failed: ', err);
 });
