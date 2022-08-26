@@ -37,7 +37,7 @@ fetch('./website-exported/sitemap.html').then((response) => {
             zoom.transform,
             d3.zoomIdentity
                 .translate(.9 * viewBoxCenter.x, viewBoxCenter.y)
-                .scale(10)
+                .scale(6)
                 .translate(-gsap.getProperty(popup.el, "x"), -gsap.getProperty(popup.el, "y")),
         );
 
