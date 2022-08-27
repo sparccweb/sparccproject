@@ -67,6 +67,7 @@ svg {
     width: 20px;
     padding: 5px;
     background-color: #cdeff9;
+    border-radius: 2px;
 }
 
 .zooming-controls #zoom-in-btn:hover,
