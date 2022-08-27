@@ -4,7 +4,7 @@ const loaderAnimation = gsap.timeline({
         map.classList.add('loaded');
     }
 })
-    .timeScale(1.5)
+    .timeScale(10.5)
     .to(loaderSea, {
         opacity: 0
     }, 0)
