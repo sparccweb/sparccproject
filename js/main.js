@@ -65,7 +65,7 @@ fetch('./website-exported/sitemap.html').then((response) => {
 
 
 const zoom = d3.zoom()
-    .scaleExtent([1, 15])
+    .scaleExtent([1, 20])
     .on("zoom", zoomed);
 
 d3Svg.call(zoom);
