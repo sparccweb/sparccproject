@@ -5,7 +5,7 @@
 .map {
     pointer-events: auto;
 }
-.marker circle,
+.marker circle.clickable,
 .modal #main a,
 .modal #close-modal-btn,
 .map.loaded .highlight:not(.selected),

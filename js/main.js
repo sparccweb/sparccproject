@@ -25,7 +25,7 @@ fetch('./website-exported/sitemap.html').then((response) => {
     const islandCode = modalCodeFromUrl.slice(0, 1);
     const contentName = modalCodeFromUrl.slice(0, 3);
 
-    const markerToFocus = document.querySelector('circle[data-popup-name="' + contentName + '"]');
+    const markerToFocus = document.querySelector('circle.clickable[data-popup-name="' + contentName + '"]');
 
     const island = islands.find(i => i.popupCode.toUpperCase() === islandCode.toUpperCase());
     if (markerToFocus && island) {

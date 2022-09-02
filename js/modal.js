@@ -32,22 +32,34 @@ function generateMarkers(html) {
                 x: popupData.x,
                 y: popupData.y
             });
+            const dotClickable = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            dotClickable.setAttributeNS(null, 'data-popup-name', contentName);
+            dotClickable.setAttributeNS(null, 'cx', 0);
+            dotClickable.setAttributeNS(null, 'cy', 0);
+            dotClickable.setAttributeNS(null, 'r', markerSize[2]);
+            dotClickable.setAttributeNS(null, 'fill', 'transparent');
+            dotClickable.style.pointerEvents = 'auto';
+            dotClickable.style.cursor = 'pointer';
+            dotClickable.classList.add('clickable');
+
             const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             dot.setAttributeNS(null, 'data-popup-name', contentName);
             dot.setAttributeNS(null, 'cx', 0);
-            // dot.setAttributeNS(null, 'cx', popupData.x);
             dot.setAttributeNS(null, 'cy', 0);
-            // dot.setAttributeNS(null, 'cy', popupData.y);
             dot.setAttributeNS(null, 'r', markerSize[0]);
-            dot.setAttributeNS(null, 'fill', 'red');
-            dot.style.pointerEvents = 'auto';
-            dot.style.cursor = 'pointer';
+            dot.setAttributeNS(null, 'fill', '#000');
+            dot.classList.add('visible');
+
             const dotTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            dotTitle.setAttributeNS(null, 'text-anchor', 'middle');
+            dotTitle.setAttributeNS(null, 'font-size', '6');
+            dotTitle.setAttributeNS(null, 'font-weight', '600');
             dotTitle.setAttributeNS(null, 'x', 0);
-            dotTitle.setAttributeNS(null, 'y', -.5 * markerSize[0]);
-            dotTitle.setAttributeNS(null, 'fill', '#000');
+            dotTitle.setAttributeNS(null, 'y', .5 * markerSize[0]);
+            dotTitle.setAttributeNS(null, 'fill', '#fff');
             dotTitle.innerHTML = popupData.name;
 
+            gDot.appendChild(dotClickable);
             gDot.appendChild(dot);
             gDot.appendChild(dotTitle);
 
@@ -64,7 +76,7 @@ function generateMarkers(html) {
 
     islands.forEach(island => {
         island.popups.forEach(p => {
-            p.el.querySelector('circle').onclick = function () {
+            p.el.querySelector('.clickable').onclick = function () {
                 
                 d3Svg.transition().duration(700).call(
                     zoom.transform,
@@ -89,18 +101,36 @@ function generateMarkers(html) {
 function deselectMarkers() {
     Array.from(document.querySelectorAll('.marker-circle-selected')).forEach(c => {
         c.classList.remove('marker-circle-selected');
-        gsap.to(c, {
-            duration: .4,
-            attr: { r: markerSize[0], fill: '#ff0000' }
+        gsap.to(c.querySelector('.clickable'), {
+            duration: .3,
+            attr: {
+                r: markerSize[2],
+            }
+        })
+        gsap.to(c.querySelector('.visible'), {
+            duration: .3,
+            attr: {
+                r: markerSize[0],
+            }
         })
     });
 }
 function selectMarker(markerCircle) {
-    markerCircle.classList.add('marker-circle-selected');
+    const markerGroup = markerCircle.parentElement;
+    markerGroup.classList.add('marker-circle-selected');
     gsap.to(markerCircle, {
-        duration: .4,
-        attr: { r: markerSize[1], fill: '#000000' },
+        duration: .3,
+        attr: {
+            r: markerSize[1],
+        },
         ease: 'back(3).out'
+    })
+    gsap.to(markerGroup.querySelector('.visible'), {
+        duration: .3,
+        attr: {
+            r: markerSize[1],
+        },
+        ease: 'power2.in'
     })
 }
 

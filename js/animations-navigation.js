@@ -209,12 +209,12 @@ function addIslandSelectionToTimeline(tl, idx) {
         
         .fromTo(island.popups.map(p => p.el), {
             scale: 0,
-            transformOrigin: '20% 75%'
+            transformOrigin: '50% 50%'
         }, {
             duration: .5,
             scale: 1,
-            transformOrigin: '20% 75%',
-            ease: 'back(5).out'
+            transformOrigin: '50% 50%',
+            ease: 'back(3).out'
         }, 2)
 }
 function addIslandDeselectionToTimeline(tl, idx) {
@@ -288,7 +288,7 @@ function addMapShowingToTimeline(tl, idx) {
         .to(islands[idx].popups.map(p => p.el), {
             duration: .2,
             scale: 0,
-            transformOrigin: '20% 75%',
+            transformOrigin: '50% 50%',
         }, .3)
 
     islands.forEach(island => {

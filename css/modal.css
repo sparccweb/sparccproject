@@ -2,12 +2,12 @@
     --container-color: #564C7A ;
 }
 
-.marker circle {
-    stroke-width: 2;
-    stroke: #000;
-}
-.marker circle.marker-circle-selected,
-.marker circle:hover {
+
+/*.atlanta .marker text {*/
+/*    display: none;*/
+/*}*/
+.marker.marker-circle-selected circle.clickable,
+.marker circle.clickable:hover {
     stroke: #fff;
 }
 
