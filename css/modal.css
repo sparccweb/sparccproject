@@ -53,12 +53,11 @@
 .modal #main h1,
 .modal #main h2,
 .modal #main h3,
-/*.modal #main > div,*/
+.modal #main > div,
 .modal #main > p,
 .modal #main > article {
     padding: 0 20px;
 }
-/*.modal #main .div.size-large,*/
 .modal #main figure {
     padding: 0;
     margin: 0;

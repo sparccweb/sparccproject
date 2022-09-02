@@ -152,11 +152,24 @@ function updateModalContent(URL) {
             if (isImgLink(imgURL)) {
                 const newImage = document.createElement('img');
                 newImage.setAttribute('src', './website-exported/' + imgURL);
+
+                if (l.nextSibling.tagName) {
+                    if (l.nextSibling.tagName.toUpperCase() === 'BR') {
+                        newImage.setAttribute('alt', l.nextSibling.nextSibling);
+                        // l.nextSibling.remove();
+                        l.nextSibling.nextSibling.remove();
+                    }
+                }
                 l.parentNode.replaceChild(newImage, l);
             }
-        })
-        
-        // console.log('textContent', main.textContent)
+        });
+
+        const figures = Array.from(doc.querySelectorAll('figure'));
+        figures.forEach(f => {
+            if (Array.from(f.querySelectorAll('*')).length === 0) {
+                f.parentNode.innerHTML = f.innerHTML;
+            }
+        });
 
         modalContentContainer.innerHTML = '';
         modalContentContainer.append(main);
