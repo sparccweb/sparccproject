@@ -179,7 +179,6 @@ const islands = [{
         toDrop: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-drop > *')),
         plane: map.querySelector('.atlanta .detailed-view .plane'),
         bird: map.querySelector('.atlanta .detailed-view .bird'),
-        cableCarCabin: map.querySelector('.atlanta .cable-car-cabin'),
     },
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
