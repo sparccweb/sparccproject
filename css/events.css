@@ -2,6 +2,7 @@
     pointer-events: none;
 }
 .modal .modal-content,
+.modal iframe,
 .map {
     pointer-events: auto;
 }

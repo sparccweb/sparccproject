@@ -43,6 +43,7 @@
     padding-bottom: 40px;
 }
 
+.modal iframe,
 .modal img {
     display: block;
     height: auto;
@@ -51,11 +52,13 @@
 }
 .modal #main h1,
 .modal #main h2,
-.modal #main > div,
+.modal #main h3,
+/*.modal #main > div,*/
 .modal #main > p,
 .modal #main > article {
     padding: 0 20px;
 }
+/*.modal #main .div.size-large,*/
 .modal #main figure {
     padding: 0;
     margin: 0;
