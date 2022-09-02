@@ -117,6 +117,8 @@ function updateModalContent(URL) {
                 l.parentNode.replaceChild(newImage, l);
             }
         })
+        
+        // console.log('textContent', main.textContent)
 
         modalContentContainer.innerHTML = '';
         modalContentContainer.append(main);
