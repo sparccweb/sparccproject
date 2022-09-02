@@ -15,10 +15,16 @@ function generateMarkers(html) {
             const popupData = {
                 name: contentName,
                 url: contentPath,
-                x: box.x + Math.random() * box.width,
-                y: box.y + Math.random() * box.height,
                 el: null
             };
+            if (markersRef[contentName]) {
+                popupData.x = markersRef[contentName].pos[0];
+                popupData.y = markersRef[contentName].pos[1];
+            } else {
+                popupData.x = box.x + Math.random() * box.width;
+                popupData.y = box.y + Math.random() * box.height;
+            }
+            
             
             const gDot = document.createElementNS('http://www.w3.org/2000/svg', 'g');
             gDot.classList.add('marker');
@@ -29,7 +35,9 @@ function generateMarkers(html) {
             const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             dot.setAttributeNS(null, 'data-popup-name', contentName);
             dot.setAttributeNS(null, 'cx', 0);
+            // dot.setAttributeNS(null, 'cx', popupData.x);
             dot.setAttributeNS(null, 'cy', 0);
+            // dot.setAttributeNS(null, 'cy', popupData.y);
             dot.setAttributeNS(null, 'r', markerSize[0]);
             dot.setAttributeNS(null, 'fill', 'red');
             dot.style.pointerEvents = 'auto';

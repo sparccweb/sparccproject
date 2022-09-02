@@ -1,7 +1,6 @@
 .full-page * {
     pointer-events: none;
 }
-/*.modal .modal-content-wrapper,*/
 .modal .modal-content,
 .map {
     pointer-events: auto;
@@ -9,7 +8,7 @@
 .marker circle,
 .modal #main a,
 .modal #close-modal-btn,
-.map.loaded .highlight,
+.map.loaded .highlight:not(.selected),
 .zooming-controls #go-to-map-btn,
 .zooming-controls #zoom-in-btn,
 .zooming-controls #zoom-out-btn {
