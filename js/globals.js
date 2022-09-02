@@ -86,7 +86,6 @@ const peopleTrdColoredElements = document.querySelectorAll('.trd-color');
 
 
 const parser = new DOMParser();
-let popups = [];
 
 
 const islands = [{

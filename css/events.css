@@ -1,6 +1,7 @@
 .full-page * {
     pointer-events: none;
 }
+/*.modal .modal-content-wrapper,*/
 .modal .modal-content,
 .map {
     pointer-events: auto;

@@ -1,5 +1,4 @@
 :root {
-    --text-color: black;
     --container-color: #564C7A ;
 }
 
@@ -22,9 +21,7 @@
     right: 10px;
     width: calc(100% - 50px);
     height: calc(100% - 50px);
-    border-radius: 30px;
     background: #FFF;
-    color: var(--text-color);
     display: none;
 }
 @media only screen and (min-aspect-ratio: 1/1) and (min-width: 600px) and (min-height: 300px) {
@@ -33,32 +30,58 @@
     }
 }
 
+
+.modal {
+    border-radius: 30px;
+}
+.modal .modal-content {
+    height: 100%;
+    overflow-y: scroll;
+    border-radius: 30px;
+}
+.modal .modal-content #main {
+    padding-bottom: 40px;
+}
+
 .modal img {
     display: block;
     height: auto;
     width: 100%;
+    margin-bottom: 10px;
 }
-.modal .modal-content {
-    overflow-y: scroll;
-    max-height: 100%;
-    border-radius: 30px;
+.modal #main h1,
+.modal #main h2,
+.modal #main > div,
+.modal #main > p,
+.modal #main > article {
+    padding: 0 20px;
 }
-
-.modal h1 {
+.modal #main figure {
+    padding: 0;
     margin: 0;
+}
+.modal #main h1 {
+    margin: 0;
+    padding: 30px 30px 20px 20px;
     background-color: var(--container-color);
     color: white;
-    padding: 2rem;
-    border-radius:20px 20px 0 0;
 }
-.modal h2 {
-    line-height: 1.45;
-    margin: 1em 0 0 0;
-    padding: 2rem 2rem 0 2rem;
+.modal #main a {
+    color: var(--container-color);
+    font-weight: bold;
+    text-decoration: underline;
 }
-.modal article {
-    padding: 0 2rem;
+.modal #main a:visited {
+    color: #555555;
 }
+.modal #main a:hover {
+    color: #000000;
+}
+a:focus {
+    border: 1px solid var(--container-color);
+    outline: none;
+}
+
 
 
 
@@ -100,20 +123,22 @@
 .modal #close-modal-btn {
     position: absolute;
     right: 15px;
-    top: 5px;
-    width: 33px;
-    height: 33px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
     background-color: #ffffff;
     opacity: 1;
 }
 .modal #close-modal-btn:hover:before, .modal #close-modal-btn:hover:after {
-    opacity: .6;
+    background-color: #000;
 }
 .modal #close-modal-btn:before, .modal #close-modal-btn:after {
     position: absolute;
-    left: 15px;
+    top: 5px;
+    left: 18px;
     content: ' ';
-    height: 33px;
+    height: 29px;
     width: 4px;
     background-color: var(--container-color);
 }
