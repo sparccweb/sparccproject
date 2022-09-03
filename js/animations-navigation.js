@@ -239,6 +239,11 @@ function addIslandDeselectionToTimeline(tl, idx) {
         .to(island.content, {
             opacity: 0
         }, .3)
+
+        .to(island.popups.map(p => p.el), {
+            scale: 0,
+            transformOrigin: '50% 50%'
+        }, .3)
 }
 
 function addMapShowingToTimeline(tl, idx) {
