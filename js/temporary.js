@@ -1,6 +1,6 @@
-const shapesToBeBoxed = Array.from(document.querySelectorAll('.ttt'));
+const shapesToBeBoxed = Array.from(document.querySelectorAll('.person-basket'));
 let outputString = '';
-const symbolName = 'indian-side-face';
+const symbolName = 'basket-symbol';
 shapesToBeBoxed.forEach(b => {
     const box = b.getBBox();
 

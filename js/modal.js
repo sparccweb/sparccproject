@@ -156,7 +156,6 @@ function updateModalContent(URL) {
                 if (l.nextSibling.tagName) {
                     if (l.nextSibling.tagName.toUpperCase() === 'BR') {
                         newImage.setAttribute('alt', l.nextSibling.nextSibling);
-                        // l.nextSibling.remove();
                         l.nextSibling.nextSibling.remove();
                     }
                 }
