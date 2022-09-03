@@ -42,6 +42,7 @@ fetch('./website-exported/sitemap.html').then((response) => {
         );
 
         island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
+        island.markerPulsingTween.play(0);
         activeIslandIdx = islands.indexOf(island);
         updateIslandSelection();
 
@@ -147,6 +148,7 @@ islands.forEach((island, islandIdx) => {
         }
         
         island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
+        island.markerPulsingTween.play(0);
         activeIslandIdx = islandIdx;
         updateIslandSelection();
 
@@ -168,6 +170,7 @@ toMapBtn.addEventListener('click', () => {
     });
     gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {
         islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
+        islands[activeIslandIdx].markerPulsingTween.pause();
         activeIslandIdx = null;
         updateIslandSelection();
     });

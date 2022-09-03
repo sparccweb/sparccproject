@@ -90,8 +90,18 @@ function generateMarkers(html) {
 
                 updatePageUrl(p.name);
             }
-        })
-    })
+        });
+
+        island.markerPulsingTween = gsap.to(island.markersContainer.querySelectorAll('.marker .visible'), {
+            duration: .7,
+            attr: { 'r' : markerSize[1] },
+            opacity: .6,
+            ease: 'power1.inOut',
+            repeat: -1,
+            yoyo: true,
+            paused: true
+        });
+    });
 }
 
 function deselectMarkers() {
@@ -101,12 +111,6 @@ function deselectMarkers() {
             duration: .3,
             attr: {
                 r: markerSize[2],
-            }
-        })
-        gsap.to(c.querySelector('.visible'), {
-            duration: .3,
-            attr: {
-                r: markerSize[0],
             }
         })
     });
@@ -120,13 +124,6 @@ function selectMarker(markerCircle) {
             r: markerSize[1],
         },
         ease: 'back(3).out'
-    })
-    gsap.to(markerGroup.querySelector('.visible'), {
-        duration: .3,
-        attr: {
-            r: markerSize[1],
-        },
-        ease: 'power2.in'
     })
 }
 
@@ -211,6 +208,7 @@ function openModal(islandIdx) {
     gsap.set(islands[islandIdx].modalBack, {
         pointerEvents: 'auto'
     });
+    islands[islandIdx].markerPulsingTween.pause();
     gsap.set(modal, {
         display: 'flex'
     });
@@ -244,4 +242,6 @@ function closeModal() {
     });
 
     updatePageUrl('');
+
+    islands[activeIslandIdx].markerPulsingTween.play();
 }

@@ -212,6 +212,7 @@ function addIslandSelectionToTimeline(tl, idx) {
             transformOrigin: '50% 50%'
         }, {
             duration: .5,
+            stagger: .1,
             scale: 1,
             transformOrigin: '50% 50%',
             ease: 'back(3).out'
