@@ -3,9 +3,7 @@
 }
 
 
-/*.atlanta .marker text {*/
-/*    display: none;*/
-/*}*/
+
 .marker.marker-circle-selected circle.clickable,
 .marker circle.clickable:hover {
     stroke: #fff;
@@ -190,4 +188,35 @@ a:focus {
 }
 .modal #close-modal-btn:after {
     transform: rotate(-45deg);
+}
+
+
+
+
+
+
+
+
+
+
+.marker text {
+    /*display: none;*/
+}
+.central .marker .visible {
+    fill: #000;
+}
+.denver .marker .visible {
+    fill: #f00;
+}
+.atlanta .marker .visible {
+    fill: #000;
+}
+.memphis .marker .visible {
+    fill: purple;
+}
+.LA .marker .visible {
+    fill: yellow;
+}
+.bay .marker .visible {
+    fill: deeppink;
 }

@@ -48,7 +48,6 @@ function generateMarkers(html) {
             dot.setAttributeNS(null, 'cx', 0);
             dot.setAttributeNS(null, 'cy', 0);
             dot.setAttributeNS(null, 'r', markerSize[0]);
-            dot.setAttributeNS(null, 'fill', '#000');
             dot.classList.add('visible');
 
             const dotTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
@@ -60,9 +59,16 @@ function generateMarkers(html) {
             dotTitle.setAttributeNS(null, 'fill', '#fff');
             dotTitle.innerHTML = popupData.name;
 
+            const dotAdditional = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            dotAdditional.setAttributeNS(null, 'cx', 0);
+            dotAdditional.setAttributeNS(null, 'cy', 0);
+            dotAdditional.setAttributeNS(null, 'fill', '#ffffff');
+            dotAdditional.setAttributeNS(null, 'r', 1);
+
             gDot.appendChild(dotClickable);
             gDot.appendChild(dot);
             gDot.appendChild(dotTitle);
+            gDot.appendChild(dotAdditional);
 
             popupData.el = gDot;
             island.popups.push(popupData);
@@ -94,7 +100,7 @@ function generateMarkers(html) {
 
         island.markerPulsingTween = gsap.to(island.markersContainer.querySelectorAll('.marker .visible'), {
             duration: .7,
-            attr: { 'r' : markerSize[1] },
+            attr: { 'r' : .8 * markerSize[1] },
             opacity: .6,
             ease: 'power1.inOut',
             repeat: -1,
