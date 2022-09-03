@@ -200,7 +200,7 @@ a:focus {
 
 
 .marker text {
-    /*display: none;*/
+    display: none;
 }
 .central .marker .visible {
     fill: #000;
@@ -219,4 +219,20 @@ a:focus {
 }
 .bay .marker .visible {
     fill: deeppink;
+}
+
+
+
+
+
+
+
+.test {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: sans-serif;
+}
+.test * {
+    pointer-events: auto !important;
 }

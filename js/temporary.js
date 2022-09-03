@@ -15,3 +15,12 @@ shapesToBeBoxed.forEach(b => {
 
 // console.log('<g>' + outputString + '</g>');
 // console.log(outputString);
+
+
+const cb = document.querySelector('#show-marker-names');
+
+function testTest() {
+    gsap.set('.marker text', {
+        display: cb.checked ? 'block' : 'none'
+    })
+}
