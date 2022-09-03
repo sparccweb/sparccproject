@@ -20,9 +20,11 @@ function generateMarkers(html) {
             if (markersRef[contentName]) {
                 popupData.x = markersRef[contentName].pos[0];
                 popupData.y = markersRef[contentName].pos[1];
+                popupData.type = markersRef[contentName].type;
             } else {
                 popupData.x = box.x + Math.random() * box.width;
                 popupData.y = box.y + Math.random() * box.height;
+                popupData.type = 1;
             }
             
             
@@ -43,7 +45,6 @@ function generateMarkers(html) {
             dotClickable.classList.add('clickable');
 
             const dot = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            dot.setAttributeNS(null, 'data-popup-name', contentName);
             dot.setAttributeNS(null, 'cx', 0);
             dot.setAttributeNS(null, 'cy', 0);
             dot.setAttributeNS(null, 'r', markerSize[0]);
@@ -65,16 +66,11 @@ function generateMarkers(html) {
 
             popupData.el = gDot;
             island.popups.push(popupData);
-            
-            if (island.detailedViewContainer.length) {
-                island.detailedViewContainer[island.detailedViewContainer.length - 1].appendChild(gDot);
-            } else {
-                island.detailedViewContainer.appendChild(gDot);
-            }
+            island.markersContainer.appendChild(gDot);
         }
     })
 
-    islands.forEach(island => {
+    islands.forEach((island, islandIdx) => {
         island.popups.forEach(p => {
             p.el.querySelector('.clickable').onclick = function () {
                 
@@ -90,7 +86,7 @@ function generateMarkers(html) {
                 selectMarker(this);
 
                 const contentURL = './website-exported/' + p.url;
-                updateModalContent(contentURL);
+                updateModalContent(contentURL, p.type, islandIdx);
 
                 updatePageUrl(p.name);
             }
@@ -134,45 +130,70 @@ function selectMarker(markerCircle) {
     })
 }
 
-modalCloseBtn.onclick = function () {
+modalCloseBtn.addEventListener('click', () => {
     closeModal();
     deselectMarkers();
-}
+});
+modalBackAll.forEach(b => {
+    b.addEventListener('click', () => {
+        closeModal();
+        deselectMarkers();
+    });
+})
 
-function updateModalContent(URL) {
+
+function updateModalContent(URL, contentType, islandIdx) {
     fetch(URL).then((response) => {
         return response.text();
     }).then((html) => {
-        const doc = parser.parseFromString(html, 'text/html');
-        const main = doc.querySelector('#main');
-        
-        const links = Array.from(main.querySelectorAll('a'));
-        links.forEach(l => {
-            const imgURL = l.getAttribute('href');
-            if (isImgLink(imgURL)) {
-                const newImage = document.createElement('img');
-                newImage.setAttribute('src', './website-exported/' + imgURL);
-
-                if (l.nextSibling.tagName) {
-                    if (l.nextSibling.tagName.toUpperCase() === 'BR') {
-                        newImage.setAttribute('alt', l.nextSibling.nextSibling);
-                        l.nextSibling.nextSibling.remove();
-                    }
-                }
-                l.parentNode.replaceChild(newImage, l);
-            }
-        });
-
-        const figures = Array.from(doc.querySelectorAll('figure'));
-        figures.forEach(f => {
-            if (Array.from(f.querySelectorAll('*')).length === 0) {
-                f.parentNode.innerHTML = f.innerHTML;
-            }
-        });
 
         modalContentContainer.innerHTML = '';
-        modalContentContainer.append(main);
-        openModal();
+
+        if (contentType === 1) {
+            // text content
+
+            const doc = parser.parseFromString(html, 'text/html');
+            const main = doc.querySelector('#main');
+
+            const links = Array.from(main.querySelectorAll('a'));
+            links.forEach(l => {
+                const imgURL = l.getAttribute('href');
+                if (isImgLink(imgURL)) {
+                    const newImage = document.createElement('img');
+                    newImage.setAttribute('src', './website-exported/' + imgURL);
+
+                    if (l.nextSibling.tagName) {
+                        if (l.nextSibling.tagName.toUpperCase() === 'BR') {
+                            newImage.setAttribute('alt', l.nextSibling.nextSibling);
+                            l.nextSibling.nextSibling.remove();
+                        }
+                    }
+                    l.parentNode.replaceChild(newImage, l);
+                }
+            });
+
+            const figures = Array.from(doc.querySelectorAll('figure'));
+            figures.forEach(f => {
+                if (Array.from(f.querySelectorAll('*')).length === 0) {
+                    f.parentNode.innerHTML = f.innerHTML;
+                }
+            });
+
+            modalContentContainer.append(main);
+            modalContainer.classList.remove('is-video');
+
+        } else if (contentType === 0) {
+            const newIframe = document.createElement('iframe');
+            newIframe.setAttribute('src', 'https://www.youtube.com/embed/ScMzIvxBSi4?controls=0');
+            newIframe.setAttribute('width', '560');
+            newIframe.setAttribute('height', '349');
+            newIframe.setAttribute('frameBorder', '0');
+            modalContentContainer.append(newIframe);
+            modalContainer.classList.add('is-video');
+        }
+
+        openModal(islandIdx);
+
     }).catch((err) => {
         console.warn('Modal content loader failed: ', err);
     });
@@ -182,9 +203,16 @@ function updatePageUrl(name) {
     window.location.hash = name;
 }
 
-function openModal() {
+function openModal(islandIdx) {
+    gsap.to(islands[islandIdx].modalBack, {
+        duration: .3,
+        opacity: 1
+    });
+    gsap.set(islands[islandIdx].modalBack, {
+        pointerEvents: 'auto'
+    });
     gsap.set(modal, {
-        display: 'block'
+        display: 'flex'
     });
     gsap.fromTo(modal, {
         y: 100,
@@ -197,6 +225,13 @@ function openModal() {
 }
 
 function closeModal() {
+    gsap.to(modalBackAll, {
+        duration: .3,
+        opacity: 0
+    });
+    gsap.set(modalBackAll, {
+        pointerEvents: 'none'
+    });
     gsap.to(modal, {
         duration: .25,
         y: 100,

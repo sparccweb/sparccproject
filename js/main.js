@@ -50,7 +50,7 @@ fetch('./website-exported/sitemap.html').then((response) => {
         gsap.delayedCall(loaderAnimation.duration() / loaderAnimation.timeScale(), () => {
             selectMarker(markerToFocus);
             const contentURL = './website-exported/' + popup.url;
-            updateModalContent(contentURL);
+            updateModalContent(contentURL, popup.type, activeIslandIdx);
         });
 
     } else {

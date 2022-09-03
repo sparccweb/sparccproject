@@ -2,6 +2,8 @@ const container = document.querySelector('.full-page');
 
 const map = document.querySelector('svg.map');
 
+const modalBackAll = Array.from(document.querySelectorAll('.modal-back'));
+const modalContainer = document.querySelector('.modal-container');
 const modal = document.querySelector('.modal');
 const modalContentContainer = document.querySelector('.modal-content');
 const modalCloseBtn = document.querySelector('#close-modal-btn');
@@ -116,6 +118,8 @@ const islands = [{
         cart: map.querySelector('.central .cart'),
         tools: Array.from(map.querySelectorAll('.central .tools > *')),
     },
+    markersContainer: map.querySelector('.central .markers-container'),
+    modalBack: map.querySelector('.central .modal-back'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -149,6 +153,8 @@ const islands = [{
         ball: map.querySelector('.denver .detailed-view .ball'),
         boat: map.querySelector('.denver .detailed-view .yellow-boat'),
     },
+    markersContainer: map.querySelector('.denver .markers-container'),
+    modalBack: map.querySelector('.denver .modal-back'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -180,6 +186,8 @@ const islands = [{
         plane: map.querySelector('.atlanta .detailed-view .plane'),
         bird: map.querySelector('.atlanta .detailed-view .bird'),
     },
+    markersContainer: map.querySelector('.atlanta .markers-container'),
+    modalBack: map.querySelector('.atlanta .modal-back'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -214,6 +222,8 @@ const islands = [{
         ship: map.querySelector('.bay .detailed-view .ship'),
         plane: map.querySelector('.bay .detailed-view .plane'),
     },
+    markersContainer: map.querySelector('.bay .markers-container'),
+    modalBack: map.querySelector('.bay .modal-back'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -244,6 +254,8 @@ const islands = [{
         toDrop: Array.from(map.querySelectorAll('.memphis .detailed-view .to-drop > *')),
         plane: map.querySelector('.memphis .detailed-view .plane'),
     },
+    markersContainer: map.querySelector('.memphis .markers-container'),
+    modalBack: map.querySelector('.memphis .modal-back'),
     neon: map.querySelector('.memphis .neon'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
@@ -284,6 +296,8 @@ const islands = [{
         hollywood: Array.from(map.querySelectorAll('.LA .detailed-view .hollywood-letters > *')),
         bench: map.querySelector('.LA .detailed-view .bench'),
     },
+    markersContainer: map.querySelector('.LA .markers-container'),
+    modalBack: map.querySelector('.LA .modal-back'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),
@@ -315,6 +329,8 @@ const islands = [{
         ship: map.querySelector('.chicago .detailed-view .ship'),
         plane: map.querySelector('.chicago .detailed-view .plane'),
     },
+    markersContainer: map.querySelector('.chicago .markers-container'),
+    modalBack: map.querySelector('.chicago .modal-back'),
     detailedViewLoopedAnimations: [],
     mapToIslandAnimation: gsap.timeline({ paused: true }),
     hideIslandToMapAnimation: gsap.timeline({ paused: true }),

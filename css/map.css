@@ -86,16 +86,3 @@ svg {
 .detailed-view {
     display: none;
 }
-
-
-
-
-/*.detailed-view > * {*/
-/*    display: none !important;*/
-/*}*/
-/*.detailed-view > .people {*/
-/*    display: block !important;*/
-/*}*/
-/*.people {*/
-/*    pointer-events: auto !important;*/
-/*}*/
