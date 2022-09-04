@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118.4 118.4">
+    <path d="M78.5,86.3l7.4-.3V9.7a2.6,2.6,0,0,0-1-1.3V3.7a.8.8,0,0,0-.6-.8H80.8a.9.9,0,0,0-.5.8V8.1a2.2,2.2,0,0,0-1.6,1.6Z" class="crane-fst-color"/>
+    <path class="crane-scd-color" d="M80.8,1.3V2.9h3.4V1.3A1.3,1.3,0,0,0,82.9,0h-.7a1.3,1.3,0,0,0-1.4,1.2Z"/>
+    <path class="crane-scd-color" d="M72.3,113.5V117a1.4,1.4,0,0,0,1.4,1.4H91.4a1.4,1.4,0,0,0,1.4-1.4h0v-3.5a1.3,1.3,0,0,0-1.3-1.3H89.9V90.8a4.8,4.8,0,0,0-4-4.8H80.2l-1.7.3a5.2,5.2,0,0,0-3.4,4.8v21.1H73.7a1.3,1.3,0,0,0-1.4,1.2Z"/>
+    <rect class="crane-scd-color" x="78" y="16.5" width="8.5" height="2.85" rx="0.9"/>
+    <g class="crane-hook-wrapper">
+        <path d="M0,15.4H110.4V9.7H5.7A5.6,5.6,0,0,0,0,15.2Z" class="crane-fst-color"/>
+        <rect x="43" y="9.1" width="8.5" height="6.83" rx="0.8" class="crane-scd-color"/>
+    </g>
+    <path class="crane-bumper crane-scd-color" d="M110.4,10v5.6a2.6,2.6,0,0,0,2.6,2.6h2.8a2.6,2.6,0,0,0,2.6-2.6h0V10a2.6,2.6,0,0,0-2.6-2.6H113a2.7,2.7,0,0,0-2.6,2.3Z"/>
+    <g class="crane-hook-wrapper">
+        <path class="crane-hook crane-scd-color" d="M11.3,53.5h2.4a.5.5,0,0,1,.5.5v3a.5.5,0,0,1-.5.5h-.6v.9c.1-.1.2,0,.2.1s0,.3-.1.3a1.4,1.4,0,0,0-1.1,1.1,1.6,1.6,0,0,0,1,.8c.2,0,.3.1.2.2s-.1.3-.2.3h0A1.7,1.7,0,0,1,11.7,60a1.4,1.4,0,0,1,.9-1.5v-1H11.3a.5.5,0,0,1-.5-.5V54A.5.5,0,0,1,11.3,53.5Z"/>
+        <path class="crane-hook-line crane-scd-color" d="M13.1,53.5V15.4H11.9V53.5"/>
+    </g>
+</svg>

@@ -151,6 +151,56 @@ chiTrainAnimation
         ease: 'none'
     });
 
+// All the cranes
+craneAnimations[0]
+    .to(cranes[0].craneHozLine, {
+        duration: 1,
+        scaleX: .3,
+        svgOrigin: '36 12.5'
+    })
+    .to(cranes[0].craneHookWrapper, {
+        duration: 1,
+        x: -50
+    }, 0)
+    .to(cranes[0].craneBumper, {
+        duration: 1,
+        x: 25
+    }, 0)
+    .to(cranes[0].craneHookLine, {
+        duration: 1,
+        scaleY: 2,
+        transformOrigin: '50% 0%'
+    }, 1)
+    .to(cranes[0].craneHook, {
+        duration: 1,
+        y: 35
+    }, 1);
+
+craneAnimations[1]
+    .to(cranes[1].craneHozLine, {
+        duration: 1,
+        scaleX: .5,
+        svgOrigin: '82 12.5'
+    })
+    .to(cranes[1].craneHookWrapper, {
+        duration: 1,
+        x: 35
+    }, 0)
+    .to(cranes[1].craneBumper, {
+        duration: 1,
+        x: -15
+    }, 0)
+    .to(cranes[1].craneHookLine, {
+        duration: 1,
+        scaleY: 1.5,
+        transformOrigin: '50% 0%'
+    }, 1)
+    .to(cranes[1].craneHook, {
+        duration: 1,
+        y: 18
+    }, 1);
+
+
 // All traffic lights
 
 trafficLightAnimation

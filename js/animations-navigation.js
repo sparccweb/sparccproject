@@ -27,7 +27,7 @@ function updateMapToIslandAnimation(islandIdx) {
     } else if (island.name === 'central') {
         addCentralDetailsToTimeline(island.mapToIslandAnimation, islandIdx);
     }
-    
+
     islands.forEach((isl, idx) => {
         if (idx !== islandIdx) {
             addIslandDeselectionToTimeline(island.mapToIslandAnimation, idx);
@@ -180,6 +180,14 @@ function addIslandSelectionToTimeline(tl, idx) {
             .to(peopleTrdColoredElements, {
                 duration: .1,
                 attr: { fill: island.peopleColors[2] }
+            }, 0)
+            .to(craneFstColoredElements, {
+                duration: .1,
+                attr: { fill: island.buildingColors[0] }
+            }, 0)
+            .to(craneScdColoredElements, {
+                duration: .1,
+                attr: { fill: island.buildingColors[1] }
             }, 0)
     }
 

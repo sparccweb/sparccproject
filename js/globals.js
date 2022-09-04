@@ -42,6 +42,21 @@ const birdTrajectories = Array.from(map.querySelectorAll('.bird-trajectories > *
 
 const mainMapBoat = map.querySelector('.main-map-boat');
 
+const cranes = [{
+    craneHozLine: document.querySelector('#crane-symbol-right .crane-horizontal'),
+    craneHookWrapper: document.querySelector('#crane-symbol-right .crane-hook-wrapper'),
+    craneHook: document.querySelector('#crane-symbol-right .crane-hook'),
+    craneHookLine: document.querySelector('#crane-symbol-right .crane-hook-line'),
+    craneBumper: document.querySelector('#crane-symbol-right .crane-bumper')
+}, {
+    craneHozLine: document.querySelector('#crane-symbol-left .crane-horizontal'),
+    craneHookWrapper: document.querySelector('#crane-symbol-left .crane-hook-wrapper'),
+    craneHook: document.querySelector('#crane-symbol-left .crane-hook'),
+    craneHookLine: document.querySelector('#crane-symbol-left .crane-hook-line'),
+    craneBumper: document.querySelector('#crane-symbol-left .crane-bumper')
+}]
+
+
 const d3Svg = d3.select("svg.map");
 const d3SvgMainMap = d3Svg.select(".main-map");
 
@@ -80,8 +95,15 @@ const beesAnimations = [ gsap.timeline({ repeat: -1 }), gsap.timeline({ repeat: 
 const mainBoatAnimation = gsap.timeline({ repeat: -1 });
 const ferrisWheelAnimation = gsap.timeline({ repeat: -1 });
 const chiTrainAnimation = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
-const birdAnimations = [ gsap.timeline({ repeat: -1, yoyo: true }), gsap.timeline({ repeat: -1 }) ];
+const birdAnimations = [
+    gsap.timeline({ repeat: -1, yoyo: true }),
+    gsap.timeline({ repeat: -1 })
+];
 const trafficLightAnimation = gsap.timeline({ repeat: -1 });
+const craneAnimations = [
+    gsap.timeline({ repeat: -1, yoyo: true, delay: 2, repeatDelay: 1, defaults: { ease: 'power1.inOut' } }),
+    gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 2, defaults: { ease: 'power1.inOut' } })
+];
 
 
 const islandToIslandAnimation = gsap.timeline({ paused: true });
@@ -89,6 +111,9 @@ const islandToIslandAnimation = gsap.timeline({ paused: true });
 const peopleFstColoredElements = document.querySelectorAll('.fst-color');
 const peopleScdColoredElements = document.querySelectorAll('.scd-color');
 const peopleTrdColoredElements = document.querySelectorAll('.trd-color');
+
+const craneFstColoredElements = document.querySelectorAll('.crane-fst-color');
+const craneScdColoredElements = document.querySelectorAll('.crane-scd-color');
 
 
 const parser = new DOMParser();
@@ -139,6 +164,7 @@ const islands = [{
         map.querySelector('.island-back.denver .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#324c93', '#4059ad', '#526eb2' ],
+    buildingColors: [ '#e5bf55', '#ffe18d' ],
     landShadow: Array.from(map.querySelectorAll('.island-back.denver .land-shadow')),
     content: map.querySelector('.island-content.denver'),
     mapViewEls: {
@@ -175,6 +201,7 @@ const islands = [{
         map.querySelector('.island-back.atlanta .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#21505b', '#2e6171', '#327484' ],
+    buildingColors: [ '#af4141', '#e55555' ],
     content: map.querySelector('.island-content.atlanta'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.atlanta .map-view .to-scale > *')),
@@ -210,6 +237,7 @@ const islands = [{
         map.querySelector('.island-back.bay .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#168c99', '#009fb7', '#05b7c9' ],
+    buildingColors: [ '#bf7736', '#ed9a4f' ],
     content: map.querySelector('.island-content.bay'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.bay .map-view .to-scale > *')),
@@ -246,6 +274,7 @@ const islands = [{
         map.querySelector('.island-back.memphis .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#ddb94a', '#ffdc5e', '#ffe180' ],
+    buildingColors: [ '#30d2bf', '#c0fff3' ],
     content: map.querySelector('.island-content.memphis'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.memphis .map-view .to-scale > *')),
@@ -279,6 +308,7 @@ const islands = [{
         map.querySelector('.island-back.LA .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#a33636', '#b0413e', '#c15959' ],
+    buildingColors: [ '#12484f', '#1c5e6a' ],
     content: map.querySelector('.island-content.LA'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.LA .map-view .to-scale > *')),
@@ -320,6 +350,7 @@ const islands = [{
         map.querySelector('.island-back.chicago .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#865ebf', '#9d75cb', '#b08de2' ],
+    buildingColors: [ '#8e2a32', '#99414c' ],
     content: map.querySelector('.island-content.chicago'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.chicago .map-view .to-scale > *')),
