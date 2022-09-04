@@ -149,9 +149,40 @@ chiTrainAnimation
         duration: 2,
         x: 100,
         ease: 'none'
-    })
+    });
+
+// All traffic lights
+
+trafficLightAnimation
+    .to(trafficLightColors[2], {
+        duration: .2,
+        attr: { fill: '#a0a09f' }
+    }, 2)
+    .to(trafficLightColors[0], {
+        duration: .2,
+        attr: { fill: '#e55555' }
+    }, 2)
+
+    .to(trafficLightColors[0], {
+        duration: .2,
+        attr: { fill: '#a0a09f' }
+    }, 4)
+    .to(trafficLightColors[1], {
+        duration: .2,
+        attr: { fill: '#efa32b' }
+    }, 4)
+
+    .to(trafficLightColors[1], {
+        duration: .2,
+        attr: { fill: '#a0a09f' }
+    }, 6)
+    .to(trafficLightColors[2], {
+        duration: .2,
+        attr: { fill: '#94b241' }
+    }, 6)
 
 
+// Garden bees
 beesAnimations[0]
     .to(beesWrappers[0], {
         duration: 5,
@@ -199,6 +230,7 @@ beesAnimations[1]
 islands[1].detailedViewLoopedAnimations[0] = gsap.timeline({ 
     repeat: -1,
 })
+    .timeScale(.4)
     .to(islands[1].detailedViewEls.boat, {
         duration: .3,
         opacity: 1
@@ -252,17 +284,17 @@ islands[1].detailedViewLoopedAnimations[1] = gsap.timeline({
     yoyo: true,
 })
     .fromTo(islands[1].detailedViewEls.boat, {
-        rotation: -1,
+        rotation: -2,
         transformOrigin: '50% 100%',
     }, {
         duration: .5,
-        rotation: 1,
+        rotation: 2,
         transformOrigin: '50% 100%',
         ease: 'power1.inOut',
     }, 0)
 
 // LA
-islands[5].detailedViewLoopedAnimations[5] = gsap.timeline({
+islands[5].detailedViewLoopedAnimations[0] = gsap.timeline({
     paused: true,
     repeat: -1,
 })

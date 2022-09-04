@@ -28,6 +28,8 @@ const ferrisWheelAnimated = document.querySelector('.ferris-wheel-animated');
 const ferrisWheelRotatingPart = ferrisWheelAnimated.querySelector('.ferris-wheel-rotating');
 const ferrisWheelCabins = Array.from(ferrisWheelAnimated.querySelectorAll('.ferris-wheel-cabins > path'));
 
+const trafficLightColors = Array.from(document.querySelectorAll('.traffic-light-color'));
+
 const bees = Array.from(map.querySelectorAll('.bee'));
 const beesWrappers = Array.from(map.querySelectorAll('.bee-wrapper'));
 const beesTrajectories = Array.from(map.querySelectorAll('.bee-trajectory'));
@@ -79,6 +81,7 @@ const mainBoatAnimation = gsap.timeline({ repeat: -1 });
 const ferrisWheelAnimation = gsap.timeline({ repeat: -1 });
 const chiTrainAnimation = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
 const birdAnimations = [ gsap.timeline({ repeat: -1, yoyo: true }), gsap.timeline({ repeat: -1 }) ];
+const trafficLightAnimation = gsap.timeline({ repeat: -1 });
 
 
 const islandToIslandAnimation = gsap.timeline({ paused: true });
