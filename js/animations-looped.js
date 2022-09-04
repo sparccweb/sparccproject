@@ -141,6 +141,16 @@ ferrisWheelCabins.forEach(c => {
     }, 0)
 });
 
+// Chicago train
+chiTrainAnimation
+    .fromTo(islands[6].train, {
+        x: -100,
+    }, {
+        duration: 2,
+        x: 100,
+        ease: 'none'
+    })
+
 
 beesAnimations[0]
     .to(beesWrappers[0], {

@@ -77,6 +77,7 @@ let activeIslandIdx = null;
 const beesAnimations = [ gsap.timeline({ repeat: -1 }), gsap.timeline({ repeat: -1 }) ];
 const mainBoatAnimation = gsap.timeline({ repeat: -1 });
 const ferrisWheelAnimation = gsap.timeline({ repeat: -1 });
+const chiTrainAnimation = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
 const birdAnimations = [ gsap.timeline({ repeat: -1, yoyo: true }), gsap.timeline({ repeat: -1 }) ];
 
 
@@ -329,6 +330,7 @@ const islands = [{
         ship: map.querySelector('.chicago .detailed-view .ship'),
         plane: map.querySelector('.chicago .detailed-view .plane'),
     },
+    train: document.querySelector('.chi-train-animated'),
     markersContainer: map.querySelector('.chicago .markers-container'),
     modalBack: map.querySelector('.chicago .modal-back'),
     detailedViewLoopedAnimations: [],
