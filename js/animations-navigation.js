@@ -184,11 +184,11 @@ function addIslandSelectionToTimeline(tl, idx) {
             .to(craneFstColoredElements, {
                 duration: .1,
                 attr: { fill: island.buildingColors[0] }
-            }, 0)
+            }, .5)
             .to(craneScdColoredElements, {
                 duration: .1,
                 attr: { fill: island.buildingColors[1] }
-            }, 0)
+            }, .5)
     }
 
     tl
@@ -256,6 +256,9 @@ function addIslandDeselectionToTimeline(tl, idx) {
 
 function addMapShowingToTimeline(tl, idx) {
     tl
+        .set([ craneFstColoredElements, craneScdColoredElements ], {
+            attr: { fill: 'auto' }
+        }, .3)
         .fromTo(zoomingControls, {
             opacity: 1
         }, {
