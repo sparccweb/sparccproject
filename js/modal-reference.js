@@ -173,7 +173,7 @@ const markersRef = {
     'B08': {
         pos: [1735, 937],
         type: 1,
-        labels: ['']
+        labels: ['Site Story']
     },
 
     'C01': {

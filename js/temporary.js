@@ -24,3 +24,8 @@ function testTest() {
         display: cb.checked ? 'block' : 'none'
     })
 }
+
+
+
+const t = Object.values(markersRef).map(v => v.labels).flat().filter((v, idx, self) => self.indexOf(v) === idx);
+console.log(t)
