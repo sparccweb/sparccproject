@@ -1,10 +1,7 @@
 function addAtlantaDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
-        .to(birdWrapper, {
-            duration: .2,
-            opacity: 1
-        }, .6)
+
         // .set(birdAnimations, {
         //     progress: 0,
         //     timeScale: 1
@@ -83,6 +80,11 @@ function addAtlantaDetailsToTimeline(tl, idx) {
             y: 0,
             ease: 'power3.out'
         }, 1)
+
+        .to(birdWrapper, {
+            duration: .2,
+            opacity: 1
+        }, 2.8)
 }
 
 function hideAtlantaDetailsToTimeline(tl, idx) {

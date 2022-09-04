@@ -293,6 +293,65 @@ islands[1].detailedViewLoopedAnimations[1] = gsap.timeline({
         ease: 'power1.inOut',
     }, 0)
 
+
+// Atlanta
+islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({
+    repeat: -1,
+    repeatDelay: 2
+})
+
+    .to(islands[2].detailedViewEls.ball, {
+        duration: .35,
+        y: -17,
+        ease: 'power1.inOut'
+    })
+    .to(islands[2].detailedViewEls.ball, {
+        duration: 1.4,
+        y: 0,
+        ease: 'bounce'
+    });
+
+islands[2].detailedViewLoopedAnimations[1] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    delay: 6,
+    repeatDelay: 4
+})
+    .fromTo(islands[2].detailedViewEls.cyclist, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .fromTo(islands[2].detailedViewEls.cyclist, {
+        x: -40,
+    }, {
+        duration: 2,
+        x: 80,
+        ease: 'none'
+    }, 0)
+    .to(islands[2].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+    .set(islands[2].detailedViewEls.cyclist, {
+        scaleX: -1,
+        transformOrigin: 'center center',
+    }, 4)
+    .to(islands[2].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 1
+    }, 4)
+    .to(islands[2].detailedViewEls.cyclist, {
+        duration: 2,
+        x: -30,
+        ease: 'none'
+    }, 4)
+    .to(islands[2].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
 // LA
 islands[5].detailedViewLoopedAnimations[0] = gsap.timeline({
     paused: true,

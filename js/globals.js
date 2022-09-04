@@ -189,6 +189,8 @@ const islands = [{
         toDrop: Array.from(map.querySelectorAll('.atlanta .detailed-view .to-drop > *')),
         plane: map.querySelector('.atlanta .detailed-view .plane'),
         bird: map.querySelector('.atlanta .detailed-view .bird'),
+        ball: map.querySelector('.atlanta .detailed-view .person-ball'),
+        cyclist: map.querySelector('.atlanta .detailed-view .hijab-lady'),
     },
     markersContainer: map.querySelector('.atlanta .markers-container'),
     modalBack: map.querySelector('.atlanta .modal-back'),
