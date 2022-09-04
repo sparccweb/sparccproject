@@ -151,13 +151,11 @@ function updateModalContent(URL, contentType, islandIdx) {
     }).then((html) => {
 
         modalContentContainer.innerHTML = '';
+        const doc = parser.parseFromString(html, 'text/html');
+        const main = doc.querySelector('#main');
 
         if (contentType === 1) {
             // text content
-
-            const doc = parser.parseFromString(html, 'text/html');
-            const main = doc.querySelector('#main');
-
             const links = Array.from(main.querySelectorAll('a'));
             links.forEach(l => {
                 const imgURL = l.getAttribute('href');
@@ -186,12 +184,22 @@ function updateModalContent(URL, contentType, islandIdx) {
             modalContainer.classList.remove('is-video');
 
         } else if (contentType === 0) {
-            const newIframe = document.createElement('iframe');
-            newIframe.setAttribute('src', 'https://www.youtube.com/embed/ScMzIvxBSi4?controls=0');
-            newIframe.setAttribute('width', '560');
-            newIframe.setAttribute('height', '349');
-            newIframe.setAttribute('frameBorder', '0');
-            modalContentContainer.append(newIframe);
+
+            let iframeProvided = main.querySelector('pre').innerHTML;
+            iframeProvided = iframeProvided.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+            iframeProvided = parser.parseFromString(iframeProvided, 'text/html');
+            iframeProvided = iframeProvided.querySelector('iframe');
+
+            if (iframeProvided) {
+                modalContentContainer.append(iframeProvided);
+            } else {
+                const newIframe = document.createElement('iframe');
+                newIframe.setAttribute('src', 'https://www.youtube.com/embed/ScMzIvxBSi4?controls=0');
+                newIframe.setAttribute('width', '560');
+                newIframe.setAttribute('height', '349');
+                newIframe.setAttribute('frameBorder', '0');
+                modalContentContainer.append(newIframe);
+            }
             modalContainer.classList.add('is-video');
         }
 
