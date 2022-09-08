@@ -182,6 +182,7 @@ const islands = [{
         bear: map.querySelector('.denver .detailed-view .bear'),
         ball: map.querySelector('.denver .detailed-view .ball'),
         boat: map.querySelector('.denver .detailed-view .yellow-boat'),
+        cyclist: map.querySelector('.denver .detailed-view .cyclist'),
     },
     markersContainer: map.querySelector('.denver .markers-container'),
     modalBack: map.querySelector('.denver .modal-back'),

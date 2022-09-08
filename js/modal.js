@@ -62,7 +62,7 @@ function generateMarkers(html) {
             const dotAdditional = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             dotAdditional.setAttributeNS(null, 'cx', 0);
             dotAdditional.setAttributeNS(null, 'cy', 0);
-            dotAdditional.setAttributeNS(null, 'fill', '#ffffff');
+            dotAdditional.setAttributeNS(null, 'fill', popupData.type ? '#ffffff' : '#000000');
             dotAdditional.setAttributeNS(null, 'r', 1);
 
             gDot.appendChild(dotClickable);
@@ -185,10 +185,14 @@ function updateModalContent(URL, contentType, islandIdx) {
 
         } else if (contentType === 0) {
 
-            let iframeProvided = main.querySelector('pre').innerHTML;
-            iframeProvided = iframeProvided.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
-            iframeProvided = parser.parseFromString(iframeProvided, 'text/html');
-            iframeProvided = iframeProvided.querySelector('iframe');
+
+            let iframeProvided;
+            if (main.querySelector('pre')) {
+                iframeProvided = main.querySelector('pre').innerHTML;
+                iframeProvided = iframeProvided.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+                iframeProvided = parser.parseFromString(iframeProvided, 'text/html');
+                iframeProvided = iframeProvided.querySelector('iframe');
+            }
 
             if (iframeProvided) {
                 modalContentContainer.append(iframeProvided);

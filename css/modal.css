@@ -126,41 +126,6 @@ a:focus {
 
 
 
-/*.modal .login-button {*/
-/*    width: 14rem;*/
-/*    padding: 0.7rem;*/
-/*    margin: 0 2rem 2rem 2rem ;*/
-/*    border-radius: 0;*/
-/*    color: var(--container-color);*/
-/*    background-color: white;*/
-/*    border: 0.22rem solid var(--container-color);*/
-/*    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);*/
-/*    box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);*/
-/*}*/
-
-/*.modal .login-button:link,*/
-/*.modal .login-button:visited,*/
-/*.modal .login-button:hover,*/
-/*.modal .login-button:active {*/
-/*    color: white;*/
-/*    background-color: var(--container-color);*/
-/*    border: 0.22rem solid var(--container-color);*/
-/*    -webkit-box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);*/
-/*    box-shadow: 0.2rem 0.2rem 0.2rem var(--container-color);*/
-/*    cursor: pointer;*/
-
-/*}*/
-/*.modal #emailHelp.form-text,*/
-/*.modal #passwordHelp.form-text {*/
-/*    margin: 0.9rem 2.8rem 1.6rem 4.3rem;*/
-/*    padding: 0.2rem 0.4rem;*/
-/*    background-color: white;*/
-/*    font-size: 0.8rem;*/
-/*}*/
-
-
-
-
 .modal #close-modal-btn {
     position: absolute;
     right: 15px;
@@ -188,6 +153,9 @@ a:focus {
 }
 .modal #close-modal-btn:after {
     transform: rotate(-45deg);
+}
+.is-video .modal #close-modal-btn {
+    display: none;
 }
 
 

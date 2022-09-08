@@ -236,6 +236,12 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
+    'C13': {
+        pos: [1975, 1482],
+        type: 1,
+        labels: ['Site Story']
+    },
+    
     'D01': {
         pos: [407, 1212],
         type: 1,

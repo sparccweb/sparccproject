@@ -51,37 +51,7 @@ function addDenverDetailsToTimeline(tl, idx) {
             y: 0
         }, 1)
         
-        .fromTo(island.detailedViewEls.planes[1], {
-            opacity: 0
-        }, {
-            duration: .3,
-            opacity: 1
-        }, .7)
-        .fromTo(island.detailedViewEls.planes[1], {
-            x: -500,
-            y: -100,
-        }, {
-            duration: 1.6,
-            x: 0,
-            y: 0,
-            ease: 'power4.out'
-        }, .7)
-        .fromTo(island.detailedViewEls.planes[0], {
-            opacity: 0
-        }, {
-            duration: .3,
-            opacity: 1
-        }, 1.2)
-        .fromTo(island.detailedViewEls.planes[0], {
-            x: -500,
-            y: -100,
-        }, {
-            duration: 1.6,
-            x: 0,
-            y: 0,
-            ease: 'power4.out'
-        }, 1.2)
-        
+
         .fromTo(island.detailedViewEls.bear, {
             opacity: 0
         }, {
@@ -113,16 +83,6 @@ function addDenverDetailsToTimeline(tl, idx) {
 function hideDenverDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
-        .to(island.detailedViewEls.planes, {
-            duration: 1.2,
-            x: 1000,
-            y: -200,
-            ease: 'power3.in'
-        }, 0)
-        .to(island.detailedViewEls.planes, {
-            duration: .2,
-            opacity: 0
-        }, '>-.2')
         .to([ island.detailedViewEls.toFade, island.detailedViewEls.ball, island.detailedViewEls.toDrop, island.detailedViewEls.people ], {
             duration: .5,
             opacity: 0
