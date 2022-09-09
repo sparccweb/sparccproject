@@ -135,13 +135,15 @@ islands.forEach((island, islandIdx) => {
             island.hideIslandToMapAnimation.pause();
             island.mapToIslandAnimation.play(0);
         } else {
-            islands[activeIslandIdx].mapToIslandAnimation.pause();
+            if (activeIslandIdx) {
+                islands[activeIslandIdx].mapToIslandAnimation.pause();
+                islands[activeIslandIdx].mapToIslandAnimation.progress(1);
+            }
             if (activeIslandIdx !== islandIdx) {
                 closeModal();
                 deselectMarkers();
                 updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
                 islandToIslandAnimation.play(.5);
-            } else {
             }
         }
         
@@ -164,6 +166,7 @@ toMapBtn.addEventListener('click', () => {
 
     islandToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.pause();
+    islands[activeIslandIdx].mapToIslandAnimation.progress(1);
     islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
     gsap.delayedCall(.5, () => {
         view = views.m;

@@ -19,18 +19,22 @@ function addBayDetailsToTimeline(tl, idx) {
             transformOrigin: '50% 50%',
             ease: 'power1.inOut'
         }, 0)
-        .from(island.balloons[0], {
-            duration: .5,
+        .fromTo(island.balloons[0], {
             scale: 0,
+            transformOrigin: '50% 50%',
+        }, {
+            duration: .5,
+            scale: 1,
             transformOrigin: '50% 50%',
             ease: 'power1.inOut'
         }, 0)
         .to(island.bayTowers, {
             duration: 1,
-            scale: .7,
+            scale: .6,
             transformOrigin: '50% 100%',
-            ease: 'back(5).in'
-        }, 0)
+            y: -40,
+            ease: 'back(1.2).in'
+        }, .2)
         .fromTo(island.detailedViewEls.roads, {
             opacity: 0
         }, {

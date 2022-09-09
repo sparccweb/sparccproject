@@ -185,10 +185,10 @@ a:focus {
     fill: purple;
 }
 .LA .marker .visible {
-    fill: yellow;
+    fill: #EDF008;
 }
 .bay .marker .visible {
-    fill: deeppink;
+    fill: #EDF008;
 }
 
 

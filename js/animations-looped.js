@@ -350,9 +350,6 @@ islands[1].detailedViewLoopedAnimations[2] = gsap.timeline({
     delay: 3,
     repeatDelay: 4
 })
-    .set(islands[1].detailedViewEls.cyclist, {
-        x: 40
-    }, 0)
     .fromTo(islands[1].detailedViewEls.cyclist, {
         opacity: 0
     }, {
@@ -502,7 +499,6 @@ islands[2].detailedViewLoopedAnimations[0] = gsap.timeline({
     repeat: -1,
     repeatDelay: 2
 })
-
     .to(islands[2].detailedViewEls.ball, {
         duration: .35,
         y: -17,
@@ -553,10 +549,134 @@ islands[2].detailedViewLoopedAnimations[1] = gsap.timeline({
     .to(islands[2].detailedViewEls.cyclist, {
         duration: .3,
         opacity: 0
-    }, '>-.3')
+    }, '>-.3');
+
+
+// Bay area
+
+let balloonsTravelTls = [], balloonsSwingTls = [];
+islands[3].balloons.forEach((b, idx) => {
+    let balloon = {
+        travel: b,
+        swing: b.querySelector('.balloon-swing'),
+    };
+    gsap.set(balloon.swing, {
+        transformOrigin: '50% 25%',
+    });
+
+    // balloon traveling animation
+    balloonsTravelTls[idx] =
+        gsap.timeline({
+            repeat: -1,
+        })
+            .to(balloon.travel, {
+                duration: 30,
+                motionPath: {
+                    path: islands[3].balloonsTrajectories[idx],
+                    align: islands[3].balloonsTrajectories[idx],
+                    alignOrigin: [0.5, 0.5]
+                },
+                ease: 'none'
+            });
+
+    // balloon swing animation
+    balloonsSwingTls[idx] =
+        gsap.timeline({
+            repeat: -1,
+            yoyo: true,
+        })
+            .to(balloon.travel, {
+                duration: 1,
+                rotation: -5,
+                ease: 'power1.inOut'
+            })
+            .to(balloon.travel, {
+                duration: 1,
+                rotation: 5,
+                ease: 'power1.inOut'
+            }, '>');
+});
 
 // LA
 islands[5].detailedViewLoopedAnimations[0] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    delay: 2,
+    repeatDelay: 3
+})
+    .to(islands[5].detailedViewEls.hollywood, {
+        duration: .2,
+        stagger: .1,
+        scaleY: 1.5,
+        transformOrigin: 'center center',
+        y: -8
+    }, 0)
+    .to(islands[5].detailedViewEls.hollywood, {
+        duration: .2,
+        stagger: .1,
+        scaleY: 1,
+        y: 0
+    }, .2);
+
+islands[5].detailedViewLoopedAnimations[1] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    delay: 4,
+    repeatDelay: 5
+})
+    .fromTo(islands[5].detailedViewEls.cyclist, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .fromTo(islands[5].detailedViewEls.cyclist, {
+        x: 20,
+    }, {
+        duration: 3.5,
+        x: -130,
+        ease: 'none'
+    }, 0)
+    .to(islands[5].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+    .set(islands[5].detailedViewEls.cyclist, {
+        scaleX: -1,
+        transformOrigin: 'center center',
+    }, 5)
+    .to(islands[5].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 1
+    }, 5)
+    .to(islands[5].detailedViewEls.cyclist, {
+        duration: 3.5,
+        x: 20,
+        ease: 'none'
+    }, 5)
+    .to(islands[5].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3');
+
+islands[5].detailedViewLoopedAnimations[2] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    delay: 3
+    repeatDelay: 3
+})
+    .to(islands[5].detailedViewEls.ball, {
+        duration: .35,
+        y: -17,
+        ease: 'power1.inOut'
+    })
+    .to(islands[5].detailedViewEls.ball, {
+        duration: 1.4,
+        y: 0,
+        ease: 'bounce'
+    });
+
+islands[5].detailedViewLoopedAnimations[3] = gsap.timeline({
     paused: true,
     repeat: -1,
 })
@@ -648,57 +768,62 @@ islands[5].detailedViewLoopedAnimations[0] = gsap.timeline({
 
 islands[6].detailedViewLoopedAnimations[0] = gsap.timeline({
     paused: true,
-    repeat: -1
+    repeat: -1,
+    delay: 3,
+    repeatDelay: 2
 })
+    .fromTo(islands[6].detailedViewEls.cyclist, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .fromTo(islands[6].detailedViewEls.cyclist, {
+        x: 40,
+    }, {
+        duration: 2,
+        x: -30,
+        ease: 'none'
+    }, 0)
+    .to(islands[6].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
 
+    .set(islands[6].detailedViewEls.cyclist, {
+        x: -10,
+        y: -338,
+    }, 3.5)
+    .fromTo(islands[6].detailedViewEls.cyclist, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 3.5)
+    .to(islands[6].detailedViewEls.cyclist, {
+        duration: 4,
+        x: -220,
+        ease: 'none'
+    }, 3.5)
+    .to(islands[6].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
 
-
-
-
-
-
-
-
-let balloonsTravelTls = [], balloonsSwingTls = [];
-
-islands[3].balloons.forEach((b, idx) => {
-    let balloon = {
-        travel: b,
-        swing: b.querySelector('.balloon-swing'),
-    };
-    gsap.set(balloon.swing, {
-        transformOrigin: '50% 25%',
-    });
-
-    // balloon traveling animation
-    balloonsTravelTls[idx] =
-        gsap.timeline({
-            repeat: -1,
-        })
-            .to(balloon.travel, {
-                duration: 30,
-                motionPath: {
-                    path: islands[3].balloonsTrajectories[idx],
-                    align: islands[3].balloonsTrajectories[idx],
-                    alignOrigin: [0.5, 0.5]
-                },
-                ease: 'none'
-            });
-
-    // balloon swing animation
-    balloonsSwingTls[idx] =
-        gsap.timeline({
-            repeat: -1,
-            yoyo: true,
-        })
-            .to(balloon.travel, {
-                duration: 1,
-                rotation: -5,
-                ease: 'power1.inOut'
-            })
-            .to(balloon.travel, {
-                duration: 1,
-                rotation: 5,
-                ease: 'power1.inOut'
-            }, '>');
-});
+    .set(islands[6].detailedViewEls.cyclist, {
+        scaleX: -1,
+        transformOrigin: 'center center',
+    }, 12)
+    .to(islands[6].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 1
+    }, 12)
+    .to(islands[6].detailedViewEls.cyclist, {
+        duration: 4,
+        x: -10,
+        ease: 'none'
+    }, 12)
+    .to(islands[6].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')

@@ -23,8 +23,8 @@ function addLADetailsToTimeline(tl, idx) {
         }, 0)
         .to(island.mapViewEls.bench, {
             duration: .5,
-            x: 20,
-            y: -20,
+            x: 35,
+            y: -30,
             scale: .32,
             transformOrigin: '0% 0%',
             ease: 'power1.inOut'
@@ -97,19 +97,6 @@ function addLADetailsToTimeline(tl, idx) {
             transformOrigin: 'center center'
         }, {
             duration: .4,
-            scaleY: 1,
-            transformOrigin: 'center center',
-            opacity: 1,
-            y: 0
-        }, 1.5)
-        .fromTo(island.detailedViewEls.hollywood, {
-            opacity: 0,
-            y: -50,
-            scaleY: 2,
-            transformOrigin: 'center center'
-        }, {
-            duration: .3,
-            stagger: .03,
             scaleY: 1,
             transformOrigin: 'center center',
             opacity: 1,

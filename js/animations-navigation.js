@@ -147,22 +147,22 @@ function addMapHidingToTimeline(tl) {
             duration: .3,
             opacity: 0
         }, 0)
+        .set(islands.map(v => v.highlight), {
+            attr: { 'stroke-width': 10 }
+        }, .2)
         .to(titles, {
             duration: .3,
             attr: {opacity: .5}
         }, .3)
         .set(zoomingControls, {
             display: 'block'
-        }, 1.5)
+        }, 3.2)
         .fromTo(zoomingControls, {
             opacity: 0
         }, {
             duration: .2,
             opacity: 1
-        }, 1.5)
-        .set(islands.map(v => v.highlight), {
-            attr: { 'stroke-width': 10 }
-        }, .2);
+        }, 3.2);
 }
 
 function addIslandSelectionToTimeline(tl, idx) {
