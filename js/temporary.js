@@ -1,6 +1,6 @@
-const shapesToBeBoxed = Array.from(document.querySelectorAll('.ttt > *'));
+const shapesToBeBoxed = Array.from(document.querySelectorAll('.ttt'));
 let outputString = '';
-const symbolName = 'mem-landscape-flower';
+const symbolName = 'mem-pumpkin-symbol';
 shapesToBeBoxed.forEach(b => {
     const box = b.getBBox();
 

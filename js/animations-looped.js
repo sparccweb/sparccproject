@@ -62,7 +62,7 @@ birdAnimations[1]
         duration: .1,
         opacity: 0
     }, '>-.1')
-    
+
     .set(birdWrapper, {
         rotation: 0,
         scaleX: -1,
@@ -277,7 +277,7 @@ beesAnimations[1]
 
 // Denver
 
-islands[1].detailedViewLoopedAnimations[0] = gsap.timeline({ 
+islands[1].detailedViewLoopedAnimations[0] = gsap.timeline({
     repeat: -1,
 })
     .timeScale(.4)
@@ -304,7 +304,7 @@ islands[1].detailedViewLoopedAnimations[0] = gsap.timeline({
         duration: .3,
         opacity: 0
     }, 7.7)
-    
+
     .to(islands[1].detailedViewEls.boat, {
         duration: .3,
         opacity: 1
@@ -611,6 +611,26 @@ islands[4].detailedViewLoopedAnimations[0] = gsap.timeline({
     })
 
 islands[4].detailedViewLoopedAnimations[1] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    delay: 3,
+})
+    .fromTo(islands[4].detailedViewEls.pumpkins, {
+        scale: 0,
+        transformOrigin: 'center center',
+    }, {
+        duration: .4,
+        stagger: .2,
+        scale: 1,
+        transformOrigin: 'center center',
+        ease: 'back(3).out'
+    }, 1)
+    .to(islands[4].detailedViewEls.pumpkins, {
+        duration: 2,
+        opacity: 0,
+    }, 4);
+
+islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
     paused: true,
     repeat: -1,
     delay: 6,
