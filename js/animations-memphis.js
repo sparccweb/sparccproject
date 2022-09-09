@@ -1,17 +1,14 @@
 function addMemphisDetailsToTimeline(tl, idx) {
     const island = islands[idx];
     tl
+        .call(() => {
+            birdAnimations[0].play();
+            birdAnimations[1].play();
+        })
         .to(birdWrapper, {
             duration: .2,
             opacity: 1
-        }, .6)
-        // .set(birdWrapper, {
-        //     opacity: 1
-        // }, 0)
-        // .set(birdAnimations, {
-        //     progress: 0,
-        //     timeScale: 1
-        // }, 0)
+        }, 0)
         .to('.bird-symbol-wrapper .fst-color', {
             duration: .2,
             fill: '#8e5221'
@@ -161,11 +158,8 @@ function hideMemphisDetailsToTimeline(tl, idx) {
             duration: .2,
             opacity: 0
         }, .5)
-        // .set(birdAnimations, {
-        //     timeScale: 0
-        // }, 1.5)
-        // .set(birdWrapper, {
-        //     duration: .2,
-        //     opacity: 0
-        // }, '>-.2')
+        .call(() => {
+            birdAnimations[0].pause();
+            birdAnimations[1].pause();
+        }, .5)
 }

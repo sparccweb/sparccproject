@@ -6,6 +6,7 @@ function setupLayout() {
     })
 }
 
+// Once the SlickPlan data is here
 
 fetch('./website-exported/sitemap.html').then((response) => {
     return response.text();
@@ -14,22 +15,19 @@ fetch('./website-exported/sitemap.html').then((response) => {
     createMapNavigationAnimations();
 
     loaderAnimation.play(0);
-    gsap.delayedCall(4.5, () => {
-        gsap.to(birdWrapper, {
-            duration: .2,
-            opacity: 0
-        })
+    gsap.delayedCall(5, () => {
+        birdAnimations[0].pause();
+        birdAnimations[1].pause();
     });
 
+    // Check if the URL contains the existing marker and go there if yes
     const modalCodeFromUrl = window.location.hash.substring(1);
     const islandCode = modalCodeFromUrl.slice(0, 1);
     const contentName = modalCodeFromUrl.slice(0, 3);
-
     const markerToFocus = document.querySelector('circle.clickable[data-popup-name="' + contentName + '"]');
-
     const island = islands.find(i => i.popupCode.toUpperCase() === islandCode.toUpperCase());
-    if (markerToFocus && island) {
 
+    if (markerToFocus && island) {
         view = views.i;
         const popup = island.popups.find(p => p.el === markerToFocus.parentElement);
 
@@ -134,16 +132,16 @@ islands.forEach((island, islandIdx) => {
         );
 
         if (view === views.m) {
+            island.hideIslandToMapAnimation.pause();
             island.mapToIslandAnimation.play(0);
         } else {
+            islands[activeIslandIdx].mapToIslandAnimation.pause();
             if (activeIslandIdx !== islandIdx) {
                 closeModal();
                 deselectMarkers();
-
                 updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
                 islandToIslandAnimation.play(.5);
             } else {
-
             }
         }
         
@@ -163,7 +161,9 @@ toMapBtn.addEventListener('click', () => {
     deselectMarkers();
     
     resetZoom(.5);
-    
+
+    islandToIslandAnimation.pause();
+    islands[activeIslandIdx].mapToIslandAnimation.pause();
     islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
     gsap.delayedCall(.5, () => {
         view = views.m;
