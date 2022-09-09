@@ -662,7 +662,7 @@ islands[5].detailedViewLoopedAnimations[1] = gsap.timeline({
 islands[5].detailedViewLoopedAnimations[2] = gsap.timeline({
     paused: true,
     repeat: -1,
-    delay: 3
+    delay: 3,
     repeatDelay: 3
 })
     .to(islands[5].detailedViewEls.ball, {
