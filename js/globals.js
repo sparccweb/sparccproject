@@ -289,6 +289,7 @@ const islands = [{
         toFade: Array.from(map.querySelectorAll('.memphis .detailed-view .to-fade > *')),
         toDrop: Array.from(map.querySelectorAll('.memphis .detailed-view .to-drop > *')),
         plane: map.querySelector('.memphis .detailed-view .plane'),
+        cyclist: map.querySelector('.memphis .detailed-view .cyclist'),
     },
     markersContainer: map.querySelector('.memphis .markers-container'),
     modalBack: map.querySelector('.memphis .modal-back'),
