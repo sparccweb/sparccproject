@@ -256,6 +256,7 @@ function closeModal() {
             gsap.set(modal, {
                 display: 'none'
             });
+            modalContentContainer.innerHTML = '';
         }
     });
 
