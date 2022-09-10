@@ -55,8 +55,12 @@
 
 
 .is-video .modal {
-    width: calc(100% - 20px);
-    max-width: 130vh;
+    width: calc(100% - 50px);
+    max-width: 100vh;
+    max-height: 80vh;
+    padding: 70px 10px 30px 10px;
+    background: var(--container-color);
+    border-color: #fff;
 }
 .is-video .modal .modal-content {
     position: relative;
@@ -157,7 +161,6 @@ a:focus {
     transform: rotate(-45deg);
 }
 .is-video .modal #close-modal-btn {
-    display: none;
 }
 
 
