@@ -218,7 +218,7 @@ const islands = [{
         plane: map.querySelector('.atlanta .detailed-view .plane'),
         bird: map.querySelector('.atlanta .detailed-view .bird'),
         ball: map.querySelector('.atlanta .detailed-view .person-ball'),
-        cyclist: map.querySelector('.atlanta .detailed-view .hijab-lady'),
+        cyclist: map.querySelector('.atlanta .detailed-view .cyclist'),
     },
     markersContainer: map.querySelector('.atlanta .markers-container'),
     modalBack: map.querySelector('.atlanta .modal-back'),
