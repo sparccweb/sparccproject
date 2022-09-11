@@ -786,7 +786,7 @@ islands[5].detailedViewLoopedAnimations[2] = gsap.timeline({
     paused: true,
     repeat: -1,
     delay: 3,
-    repeatDelay: 3
+    repeatDelay: 5
 })
     .to(islands[5].detailedViewEls.ball, {
         duration: .35,
@@ -800,6 +800,81 @@ islands[5].detailedViewLoopedAnimations[2] = gsap.timeline({
     });
 
 islands[5].detailedViewLoopedAnimations[3] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 2
+})
+    .to([ islands[5].detailedViewEls.carBody, islands[5].detailedViewEls.car ], {
+        duration: .3,
+        rotate: -1,
+        transformOrigin: '80% 60%',
+        ease: 'power1.inOut'
+    })
+    .to(islands[5].detailedViewEls.carBody, {
+        duration: .55,
+        rotate: 3,
+        ease: 'power1.inOut'
+    })
+    .to(islands[5].detailedViewEls.car, {
+        duration: .55,
+        rotate: 4,
+        ease: 'power1.inOut'
+    }, '<')
+    .to([ islands[5].detailedViewEls.carBody, islands[5].detailedViewEls.car ], {
+        duration: .4,
+        rotate: -1,
+        ease: 'power1.inOut'
+    })
+
+    .to(islands[5].detailedViewEls.carBody, {
+        duration: .55,
+        rotate: 1,
+        ease: 'power1.inOut'
+    })
+    .to(islands[5].detailedViewEls.car, {
+        duration: .55,
+        rotate: 2,
+        ease: 'power1.inOut'
+    }, '<')
+    .to([ islands[5].detailedViewEls.carBody, islands[5].detailedViewEls.car ], {
+        duration: .4,
+        rotate: -1,
+        ease: 'power1.inOut'
+    })
+
+    .to(islands[5].detailedViewEls.carBody, {
+        duration: .55,
+        rotate: .5,
+        ease: 'power1.inOut'
+    })
+    .to(islands[5].detailedViewEls.car, {
+        duration: .55,
+        rotate: 1,
+        ease: 'power1.inOut'
+    }, '<')
+    .to([ islands[5].detailedViewEls.carBody, islands[5].detailedViewEls.car ], {
+        duration: .4,
+        rotate: -1,
+        ease: 'power1.inOut'
+    })
+
+    .to(islands[5].detailedViewEls.carBody, {
+        duration: .55,
+        rotate: .2,
+        ease: 'power1.inOut'
+    })
+    .to(islands[5].detailedViewEls.car, {
+        duration: .55,
+        rotate: .5,
+        ease: 'power1.inOut'
+    }, '<')
+    .to([ islands[5].detailedViewEls.carBody, islands[5].detailedViewEls.car ], {
+        duration: .4,
+        rotate: 0,
+        ease: 'power1.inOut'
+    })
+
+islands[5].detailedViewLoopedAnimations[4] = gsap.timeline({
     paused: true,
     repeat: -1,
 })

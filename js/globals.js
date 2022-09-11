@@ -329,6 +329,7 @@ const islands = [{
         people: Array.from(map.querySelectorAll('.LA .detailed-view .people > *')),
         van: map.querySelector('.LA .detailed-view .van'),
         car: map.querySelector('.LA .detailed-view .car'),
+        carBody: map.querySelector('.LA .detailed-view .car-body'),
         whaleContainer: map.querySelector('.LA .detailed-view .whale-container'),
         whale: map.querySelector('.LA .detailed-view .whale'),
         surf: map.querySelector('.LA .detailed-view .surf-board'),
