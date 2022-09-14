@@ -54,8 +54,8 @@ function generateMarkers(html) {
             dotTitle.setAttributeNS(null, 'text-anchor', 'middle');
             dotTitle.setAttributeNS(null, 'font-size', '6');
             dotTitle.setAttributeNS(null, 'font-weight', '600');
-            dotTitle.setAttributeNS(null, 'x', 0);
-            dotTitle.setAttributeNS(null, 'y', .5 * markerSize[0]);
+            dotTitle.setAttributeNS(null, 'x', 16);
+            dotTitle.setAttributeNS(null, 'y', -8);
             dotTitle.setAttributeNS(null, 'fill', '#fff');
             dotTitle.innerHTML = popupData.name;
 
