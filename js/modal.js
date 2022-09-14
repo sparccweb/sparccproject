@@ -77,8 +77,10 @@ function generateMarkers(html) {
 
             if (popupData.type === 0) {
                 icon.setAttributeNS(null, 'href', '#play-icon-symbol');
-            } else {
+            } else if (popupData.type === 1) {
                 icon.setAttributeNS(null, 'href', '#info-icon-symbol');
+            } else {
+                icon.setAttributeNS(null, 'href', '#newspaper-icon-symbol');
             }
 
             gDot.appendChild(dotClickable);

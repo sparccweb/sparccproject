@@ -2,15 +2,15 @@
 //
 // Types:
 // 0 - video only,
-// 1 - text (scrollable or not)
-//
+// 1 - text short
+// 2 - text long
 // -------------------------------------
 
 
 const markersRef = {
     'A01': {
         pos: [813, 1505],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     'A02': {
@@ -75,13 +75,13 @@ const markersRef = {
     },
     'A14': {
         pos: [840, 1470],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
 
     'M01': {
         pos: [1445, 1532],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     'M02': {
@@ -137,7 +137,7 @@ const markersRef = {
 
     'B01': {
         pos: [1709, 800],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     'B02': {
@@ -172,13 +172,13 @@ const markersRef = {
     },
     'B08': {
         pos: [1735, 937],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
 
     'C01': {
         pos: [1946, 1487],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     'C02': {
@@ -193,7 +193,7 @@ const markersRef = {
     },
     'C04': {
         pos: [1917, 1538],
-        type: 1,
+        type: 2,
         labels: ['Capital', 'Health']
     },
     'C05': {
@@ -238,13 +238,13 @@ const markersRef = {
     },
     'C13': {
         pos: [1975, 1482],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     
     'D01': {
         pos: [407, 1212],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     'D02': {
@@ -254,7 +254,7 @@ const markersRef = {
     },
     'D03': {
         pos: [417, 1239],
-        type: 1,
+        type: 2,
         labels: ['Grant']
     },
     'D04': {
@@ -279,83 +279,83 @@ const markersRef = {
     },
     'D08': {
         pos: [488, 1202],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
 
     'G01': {
         pos: [1284, 1325],
-        type: 1,
+        type: 2,
         labels: ['Policy']
     },
     'G02': {
         pos: [1347, 1116],
-        type: 1,
+        type: 2,
         labels: ['Capital', 'Grant']
     },
     'G03': {
         pos: [1056, 1231],
-        type: 1,
+        type: 2,
         labels: ['Housing']
     },
     'G04': {
         pos: [1338, 1391],
-        type: 1,
+        type: 2,
         labels: ['Health']
     },
     'G05': {
         pos: [1437, 1281],
-        type: 1,
+        type: 2,
         labels: ['Economic Empowerment']
     },
     'G06': {
         pos: [1260, 1358],
-        type: 1,
+        type: 2,
         labels: ['Transporation']
     },
     'G07': {
         pos: [1111, 1133],
-        type: 1,
+        type: 2,
         labels: ['Health', 'Climate']
     },
     'G08': {
         pos: [1258, 1181],
-        type: 1,
+        type: 2,
         labels: ['Climate']
     },
     'G09': {
         pos: [1340, 1205],
-        type: 1,
+        type: 2,
         labels: ['Policy']
     },
     'G10': {
         pos: [1205, 1327],
-        type: 1,
+        type: 2,
         labels: ['Other']
     },
     'G11': {
         pos: [1318, 1149],
-        type: 1,
+        type: 2,
         labels: ['Capital']
     },
     'G12': {
         pos: [1206, 1371],
-        type: 1,
+        type: 2,
         labels: ['Other']
     },
     'G13': {
         pos: [1121, 1232],
-        type: 1,
+        type: 2,
         labels: ['Capital', 'Grants']
     },
     'G14': {
         pos: [1265, 1270],
-        type: 1,
+        type: 2,
         labels: ['Other']
     },
     'G15': {
         pos: [1387, 1144],
-        type: 1,
+        type: 2,
         labels: ['Capital']
     },
     'G16': {
@@ -366,7 +366,7 @@ const markersRef = {
 
     'L01': {
         pos: [1012, 846],
-        type: 1,
+        type: 2,
         labels: ['Site Story']
     },
     'L02': {
@@ -376,7 +376,7 @@ const markersRef = {
     },
     'L03': {
         pos: [1079, 830],
-        type: 1,
+        type: 2,
         labels: ['Grant', 'Transit']
     },
     'L04': {
