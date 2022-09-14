@@ -376,27 +376,27 @@ a:focus {
 .denver .marker .visible {
     fill: #526eb2;
 }
-[data-active-isdenvernd="denver"] .modal {
+[data-active-island="denver"] .modal {
     border-color: #526eb2;
 }
-[data-active-isdenvernd="denver"].is-video .modal {
+[data-active-island="denver"].is-video .modal {
     background: #526eb2;
 }
-[data-active-isdenvernd="denver"].is-video .modal #main h1 {
+[data-active-island="denver"].is-video .modal #main h1 {
     background-color: #526eb2;
 }
-[data-active-isdenvernd="denver"] .modal #main a {
+[data-active-island="denver"] .modal #main a {
     color: #526eb2;
 }
-[data-active-isdenvernd="denver"] a:focus {
+[data-active-island="denver"] a:focus {
     border-color: #526eb2;
 }
-[data-active-isdenvernd="denver"] .modal #close-modal-btn:before,
-[data-active-isdenvernd="denver"] .modal #close-modal-btn:after {
+[data-active-island="denver"] .modal #close-modal-btn:before,
+[data-active-island="denver"] .modal #close-modal-btn:after {
     background-color: #526eb2;
 }
-[data-active-isdenvernd="denver"] .modal #close-modal-btn:before,
-[data-active-isdenvernd="denver"] .modal #close-modal-btn:after {
+[data-active-island="denver"] .modal #close-modal-btn:before,
+[data-active-island="denver"] .modal #close-modal-btn:after {
     background-color: #526eb2;
 }
 
