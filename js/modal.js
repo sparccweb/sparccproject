@@ -59,16 +59,32 @@ function generateMarkers(html) {
             dotTitle.setAttributeNS(null, 'fill', '#fff');
             dotTitle.innerHTML = popupData.name;
 
+/*
             const dotAdditional = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
             dotAdditional.setAttributeNS(null, 'cx', 0);
             dotAdditional.setAttributeNS(null, 'cy', 0);
             dotAdditional.setAttributeNS(null, 'fill', popupData.type ? '#ffffff' : '#000000');
             dotAdditional.setAttributeNS(null, 'r', 1);
+*/
+
+
+            let icon = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+            icon.setAttributeNS(null, 'x', -6);
+            icon.setAttributeNS(null, 'y', -6);
+            icon.setAttributeNS(null, 'width', 12);
+            icon.setAttributeNS(null, 'height', 12);
+            icon.setAttributeNS(null, 'fill', '#fff');
+
+            if (popupData.type === 0) {
+                icon.setAttributeNS(null, 'href', '#play-icon-symbol');
+            } else {
+                icon.setAttributeNS(null, 'href', '#info-icon-symbol');
+            }
 
             gDot.appendChild(dotClickable);
             gDot.appendChild(dot);
             gDot.appendChild(dotTitle);
-            gDot.appendChild(dotAdditional);
+            gDot.appendChild(icon);
 
             popupData.el = gDot;
             island.popups.push(popupData);
