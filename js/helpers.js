@@ -13,3 +13,8 @@ const isImgLink = (url) => {
     return (url.match(/\.(gif|jpe?g|tiff?|png|webp|bmp)$/i) !== null);
 }
 
+const isPdfLink = (url) => {
+    url = '' + url;
+    return (url.match(/\.(pdf)$/i) !== null);
+}
+

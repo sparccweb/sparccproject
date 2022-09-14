@@ -157,10 +157,10 @@ function updateModalContent(URL, contentType, islandIdx) {
             // text content
             const links = Array.from(main.querySelectorAll('a'));
             links.forEach(l => {
-                const imgURL = l.getAttribute('href');
-                if (isImgLink(imgURL)) {
+                const linkURL = l.getAttribute('href');
+                if (isImgLink(linkURL)) {
                     const newImage = document.createElement('img');
-                    newImage.setAttribute('src', './website-exported/' + imgURL);
+                    newImage.setAttribute('src', './website-exported/' + linkURL);
 
                     if (l.nextSibling.tagName) {
                         if (l.nextSibling.tagName.toUpperCase() === 'BR') {
@@ -169,6 +169,11 @@ function updateModalContent(URL, contentType, islandIdx) {
                         }
                     }
                     l.parentNode.replaceChild(newImage, l);
+                } else if (isPdfLink(linkURL)) {
+                    const newImage = document.createElement('img');
+                    newImage.classList.add('pdf-inline-icon');
+                    newImage.setAttribute('src', './img/pdf-icon.svg');
+                    l.parentNode.insertBefore(newImage, l.nextSibling);
                 }
             });
 

@@ -92,6 +92,13 @@
 .modal img {
     margin-bottom: 10px;
 }
+.modal img.pdf-inline-icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    margin: 0 0 -0.1em 0;
+    padding: 0 0.3em 0 0.1em;
+}
 .modal #main h1,
 .modal #main h2,
 .modal #main h3,
@@ -125,6 +132,7 @@ a:focus {
     border: 1px solid #000;
     outline: none;
 }
+
 
 
 
