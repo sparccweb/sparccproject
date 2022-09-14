@@ -115,7 +115,7 @@
 }
 .modal #main h1 {
     margin: 0;
-    padding: 30px 30px 20px 20px;
+    padding: 30px 90px 20px 20px;
     color: white;
 }
 .modal #main a {
@@ -195,7 +195,7 @@ a:focus {
 [data-active-island="central"].is-video .modal {
     background: #000;
 }
-[data-active-island="central"].is-video .modal #main h1 {
+[data-active-island="central"] .modal #main h1 {
     background-color: #000;
 }
 [data-active-island="central"] .modal #main a {
@@ -226,7 +226,7 @@ a:focus {
 [data-active-island="bay"].is-video .modal {
     background: #05b7c9;
 }
-[data-active-island="bay"].is-video .modal #main h1 {
+[data-active-island="bay"] .modal #main h1 {
     background-color: #05b7c9;
 }
 [data-active-island="bay"] .modal #main a {
@@ -257,7 +257,7 @@ a:focus {
 [data-active-island="atlanta"].is-video .modal {
     background: #327484;
 }
-[data-active-island="atlanta"].is-video .modal #main h1 {
+[data-active-island="atlanta"] .modal #main h1 {
     background-color: #327484;
 }
 [data-active-island="atlanta"] .modal #main a {
@@ -289,7 +289,7 @@ a:focus {
 [data-active-island="memphis"].is-video .modal {
     background: #ffe180;
 }
-[data-active-island="memphis"].is-video .modal #main h1 {
+[data-active-island="memphis"] .modal #main h1 {
     background-color: #ffe180;
 }
 [data-active-island="memphis"] .modal #main a {
@@ -319,7 +319,7 @@ a:focus {
 [data-active-island="LA"].is-video .modal {
     background: #c15959;
 }
-[data-active-island="LA"].is-video .modal #main h1 {
+[data-active-island="LA"] .modal #main h1 {
     background-color: #c15959;
 }
 [data-active-island="LA"] .modal #main a {
@@ -349,7 +349,7 @@ a:focus {
 [data-active-island="chicago"].is-video .modal {
     background: #42726b;
 }
-[data-active-island="chicago"].is-video .modal #main h1 {
+[data-active-island="chicago"] .modal #main h1 {
     background-color: #42726b;
 }
 [data-active-island="chicago"] .modal #main a {
@@ -382,7 +382,7 @@ a:focus {
 [data-active-island="denver"].is-video .modal {
     background: #526eb2;
 }
-[data-active-island="denver"].is-video .modal #main h1 {
+[data-active-island="denver"] .modal #main h1 {
     background-color: #526eb2;
 }
 [data-active-island="denver"] .modal #main a {
