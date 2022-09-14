@@ -26,11 +26,11 @@
 }
 .modal {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
-    border: 4px solid var(--container-color);
     position: relative;
     width: calc(100% - 50px);
     max-height: calc(100% - 20px);
     background: #FFF;
+    border: 4px solid #000;
     border-radius: 30px;
     display: none;
     overflow: hidden;
@@ -59,7 +59,6 @@
     max-width: 100vh;
     max-height: 80vh;
     padding: 70px 10px 30px 10px;
-    background: var(--container-color);
     border-color: #fff;
 }
 .is-video .modal .modal-content {
@@ -110,11 +109,9 @@
 .modal #main h1 {
     margin: 0;
     padding: 30px 30px 20px 20px;
-    background-color: var(--container-color);
     color: white;
 }
 .modal #main a {
-    color: var(--container-color);
     font-weight: bold;
     text-decoration: underline;
 }
@@ -125,7 +122,7 @@
     color: #000000;
 }
 a:focus {
-    border: 1px solid var(--container-color);
+    border: 1px solid #000;
     outline: none;
 }
 
@@ -152,15 +149,12 @@ a:focus {
     content: ' ';
     height: 29px;
     width: 4px;
-    background-color: var(--container-color);
 }
 .modal #close-modal-btn:before {
     transform: rotate(45deg);
 }
 .modal #close-modal-btn:after {
     transform: rotate(-45deg);
-}
-.is-video .modal #close-modal-btn {
 }
 
 
@@ -175,25 +169,339 @@ a:focus {
 .marker text {
     display: none;
 }
+
+
+/* ------------------------------------------ */
+/* Central color palette */
+
 .central .marker .visible {
     fill: #000;
 }
-.denver .marker .visible {
-    fill: #f00;
+[data-active-island="central"] .modal {
+    border-color: #000;
 }
-.atlanta .marker .visible {
-    fill: #000;
+[data-active-island="central"].is-video .modal {
+    background: #000;
 }
-.memphis .marker .visible {
-    fill: purple;
+[data-active-island="central"].is-video .modal #main h1 {
+    background-color: #000;
 }
-.LA .marker .visible {
-    fill: #EDF008;
+[data-active-island="central"] .modal #main a {
+    color: #000;
 }
-.bay .marker .visible {
-    fill: #EDF008;
+[data-active-island="central"] a:focus {
+    border-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
 }
 
+
+/* ------------------------------------------ */
+/* Central color palette */
+
+.central .marker .visible {
+    fill: #000;
+}
+[data-active-island="central"] .modal {
+    border-color: #000;
+}
+[data-active-island="central"].is-video .modal {
+    background: #000;
+}
+[data-active-island="central"].is-video .modal #main h1 {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #main a {
+    color: #000;
+}
+[data-active-island="central"] a:focus {
+    border-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+
+
+/* ------------------------------------------ */
+/* Central color palette */
+
+.central .marker .visible {
+    fill: #000;
+}
+[data-active-island="central"] .modal {
+    border-color: #000;
+}
+[data-active-island="central"].is-video .modal {
+    background: #000;
+}
+[data-active-island="central"].is-video .modal #main h1 {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #main a {
+    color: #000;
+}
+[data-active-island="central"] a:focus {
+    border-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+
+
+/* ------------------------------------------ */
+/* Central color palette */
+
+.central .marker .visible {
+    fill: #000;
+}
+[data-active-island="central"] .modal {
+    border-color: #000;
+}
+[data-active-island="central"].is-video .modal {
+    background: #000;
+}
+[data-active-island="central"].is-video .modal #main h1 {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #main a {
+    color: #000;
+}
+[data-active-island="central"] a:focus {
+    border-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+[data-active-island="central"] .modal #close-modal-btn:before,
+[data-active-island="central"] .modal #close-modal-btn:after {
+    background-color: #000;
+}
+
+
+/* ------------------------------------------ */
+/* Bay color palette */
+
+.bay .marker .visible {
+    fill: #05b7c9;
+}
+[data-active-island="bay"] .modal {
+    border-color: #05b7c9;
+}
+[data-active-island="bay"].is-video .modal {
+    background: #05b7c9;
+}
+[data-active-island="bay"].is-video .modal #main h1 {
+    background-color: #05b7c9;
+}
+[data-active-island="bay"] .modal #main a {
+    color: #05b7c9;
+}
+[data-active-island="bay"] a:focus {
+    border-color: #05b7c9;
+}
+[data-active-island="bay"] .modal #close-modal-btn:before,
+[data-active-island="bay"] .modal #close-modal-btn:after {
+    background-color: #05b7c9;
+}
+[data-active-island="bay"] .modal #close-modal-btn:before,
+[data-active-island="bay"] .modal #close-modal-btn:after {
+    background-color: #05b7c9;
+}
+
+
+/* ------------------------------------------ */
+/* Atlanta color palette */
+
+.atlanta .marker .visible {
+    fill: #327484;
+}
+[data-active-island="atlanta"] .modal {
+    border-color: #327484;
+}
+[data-active-island="atlanta"].is-video .modal {
+    background: #327484;
+}
+[data-active-island="atlanta"].is-video .modal #main h1 {
+    background-color: #327484;
+}
+[data-active-island="atlanta"] .modal #main a {
+    color: #327484;
+}
+[data-active-island="atlanta"] a:focus {
+    border-color: #327484;
+}
+[data-active-island="atlanta"] .modal #close-modal-btn:before,
+[data-active-island="atlanta"] .modal #close-modal-btn:after {
+    background-color: #327484;
+}
+[data-active-island="atlanta"] .modal #close-modal-btn:before,
+[data-active-island="atlanta"] .modal #close-modal-btn:after {
+    background-color: #327484;
+}
+
+
+
+/* ------------------------------------------ */
+/* Memphis color palette */
+
+.memphis .marker .visible {
+    fill: #ffe180;
+}
+[data-active-island="memphis"] .modal {
+    border-color: #ffe180;
+}
+[data-active-island="memphis"].is-video .modal {
+    background: #ffe180;
+}
+[data-active-island="memphis"].is-video .modal #main h1 {
+    background-color: #ffe180;
+}
+[data-active-island="memphis"] .modal #main a {
+    color: #ffe180;
+}
+[data-active-island="memphis"] a:focus {
+    border-color: #ffe180;
+}
+[data-active-island="memphis"] .modal #close-modal-btn:before,
+[data-active-island="memphis"] .modal #close-modal-btn:after {
+    background-color: #ffe180;
+}
+[data-active-island="memphis"] .modal #close-modal-btn:before,
+[data-active-island="memphis"] .modal #close-modal-btn:after {
+    background-color: #ffe180;
+}
+
+/* ------------------------------------------ */
+/* LA color palette */
+
+.LA .marker .visible {
+    fill: #c15959;
+}
+[data-active-island="LA"] .modal {
+    border-color: #c15959;
+}
+[data-active-island="LA"].is-video .modal {
+    background: #c15959;
+}
+[data-active-island="LA"].is-video .modal #main h1 {
+    background-color: #c15959;
+}
+[data-active-island="LA"] .modal #main a {
+    color: #c15959;
+}
+[data-active-island="LA"] a:focus {
+    border-color: #c15959;
+}
+[data-active-island="LA"] .modal #close-modal-btn:before,
+[data-active-island="LA"] .modal #close-modal-btn:after {
+    background-color: #c15959;
+}
+[data-active-island="LA"] .modal #close-modal-btn:before,
+[data-active-island="LA"] .modal #close-modal-btn:after {
+    background-color: #c15959;
+}
+
+/* ------------------------------------------ */
+/* Chicago color palette */
+
+.chicago .marker .visible {
+    fill: #42726b;
+}
+[data-active-ischicagond="chicago"] .modal {
+    border-color: #42726b;
+}
+[data-active-ischicagond="chicago"].is-video .modal {
+    background: #42726b;
+}
+[data-active-ischicagond="chicago"].is-video .modal #main h1 {
+    background-color: #42726b;
+}
+[data-active-ischicagond="chicago"] .modal #main a {
+    color: #42726b;
+}
+[data-active-ischicagond="chicago"] a:focus {
+    border-color: #42726b;
+}
+[data-active-ischicagond="chicago"] .modal #close-modal-btn:before,
+[data-active-ischicagond="chicago"] .modal #close-modal-btn:after {
+    background-color: #42726b;
+}
+[data-active-ischicagond="chicago"] .modal #close-modal-btn:before,
+[data-active-ischicagond="chicago"] .modal #close-modal-btn:after {
+    background-color: #42726b;
+}
+
+
+
+
+/* ------------------------------------------ */
+/* denver color palette */
+
+.denver .marker .visible {
+    fill: #526eb2;
+}
+[data-active-isdenvernd="denver"] .modal {
+    border-color: #526eb2;
+}
+[data-active-isdenvernd="denver"].is-video .modal {
+    background: #526eb2;
+}
+[data-active-isdenvernd="denver"].is-video .modal #main h1 {
+    background-color: #526eb2;
+}
+[data-active-isdenvernd="denver"] .modal #main a {
+    color: #526eb2;
+}
+[data-active-isdenvernd="denver"] a:focus {
+    border-color: #526eb2;
+}
+[data-active-isdenvernd="denver"] .modal #close-modal-btn:before,
+[data-active-isdenvernd="denver"] .modal #close-modal-btn:after {
+    background-color: #526eb2;
+}
+[data-active-isdenvernd="denver"] .modal #close-modal-btn:before,
+[data-active-isdenvernd="denver"] .modal #close-modal-btn:after {
+    background-color: #526eb2;
+}
+
+
+
+
+.atlanta .marker .visible {
+    fill: #327484;
+}
+.bay .marker .visible {
+    fill: #05b7c9;
+}
+.memphis .marker .visible {
+    fill: #ffe180;
+}
+.LA .marker .visible {
+    fill: #c15959;
+}
+.chicago .marker .visible {
+    fill: #42726b;
+}
+.denver .marker .visible {
+    fill: #526eb2;
+}
 
 
 

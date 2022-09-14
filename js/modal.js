@@ -101,7 +101,6 @@ function generateMarkers(html) {
         island.markerPulsingTween = gsap.to(island.markersContainer.querySelectorAll('.marker .visible'), {
             duration: .7,
             attr: { 'r' : .8 * markerSize[1] },
-            opacity: .6,
             ease: 'power1.inOut',
             repeat: -1,
             yoyo: true,
@@ -207,6 +206,7 @@ function updateModalContent(URL, contentType, islandIdx) {
             modalContainer.classList.add('is-video');
         }
 
+        modalContainer.setAttribute('data-active-island', islands[islandIdx].name);
         openModal(islandIdx);
 
     }).catch((err) => {
