@@ -173,7 +173,7 @@ function updateModalContent(URL, contentType, islandIdx) {
                     const newImage = document.createElement('img');
                     newImage.classList.add('pdf-inline-icon');
                     newImage.setAttribute('src', './img/pdf-icon.svg');
-                    l.parentNode.insertBefore(newImage, l.nextSibling);
+                    l.parentNode.insertBefore(newImage, l);
                 }
             });
 
