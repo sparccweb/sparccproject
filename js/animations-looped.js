@@ -967,61 +967,61 @@ islands[5].detailedViewLoopedAnimations[4] = gsap.timeline({
 islands[6].detailedViewLoopedAnimations[0] = gsap.timeline({
     paused: true,
     repeat: -1,
-    delay: 3,
-    repeatDelay: 2
+    // delay: 3,
+    // repeatDelay: 2
 })
-    .fromTo(islands[6].detailedViewEls.cyclist, {
+    .fromTo(islands[6].detailedViewEls.bus, {
         opacity: 0
     }, {
         duration: .3,
         opacity: 1
     }, 0)
-    .fromTo(islands[6].detailedViewEls.cyclist, {
+    .fromTo(islands[6].detailedViewEls.bus, {
         x: 40,
     }, {
-        duration: 2,
-        x: -30,
+        duration: 3,
+        x: -60,
         ease: 'none'
     }, 0)
-    .to(islands[6].detailedViewEls.cyclist, {
+    .to(islands[6].detailedViewEls.bus, {
         duration: .3,
         opacity: 0
     }, '>-.3')
 
-    .set(islands[6].detailedViewEls.cyclist, {
-        x: -10,
-        y: -338,
+    .set(islands[6].detailedViewEls.bus, {
+        x: -50,
+        y: -310,
     }, 3.5)
-    .fromTo(islands[6].detailedViewEls.cyclist, {
+    .fromTo(islands[6].detailedViewEls.bus, {
         opacity: 0
     }, {
         duration: .3,
         opacity: 1
     }, 3.5)
-    .to(islands[6].detailedViewEls.cyclist, {
+    .to(islands[6].detailedViewEls.bus, {
         duration: 4,
-        x: -220,
+        x: -245,
         ease: 'none'
     }, 3.5)
-    .to(islands[6].detailedViewEls.cyclist, {
+    .to(islands[6].detailedViewEls.bus, {
         duration: .3,
         opacity: 0
     }, '>-.3')
 
-    .set(islands[6].detailedViewEls.cyclist, {
+    .set(islands[6].detailedViewEls.bus, {
         scaleX: -1,
         transformOrigin: 'center center',
     }, 12)
-    .to(islands[6].detailedViewEls.cyclist, {
+    .to(islands[6].detailedViewEls.bus, {
         duration: .3,
         opacity: 1
     }, 12)
-    .to(islands[6].detailedViewEls.cyclist, {
+    .to(islands[6].detailedViewEls.bus, {
         duration: 4,
-        x: -10,
+        x: -40,
         ease: 'none'
     }, 12)
-    .to(islands[6].detailedViewEls.cyclist, {
+    .to(islands[6].detailedViewEls.bus, {
         duration: .3,
         opacity: 0
     }, '>-.3');

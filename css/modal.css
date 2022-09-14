@@ -179,97 +179,8 @@ a:focus {
 }
 
 
-/* ------------------------------------------ */
-/* Central color palette */
-
-.central .marker .visible {
-    fill: #000;
-}
-[data-active-island="central"] .modal {
-    border-color: #000;
-}
-[data-active-island="central"].is-video .modal {
-    background: #000;
-}
-[data-active-island="central"].is-video .modal #main h1 {
-    background-color: #000;
-}
-[data-active-island="central"] .modal #main a {
-    color: #000;
-}
-[data-active-island="central"] a:focus {
-    border-color: #000;
-}
-[data-active-island="central"] .modal #close-modal-btn:before,
-[data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
-}
-[data-active-island="central"] .modal #close-modal-btn:before,
-[data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
-}
 
 
-/* ------------------------------------------ */
-/* Central color palette */
-
-.central .marker .visible {
-    fill: #000;
-}
-[data-active-island="central"] .modal {
-    border-color: #000;
-}
-[data-active-island="central"].is-video .modal {
-    background: #000;
-}
-[data-active-island="central"].is-video .modal #main h1 {
-    background-color: #000;
-}
-[data-active-island="central"] .modal #main a {
-    color: #000;
-}
-[data-active-island="central"] a:focus {
-    border-color: #000;
-}
-[data-active-island="central"] .modal #close-modal-btn:before,
-[data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
-}
-[data-active-island="central"] .modal #close-modal-btn:before,
-[data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
-}
-
-
-/* ------------------------------------------ */
-/* Central color palette */
-
-.central .marker .visible {
-    fill: #000;
-}
-[data-active-island="central"] .modal {
-    border-color: #000;
-}
-[data-active-island="central"].is-video .modal {
-    background: #000;
-}
-[data-active-island="central"].is-video .modal #main h1 {
-    background-color: #000;
-}
-[data-active-island="central"] .modal #main a {
-    color: #000;
-}
-[data-active-island="central"] a:focus {
-    border-color: #000;
-}
-[data-active-island="central"] .modal #close-modal-btn:before,
-[data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
-}
-[data-active-island="central"] .modal #close-modal-btn:before,
-[data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
-}
 
 
 /* ------------------------------------------ */
@@ -432,27 +343,27 @@ a:focus {
 .chicago .marker .visible {
     fill: #42726b;
 }
-[data-active-ischicagond="chicago"] .modal {
+[data-active-island="chicago"] .modal {
     border-color: #42726b;
 }
-[data-active-ischicagond="chicago"].is-video .modal {
+[data-active-island="chicago"].is-video .modal {
     background: #42726b;
 }
-[data-active-ischicagond="chicago"].is-video .modal #main h1 {
+[data-active-island="chicago"].is-video .modal #main h1 {
     background-color: #42726b;
 }
-[data-active-ischicagond="chicago"] .modal #main a {
+[data-active-island="chicago"] .modal #main a {
     color: #42726b;
 }
-[data-active-ischicagond="chicago"] a:focus {
+[data-active-island="chicago"] a:focus {
     border-color: #42726b;
 }
-[data-active-ischicagond="chicago"] .modal #close-modal-btn:before,
-[data-active-ischicagond="chicago"] .modal #close-modal-btn:after {
+[data-active-island="chicago"] .modal #close-modal-btn:before,
+[data-active-island="chicago"] .modal #close-modal-btn:after {
     background-color: #42726b;
 }
-[data-active-ischicagond="chicago"] .modal #close-modal-btn:before,
-[data-active-ischicagond="chicago"] .modal #close-modal-btn:after {
+[data-active-island="chicago"] .modal #close-modal-btn:before,
+[data-active-island="chicago"] .modal #close-modal-btn:after {
     background-color: #42726b;
 }
 
