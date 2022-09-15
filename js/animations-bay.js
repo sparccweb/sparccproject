@@ -98,11 +98,11 @@ function addBayDetailsToTimeline(tl, idx) {
         }, 0)
         .fromTo(island.detailedViewEls.ship, {
             x: -300,
-            y: 20
+            y: 90
         }, {
             duration: 5,
             x: 0,
-            y: 20
+            y: 90
         }, 0)
         .fromTo(island.detailedViewEls.ship, {
             opacity: 0

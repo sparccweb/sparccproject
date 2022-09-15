@@ -115,6 +115,10 @@ const peopleTrdColoredElements = document.querySelectorAll('.trd-color');
 const craneFstColoredElements = document.querySelectorAll('.crane-fst-color');
 const craneScdColoredElements = document.querySelectorAll('.crane-scd-color');
 
+const shipFstColoredElements = document.querySelectorAll('.ship-fst-color');
+const shipScdColoredElements = document.querySelectorAll('.ship-scd-color');
+const shipTrdColoredElements = document.querySelectorAll('.ship-trd-color');
+
 
 const parser = new DOMParser();
 
@@ -238,7 +242,7 @@ const islands = [{
         map.querySelector('.island-back.bay .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#168c99', '#009fb7', '#05b7c9' ],
-    buildingColors: [ '#bf7736', '#ed9a4f' ],
+    buildingColors: [ '#bf7736', '#d88241', '#ed9a4f' ],
     content: map.querySelector('.island-content.bay'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.bay .map-view .to-scale > *')),
@@ -357,7 +361,7 @@ const islands = [{
         map.querySelector('.island-back.chicago .land-shadow').getAttribute('fill'),
     ],
     peopleColors: [ '#865ebf', '#9d75cb', '#b08de2' ],
-    buildingColors: [ '#8e2a32', '#99414c' ],
+    buildingColors: [ '#8e2a32', '#99414c', '#b26672' ],
     content: map.querySelector('.island-content.chicago'),
     mapViewEls: {
         toScale: Array.from(map.querySelectorAll('.chicago .map-view .to-scale > *')),

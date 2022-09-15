@@ -190,6 +190,21 @@ function addIslandSelectionToTimeline(tl, idx) {
                 attr: { fill: island.buildingColors[1] }
             }, .5)
     }
+    if (island.name === 'bay' || island.name === 'chicago') {
+        tl
+            .to(shipFstColoredElements, {
+                duration: .1,
+                attr: { fill: island.buildingColors[0] }
+            }, 0)
+            .to(shipScdColoredElements, {
+                duration: .1,
+                attr: { fill: island.buildingColors[1] }
+            }, 0)
+            .to(shipTrdColoredElements, {
+                duration: .1,
+                attr: { fill: island.buildingColors[2] }
+            }, 0)
+    }
 
     tl
         .to(island.sea, {
