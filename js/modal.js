@@ -59,15 +59,6 @@ function generateMarkers(html) {
             dotTitle.setAttributeNS(null, 'fill', '#fff');
             dotTitle.innerHTML = popupData.name;
 
-/*
-            const dotAdditional = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            dotAdditional.setAttributeNS(null, 'cx', 0);
-            dotAdditional.setAttributeNS(null, 'cy', 0);
-            dotAdditional.setAttributeNS(null, 'fill', popupData.type ? '#ffffff' : '#000000');
-            dotAdditional.setAttributeNS(null, 'r', 1);
-*/
-
-
             let icon = document.createElementNS('http://www.w3.org/2000/svg', 'use');
             icon.setAttributeNS(null, 'x', -6);
             icon.setAttributeNS(null, 'y', -6);
@@ -171,7 +162,7 @@ function updateModalContent(URL, contentType, islandIdx) {
         const doc = parser.parseFromString(html, 'text/html');
         const main = doc.querySelector('#main');
 
-        if (contentType === 1) {
+        if (contentType !== 0) {
             // text content
             const links = Array.from(main.querySelectorAll('a'));
             links.forEach(l => {
@@ -205,9 +196,8 @@ function updateModalContent(URL, contentType, islandIdx) {
             modalContentContainer.append(main);
             modalContainer.classList.remove('is-video');
 
-        } else if (contentType === 0) {
-
-
+        } else {
+            
             let iframeProvided;
             if (main.querySelector('pre')) {
                 iframeProvided = main.querySelector('pre').innerHTML;
