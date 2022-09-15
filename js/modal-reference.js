@@ -319,7 +319,7 @@ const markersRef = {
         labels: ['Health', 'Climate']
     },
     'G08': {
-        pos: [1258, 1181],
+        pos: [1248, 1166],
         type: 2,
         labels: ['Climate']
     },
@@ -334,7 +334,7 @@ const markersRef = {
         labels: ['Other']
     },
     'G11': {
-        pos: [1318, 1149],
+        pos: [1290, 1163],
         type: 2,
         labels: ['Capital']
     },
@@ -359,7 +359,7 @@ const markersRef = {
         labels: ['Capital']
     },
     'G16': {
-        pos: [1260, 1090],
+        pos: [1254, 1093],
         type: 0,
         labels: ['Other']
     },

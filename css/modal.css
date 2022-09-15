@@ -110,7 +110,7 @@
 .modal #main h1 {
     margin: 0;
     padding: 30px 90px 20px 20px;
-    color: white;
+    color: #fff;
 }
 .modal #main a {
     font-weight: bold;
@@ -181,184 +181,207 @@ a:focus {
 /* Central color palette */
 
 .central .marker .visible {
-    fill: #000;
+    fill: #ffe719;
+}
+.central .marker use {
+    fill: #000000;
+}
+.central .marker.marker-circle-selected circle.clickable,
+.central .marker circle.clickable:hover {
+    stroke: #000000;
 }
 [data-active-island="central"] .modal {
-    border-color: #000;
+    border-color: #ffe719;
 }
 [data-active-island="central"].is-video .modal {
-    background: #000;
+    background: #ffe719;
 }
 [data-active-island="central"] .modal #main h1 {
-    background-color: #000;
+    background-color: #ffe719;
 }
 [data-active-island="central"] .modal #main a {
-    color: #000;
+    color: #ffe719;
 }
 [data-active-island="central"] a:focus {
-    border-color: #000;
+    border-color: #ffe719;
 }
 [data-active-island="central"] .modal #close-modal-btn:before,
 [data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
+    background-color: #ffe719;
 }
 [data-active-island="central"] .modal #close-modal-btn:before,
 [data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #000;
+    background-color: #ffe719;
 }
-
+[data-active-island="central"] .modal #main h1 {
+    color: #333333;
+}
 
 /* ------------------------------------------ */
 /* Bay color palette */
 
 .bay .marker .visible {
-    fill: #05b7c9;
+    fill: #34292b;
 }
 [data-active-island="bay"] .modal {
-    border-color: #05b7c9;
+    border-color: #34292b;
 }
 [data-active-island="bay"].is-video .modal {
-    background: #05b7c9;
+    background: #34292b;
 }
 [data-active-island="bay"] .modal #main h1 {
-    background-color: #05b7c9;
+    background-color: #34292b;
 }
 [data-active-island="bay"] .modal #main a {
-    color: #05b7c9;
+    color: #34292b;
 }
 [data-active-island="bay"] a:focus {
-    border-color: #05b7c9;
+    border-color: #34292b;
 }
 [data-active-island="bay"] .modal #close-modal-btn:before,
 [data-active-island="bay"] .modal #close-modal-btn:after {
-    background-color: #05b7c9;
+    background-color: #34292b;
 }
 [data-active-island="bay"] .modal #close-modal-btn:before,
 [data-active-island="bay"] .modal #close-modal-btn:after {
-    background-color: #05b7c9;
+    background-color: #34292b;
 }
-
+.bay .marker .visible {
+    fill: #34292b;
+}
 
 /* ------------------------------------------ */
 /* Atlanta color palette */
 
 .atlanta .marker .visible {
-    fill: #327484;
+    fill: #ffd900;
+}
+.atlanta .marker use {
+    fill: #000000;
+}
+.atlanta .marker.marker-circle-selected circle.clickable,
+.atlanta .marker circle.clickable:hover {
+    stroke: #000000;
 }
 [data-active-island="atlanta"] .modal {
-    border-color: #327484;
+    border-color: #ffd900;
 }
 [data-active-island="atlanta"].is-video .modal {
-    background: #327484;
+    background: #ffd900;
 }
 [data-active-island="atlanta"] .modal #main h1 {
-    background-color: #327484;
+    background-color: #ffd900;
 }
 [data-active-island="atlanta"] .modal #main a {
-    color: #327484;
+    color: #ffd900;
 }
 [data-active-island="atlanta"] a:focus {
-    border-color: #327484;
+    border-color: #ffd900;
 }
 [data-active-island="atlanta"] .modal #close-modal-btn:before,
 [data-active-island="atlanta"] .modal #close-modal-btn:after {
-    background-color: #327484;
+    background-color: #ffd900;
 }
 [data-active-island="atlanta"] .modal #close-modal-btn:before,
 [data-active-island="atlanta"] .modal #close-modal-btn:after {
-    background-color: #327484;
+    background-color: #ffd900;
 }
-
+[data-active-island="atlanta"] .modal #main h1 {
+    color: #333333;
+}
 
 
 /* ------------------------------------------ */
 /* Memphis color palette */
 
 .memphis .marker .visible {
-    fill: #ffe180;
+    fill: #3962ab;
 }
 [data-active-island="memphis"] .modal {
-    border-color: #ffe180;
+    border-color: #3962ab;
 }
 [data-active-island="memphis"].is-video .modal {
-    background: #ffe180;
+    background: #3962ab;
 }
 [data-active-island="memphis"] .modal #main h1 {
-    background-color: #ffe180;
+    background-color: #3962ab;
 }
 [data-active-island="memphis"] .modal #main a {
-    color: #ffe180;
+    color: #3962ab;
 }
 [data-active-island="memphis"] a:focus {
-    border-color: #ffe180;
+    border-color: #3962ab;
 }
 [data-active-island="memphis"] .modal #close-modal-btn:before,
 [data-active-island="memphis"] .modal #close-modal-btn:after {
-    background-color: #ffe180;
+    background-color: #3962ab;
 }
 [data-active-island="memphis"] .modal #close-modal-btn:before,
 [data-active-island="memphis"] .modal #close-modal-btn:after {
-    background-color: #ffe180;
+    background-color: #3962ab;
 }
 
 /* ------------------------------------------ */
 /* LA color palette */
 
 .LA .marker .visible {
-    fill: #c15959;
+    fill: #ee251d;
 }
 [data-active-island="LA"] .modal {
-    border-color: #c15959;
+    border-color: #ee251d;
 }
 [data-active-island="LA"].is-video .modal {
-    background: #c15959;
+    background: #ee251d;
 }
 [data-active-island="LA"] .modal #main h1 {
-    background-color: #c15959;
+    background-color: #ee251d;
 }
 [data-active-island="LA"] .modal #main a {
-    color: #c15959;
+    color: #ee251d;
 }
 [data-active-island="LA"] a:focus {
-    border-color: #c15959;
+    border-color: #ee251d;
 }
 [data-active-island="LA"] .modal #close-modal-btn:before,
 [data-active-island="LA"] .modal #close-modal-btn:after {
-    background-color: #c15959;
+    background-color: #ee251d;
 }
 [data-active-island="LA"] .modal #close-modal-btn:before,
 [data-active-island="LA"] .modal #close-modal-btn:after {
-    background-color: #c15959;
+    background-color: #ee251d;
 }
 
 /* ------------------------------------------ */
 /* Chicago color palette */
 
 .chicago .marker .visible {
-    fill: #42726b;
+    fill: #2c554f;
 }
 [data-active-island="chicago"] .modal {
-    border-color: #42726b;
+    border-color: #2c554f;
 }
 [data-active-island="chicago"].is-video .modal {
-    background: #42726b;
+    background: #2c554f;
 }
 [data-active-island="chicago"] .modal #main h1 {
-    background-color: #42726b;
+    background-color: #2c554f;
 }
 [data-active-island="chicago"] .modal #main a {
-    color: #42726b;
+    color: #2c554f;
 }
 [data-active-island="chicago"] a:focus {
-    border-color: #42726b;
+    border-color: #2c554f;
 }
 [data-active-island="chicago"] .modal #close-modal-btn:before,
 [data-active-island="chicago"] .modal #close-modal-btn:after {
-    background-color: #42726b;
+    background-color: #2c554f;
 }
 [data-active-island="chicago"] .modal #close-modal-btn:before,
 [data-active-island="chicago"] .modal #close-modal-btn:after {
-    background-color: #42726b;
+    background-color: #2c554f;
+}
+.chicago .marker .visible {
+    fill: #2c554f;
 }
 
 
@@ -368,54 +391,34 @@ a:focus {
 /* denver color palette */
 
 .denver .marker .visible {
-    fill: #526eb2;
+    fill: #e65a59;
 }
 [data-active-island="denver"] .modal {
-    border-color: #526eb2;
+    border-color: #e65a59;
 }
 [data-active-island="denver"].is-video .modal {
-    background: #526eb2;
+    background: #e65a59;
 }
 [data-active-island="denver"] .modal #main h1 {
-    background-color: #526eb2;
+    background-color: #e65a59;
 }
 [data-active-island="denver"] .modal #main a {
-    color: #526eb2;
+    color: #e65a59;
 }
 [data-active-island="denver"] a:focus {
-    border-color: #526eb2;
+    border-color: #e65a59;
 }
 [data-active-island="denver"] .modal #close-modal-btn:before,
 [data-active-island="denver"] .modal #close-modal-btn:after {
-    background-color: #526eb2;
+    background-color: #e65a59;
 }
 [data-active-island="denver"] .modal #close-modal-btn:before,
 [data-active-island="denver"] .modal #close-modal-btn:after {
-    background-color: #526eb2;
-}
-
-
-
-
-.atlanta .marker .visible {
-    fill: #327484;
-}
-.bay .marker .visible {
-    fill: #05b7c9;
-}
-.memphis .marker .visible {
-    fill: #ffe180;
-}
-.LA .marker .visible {
-    fill: #c15959;
-}
-.chicago .marker .visible {
-    fill: #42726b;
+    background-color: #e65a59;
 }
 .denver .marker .visible {
-    fill: #526eb2;
+    fill: #e65a59;
 }
-
 
 
 
