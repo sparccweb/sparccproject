@@ -296,6 +296,7 @@ const islands = [{
         pumpkins: Array.from(map.querySelectorAll('.memphis .detailed-view .mem-pumpkin')),
         plane: map.querySelector('.memphis .detailed-view .plane'),
         cyclist: map.querySelector('.memphis .detailed-view .cyclist'),
+        bus: map.querySelector('.memphis .detailed-view .bus'),
     },
     markersContainer: map.querySelector('.memphis .markers-container'),
     modalBack: map.querySelector('.memphis .modal-back'),

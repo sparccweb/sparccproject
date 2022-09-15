@@ -646,8 +646,8 @@ islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
     .fromTo(islands[4].detailedViewEls.cyclist, {
         x: 10,
     }, {
-        duration: 2,
-        x: -50,
+        duration: 4,
+        x: -70,
         ease: 'none'
     }, 0)
     .to(islands[4].detailedViewEls.cyclist, {
@@ -656,22 +656,22 @@ islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
     }, '>-.3')
 
     .set(islands[4].detailedViewEls.cyclist, {
-        x: -70,
+        x: -90,
         y: -35,
         scaleX: -1,
         transformOrigin: 'center center',
-    }, 3.5)
+    }, 6.5)
     .fromTo(islands[4].detailedViewEls.cyclist, {
         opacity: 0
     }, {
         duration: .3,
         opacity: 1
-    }, 3.5)
+    }, 6.5)
     .to(islands[4].detailedViewEls.cyclist, {
-        duration: 2,
+        duration: 3,
         x: 0,
         ease: 'none'
-    }, 3.5)
+    }, 6.5)
     .to(islands[4].detailedViewEls.cyclist, {
         duration: .3,
         opacity: 0
@@ -682,18 +682,18 @@ islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
         y: 85,
         scaleX: 1,
         transformOrigin: 'center center',
-    }, 7)
+    }, 11)
     .fromTo(islands[4].detailedViewEls.cyclist, {
         opacity: 0
     }, {
         duration: .3,
         opacity: 1
-    }, 7)
+    }, 11)
     .to(islands[4].detailedViewEls.cyclist, {
-        duration: 3,
-        x: -80,
+        duration: 5,
+        x: -100,
         ease: 'none'
-    }, 7)
+    }, 11)
     .to(islands[4].detailedViewEls.cyclist, {
         duration: .3,
         opacity: 0
@@ -702,22 +702,111 @@ islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
     .set(islands[4].detailedViewEls.cyclist, {
         scaleX: -1,
         transformOrigin: 'center center',
-    }, 12)
+    }, 17)
     .fromTo(islands[4].detailedViewEls.cyclist, {
         opacity: 0
     }, {
         duration: .3,
         opacity: 1
-    }, 12)
+    }, 17)
     .to(islands[4].detailedViewEls.cyclist, {
         duration: 3,
-        x: 10,
+        x: 30,
         ease: 'none'
-    }, 12)
+    }, 17)
     .to(islands[4].detailedViewEls.cyclist, {
         duration: .3,
         opacity: 0
     }, '>-.3')
+
+islands[4].detailedViewLoopedAnimations[3] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    delay: 2,
+    repeatDelay: 4
+})
+    .fromTo(islands[4].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .fromTo(islands[4].detailedViewEls.bus, {
+        x: 0,
+        y: 105
+    }, {
+        duration: 2,
+        x: -100,
+        y: 105,
+        ease: 'none'
+    }, 0)
+    .to(islands[4].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[4].detailedViewEls.bus, {
+        scaleX: -1,
+        transformOrigin: 'center center',
+    }, 3.5)
+    .fromTo(islands[4].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 3.5)
+    .to(islands[4].detailedViewEls.bus, {
+        duration: 2,
+        x: 0,
+        ease: 'none'
+    }, 3.5)
+    .to(islands[4].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[4].detailedViewEls.bus, {
+        scaleX: 1,
+    }, 6)
+    .fromTo(islands[4].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 6)
+    .fromTo(islands[4].detailedViewEls.bus, {
+        x: 0,
+        y: 25
+    }, {
+        duration: 3,
+        x: -100,
+        y: 25,
+        ease: 'none'
+    }, 6)
+    .to(islands[4].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[4].detailedViewEls.bus, {
+        scaleX: -1,
+    }, 12)
+    .fromTo(islands[4].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 12)
+    .to(islands[4].detailedViewEls.bus, {
+        duration: 2,
+        x: 0,
+        ease: 'none'
+    }, 12)
+    .to(islands[4].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
 
 
 // LA
