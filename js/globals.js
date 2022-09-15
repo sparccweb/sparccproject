@@ -373,6 +373,7 @@ const islands = [{
         ship: map.querySelector('.chicago .detailed-view .ship'),
         plane: map.querySelector('.chicago .detailed-view .plane'),
         bus: map.querySelector('.chicago .detailed-view .bus'),
+        cyclist: map.querySelector('.chicago .detailed-view .cyclist'),
     },
     train: document.querySelector('.chi-train-animated'),
     markersContainer: map.querySelector('.chicago .markers-container'),
