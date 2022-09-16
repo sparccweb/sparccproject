@@ -609,7 +609,7 @@ islands[2].detailedViewLoopedAnimations[1] = gsap.timeline({
         x: -40,
     }, {
         duration: 2,
-        x: 80,
+        x: 70,
         ease: 'none'
     }, 0)
     .to(islands[2].detailedViewEls.cyclist, {
@@ -626,10 +626,85 @@ islands[2].detailedViewLoopedAnimations[1] = gsap.timeline({
     }, 4)
     .to(islands[2].detailedViewEls.cyclist, {
         duration: 2,
-        x: -30,
+        x: -40,
         ease: 'none'
     }, 4)
     .to(islands[2].detailedViewEls.cyclist, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3');
+
+islands[2].detailedViewLoopedAnimations[2] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 2
+})
+    .fromTo(islands[2].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: 3,
+        x: -125,
+        ease: 'none'
+    }, 0)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[2].detailedViewEls.bus, {
+        y: -87
+    }, 3)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 1
+    }, 3)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: 3,
+        x: -220,
+        ease: 'none'
+    }, 3)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[2].detailedViewEls.bus, {
+        scaleX: -1,
+        transformOrigin: 'center center'
+    }, 8)
+    .fromTo(islands[2].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 8)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: 3,
+        x: -130,
+        ease: 'none'
+    }, 8)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[2].detailedViewEls.bus, {
+        y: 0
+    }, 11)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 1
+    }, 11)
+    .to(islands[2].detailedViewEls.bus, {
+        duration: 3,
+        x: 0,
+        ease: 'none'
+    }, 11)
+    .to(islands[2].detailedViewEls.bus, {
         duration: .3,
         opacity: 0
     }, '>-.3');

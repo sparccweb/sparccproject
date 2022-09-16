@@ -224,6 +224,7 @@ const islands = [{
         bird: map.querySelector('.atlanta .detailed-view .bird'),
         ball: map.querySelector('.atlanta .detailed-view .person-ball'),
         cyclist: map.querySelector('.atlanta .detailed-view .cyclist'),
+        bus: map.querySelector('.atlanta .detailed-view .bus'),
     },
     markersContainer: map.querySelector('.atlanta .markers-container'),
     modalBack: map.querySelector('.atlanta .modal-back'),
