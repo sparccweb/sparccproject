@@ -168,9 +168,13 @@ function updateModalContent(URL, contentType, islandIdx) {
             links.forEach(l => {
                 const linkURL = l.getAttribute('href');
                 if (isImgLink(linkURL)) {
+                    // Replace links to image files with proper images
                     const newImage = document.createElement('img');
                     newImage.setAttribute('src', './website-exported/' + linkURL);
 
+                    // If there is a text under the image link separated by /br line
+                    // we consider that text as alt.
+                    // Weird but that's how it comes from SlickPlan
                     if (l.nextSibling.tagName) {
                         if (l.nextSibling.tagName.toUpperCase() === 'BR') {
                             newImage.setAttribute('alt', l.nextSibling.nextSibling);
@@ -178,11 +182,16 @@ function updateModalContent(URL, contentType, islandIdx) {
                         }
                     }
                     l.parentNode.replaceChild(newImage, l);
+
                 } else if (isPdfLink(linkURL)) {
-                    const newImage = document.createElement('img');
-                    newImage.classList.add('pdf-inline-icon');
-                    newImage.setAttribute('src', './img/pdf-icon.svg');
-                    l.parentNode.insertBefore(newImage, l);
+                    if(!l.querySelector('img')) {
+                        // For text links to pdf files we add the icon
+                        // If the link itself is an image, we don't
+                        const newImage = document.createElement('img');
+                        newImage.classList.add('pdf-inline-icon');
+                        newImage.setAttribute('src', './img/pdf-icon.svg');
+                        l.parentNode.insertBefore(newImage, l);
+                    }
                 }
             });
 
