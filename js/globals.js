@@ -342,6 +342,7 @@ const islands = [{
         hollywood: Array.from(map.querySelectorAll('.LA .detailed-view .hollywood-letters > *')),
         bench: map.querySelector('.LA .detailed-view .bench'),
         cyclist: map.querySelector('.LA .detailed-view .cyclist'),
+        bus: map.querySelector('.LA .detailed-view .bus'),
         ball: map.querySelector('.LA .detailed-view .person-ball'),
     },
     markersContainer: map.querySelector('.LA .markers-container'),
