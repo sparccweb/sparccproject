@@ -154,6 +154,10 @@ modalBackAll.forEach(b => {
 
 
 function updateModalContent(URL, contentType, islandIdx) {
+
+    console.log('updateModalContent');
+
+
     fetch(URL).then((response) => {
         return response.text();
     }).then((html) => {
@@ -163,6 +167,10 @@ function updateModalContent(URL, contentType, islandIdx) {
         const main = doc.querySelector('#main');
 
         if (contentType !== 0) {
+
+            let internalHost = location.host.replace('www.', "");
+            internalHost = new RegExp(internalHost, 'i');
+
             // text content
             const links = Array.from(main.querySelectorAll('a'));
             links.forEach(l => {
@@ -183,14 +191,21 @@ function updateModalContent(URL, contentType, islandIdx) {
                     }
                     l.parentNode.replaceChild(newImage, l);
 
-                } else if (isPdfLink(linkURL)) {
-                    if(!l.querySelector('img')) {
-                        // For text links to pdf files we add the icon
-                        // If the link itself is an image, we don't
-                        const newImage = document.createElement('img');
-                        newImage.classList.add('pdf-inline-icon');
-                        newImage.setAttribute('src', './img/pdf-icon.svg');
-                        l.parentNode.insertBefore(newImage, l);
+                } else {
+                    if (isPdfLink(linkURL)) {
+                        if(!l.querySelector('img')) {
+                            // For text links to pdf files we add the icon
+                            // If the link itself is an image, we don't
+                            const newImage = document.createElement('img');
+                            newImage.classList.add('pdf-inline-icon');
+                            newImage.setAttribute('src', './img/pdf-icon.svg');
+                            l.parentNode.insertBefore(newImage, l);
+                        }
+                    }
+
+                    const href = l.host;
+                    if (!internalHost.test(href)) { // make sure the href doesn't contain current site's host
+                        l.setAttribute('target', '_blank');
                     }
                 }
             });
@@ -235,6 +250,7 @@ function updateModalContent(URL, contentType, islandIdx) {
         console.warn('Modal content loader failed: ', err);
     });
 }
+
 
 function updatePageUrl(name) {
     window.location.hash = name;
