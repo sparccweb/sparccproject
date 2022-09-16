@@ -350,6 +350,7 @@ islands[1].detailedViewLoopedAnimations[2] = gsap.timeline({
     delay: 3,
     repeatDelay: 4
 })
+    .timeScale(.6)
     .fromTo(islands[1].detailedViewEls.cyclist, {
         opacity: 0
     }, {
@@ -370,7 +371,7 @@ islands[1].detailedViewLoopedAnimations[2] = gsap.timeline({
 
     .set(islands[1].detailedViewEls.cyclist, {
         x: -210,
-        y: 60,
+        y: 55,
     }, 2.5)
     .fromTo(islands[1].detailedViewEls.cyclist, {
         opacity: 0
@@ -424,10 +425,92 @@ islands[1].detailedViewLoopedAnimations[2] = gsap.timeline({
     .to(islands[1].detailedViewEls.cyclist, {
         duration: .3,
         opacity: 0
-    }, '>-.3')
+    }, '>-.3');
 
 
 islands[1].detailedViewLoopedAnimations[3] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    repeatDelay: 2
+})
+    .fromTo(islands[1].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 0)
+    .fromTo(islands[1].detailedViewEls.bus, {
+        x: 35
+    }, {
+        duration: 2,
+        x: -50,
+        ease: 'none'
+    }, 0)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[1].detailedViewEls.bus, {
+        x: -210,
+        y: 68,
+    }, 2.5)
+    .fromTo(islands[1].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 2.5)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: 4,
+        x: -380,
+        ease: 'none'
+    }, 2.5)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[1].detailedViewEls.bus, {
+        scaleX: -1,
+        transformOrigin: 'center center',
+    }, 7)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 1
+    }, 7)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: 4,
+        x: -210,
+        ease: 'none'
+    }, 7)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3')
+
+    .set(islands[1].detailedViewEls.bus, {
+        x: -50,
+        y: 0,
+    }, 11.5)
+    .fromTo(islands[1].detailedViewEls.bus, {
+        opacity: 0
+    }, {
+        duration: .3,
+        opacity: 1
+    }, 11.5)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: 2,
+        x: 40,
+        ease: 'none'
+    }, 11.5)
+    .to(islands[1].detailedViewEls.bus, {
+        duration: .3,
+        opacity: 0
+    }, '>-.3');
+
+
+islands[1].detailedViewLoopedAnimations[4] = gsap.timeline({
     paused: true,
     repeat: -1,
     delay: 3,
