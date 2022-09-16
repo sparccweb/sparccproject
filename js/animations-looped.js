@@ -1162,7 +1162,7 @@ islands[5].detailedViewLoopedAnimations[4] = gsap.timeline({
         ease: 'power1.inOut'
     })
 
-islands[5].detailedViewLoopedAnimations[4] = gsap.timeline({
+islands[5].detailedViewLoopedAnimations[5] = gsap.timeline({
     paused: true,
     repeat: -1,
 })

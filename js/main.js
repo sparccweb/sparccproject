@@ -147,7 +147,6 @@ islands.forEach((island, islandIdx) => {
             }
         }
 
-        console.log(island.detailedViewLoopedAnimations);
         island.detailedViewLoopedAnimations.forEach(tl => tl.play());
         island.markerPulsingTween.play(0);
         activeIslandIdx = islandIdx;
