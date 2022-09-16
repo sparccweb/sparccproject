@@ -186,10 +186,6 @@ a:focus {
 .central .marker use {
     fill: #ffffff;
 }
-.central .marker.marker-circle-selected circle.clickable,
-.central .marker circle.clickable:hover {
-    stroke: #ffffff;
-}
 [data-active-island="central"] .modal {
     border-color: #472C00;
 }
@@ -258,10 +254,6 @@ a:focus {
 }
 .atlanta .marker use {
     fill: #000000;
-}
-.atlanta .marker.marker-circle-selected circle.clickable,
-.atlanta .marker circle.clickable:hover {
-    stroke: #000000;
 }
 [data-active-island="atlanta"] .modal {
     border-color: #ffd900;
