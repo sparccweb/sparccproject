@@ -647,7 +647,7 @@ islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
         x: 10,
     }, {
         duration: 4,
-        x: -70,
+        x: -120,
         ease: 'none'
     }, 0)
     .to(islands[4].detailedViewEls.cyclist, {
@@ -691,7 +691,7 @@ islands[4].detailedViewLoopedAnimations[2] = gsap.timeline({
     }, 11)
     .to(islands[4].detailedViewEls.cyclist, {
         duration: 5,
-        x: -100,
+        x: -90,
         ease: 'none'
     }, 11)
     .to(islands[4].detailedViewEls.cyclist, {
@@ -779,7 +779,7 @@ islands[4].detailedViewLoopedAnimations[3] = gsap.timeline({
         y: 25
     }, {
         duration: 3,
-        x: -100,
+        x: -130,
         y: 25,
         ease: 'none'
     }, 6)
