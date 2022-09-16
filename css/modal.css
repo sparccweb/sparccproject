@@ -181,40 +181,40 @@ a:focus {
 /* Central color palette */
 
 .central .marker .visible {
-    fill: #ffe719;
+    fill: #472C00;
 }
 .central .marker use {
-    fill: #000000;
+    fill: #ffffff;
 }
 .central .marker.marker-circle-selected circle.clickable,
 .central .marker circle.clickable:hover {
-    stroke: #000000;
+    stroke: #ffffff;
 }
 [data-active-island="central"] .modal {
-    border-color: #ffe719;
+    border-color: #472C00;
 }
 [data-active-island="central"].is-video .modal {
-    background: #ffe719;
+    background: #472C00;
 }
 [data-active-island="central"] .modal #main h1 {
-    background-color: #ffe719;
+    background-color: #472C00;
 }
 [data-active-island="central"] .modal #main a {
-    color: #ffe719;
+    color: #472C00;
 }
 [data-active-island="central"] a:focus {
-    border-color: #ffe719;
+    border-color: #472C00;
 }
 [data-active-island="central"] .modal #close-modal-btn:before,
 [data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #ffe719;
+    background-color: #472C00;
 }
 [data-active-island="central"] .modal #close-modal-btn:before,
 [data-active-island="central"] .modal #close-modal-btn:after {
-    background-color: #ffe719;
+    background-color: #472C00;
 }
 [data-active-island="central"] .modal #main h1 {
-    color: #333333;
+    color: #ffffff;
 }
 
 /* ------------------------------------------ */
