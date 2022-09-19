@@ -217,7 +217,7 @@ const markersRef = {
         labels: ['Grant', 'Health']
     },
     'C09': {
-        pos: [2037, 1432],
+        pos: [2029, 1465],
         type: 1,
         labels: ['Grant', 'Racial Equity']
     },
@@ -227,7 +227,7 @@ const markersRef = {
         labels: ['Grant']
     },
     'C11': {
-        pos: [2036, 1372],
+        pos: [2010, 1423],
         type: 0,
         labels: ['Site Story']
     },
@@ -423,5 +423,10 @@ const markersRef = {
         pos: [1239, 880],
         type: 0,
         labels: ['Site Story']
-    }
+    },
+    // 'L13': {
+    //     pos: [1300, 800],
+    //     type: 2,
+    //     labels: ['Site Story']
+    // }
 }
