@@ -424,9 +424,9 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
-    // 'L13': {
-    //     pos: [1300, 800],
-    //     type: 2,
-    //     labels: ['Site Story']
-    // }
+    'L13': {
+        pos: [1325, 905],
+        type: 2,
+        labels: ['Site Story']
+    }
 }
