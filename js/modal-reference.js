@@ -16,47 +16,47 @@ const markersRef = {
     'A02': {
         pos: [752, 1390],
         type: 1,
-        labels: ['Grant', 'Racial Equity', 'Arts & Culture']
+        labels: ['Grants', 'Racial Equity', 'Arts & Culture']
     },
     'A03': {
         pos: [755, 1560],
         type: 1,
-        labels: ['Grant', 'Climate']
+        labels: ['Grants', 'Climate']
     },
     'A04': {
         pos: [662, 1490],
         type: 1,
-        labels: ['Grant', 'Climate']
+        labels: ['Grants', 'Climate']
     },
     'A05': {
         pos: [680, 1555],
         type: 1,
-        labels: ['Grant', 'Climate']
+        labels: ['Grants', 'Climate']
     },
     'A06': {
         pos: [710, 1580],
         type: 1,
-        labels: ['Grant', 'Housing', 'Education']
+        labels: ['Grants', 'Housing', 'Education']
     },
     'A07': {
         pos: [730, 1620],
         type: 1,
-        labels: ['Grant', 'Housing']
+        labels: ['Grants', 'Housing']
     },
     'A08': {
         pos: [660, 1630],
         type: 1,
-        labels: ['Grant', 'Transportation']
+        labels: ['Grants', 'ETOD']
     },
     'A09': {
         pos: [831, 1555],
         type: 1,
-        labels: ['Grant', 'Policy']
+        labels: ['Grants', 'Policy']
     },
     'A10': {
         pos: [771, 1600],
         type: 1,
-        labels: ['Grant', 'Health', 'Arts & Culture']
+        labels: ['Grants', 'Health', 'Arts & Culture']
     },
     'A11': {
         pos: [870, 1500],
@@ -87,12 +87,12 @@ const markersRef = {
     'M02': {
         pos: [1503, 1536],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'M03': {
         pos: [1410, 1484],
         type: 1,
-        labels: ['Grant', 'Health']
+        labels: ['Grants', 'Health']
     },
     'M04': {
         pos: [1463, 1649],
@@ -107,17 +107,17 @@ const markersRef = {
     'M06': {
         pos: [1316, 1618],
         type: 1,
-        labels: ['Grant', 'Housing']
+        labels: ['Grants', 'Housing']
     },
     'M07': {
         pos: [1398, 1697],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'M08': {
         pos: [1448, 1505],
         type: 1,
-        labels: ['Grant', 'Housing']
+        labels: ['Grants', 'Housing']
     },
     'M09': {
         pos: [1417, 1588],
@@ -127,12 +127,12 @@ const markersRef = {
     'M10': {
         pos: [1547, 1593],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'M11': {
         pos: [1490, 1705],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
 
     'B01': {
@@ -143,17 +143,17 @@ const markersRef = {
     'B02': {
         pos: [1726, 1060],
         type: 1,
-        labels: ['Grant', 'Capital', 'Housing']
+        labels: ['Grants', 'Capital', 'Housing']
     },
     'B03': {
         pos: [1817, 1019],
         type: 1,
-        labels: ['Grant', 'Capital', 'Housing']
+        labels: ['Grants', 'Capital', 'Housing']
     },
     'B04': {
         pos: [1746, 890],
         type: 1,
-        labels: ['Grant', 'ETOD']
+        labels: ['Grants', 'ETOD']
     },
     'B05': {
         pos: [1823, 1113],
@@ -184,7 +184,7 @@ const markersRef = {
     'C02': {
         pos: [1954, 1383],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'C03': {
         pos: [1983, 1548],
@@ -199,32 +199,32 @@ const markersRef = {
     'C05': {
         pos: [1922, 1419],
         type: 1,
-        labels: ['Climate', 'Grant']
+        labels: ['Climate', 'Grants']
     },
     'C06': {
         pos: [1928, 1507],
         type: 1,
-        labels: ['Grant', 'Housing']
+        labels: ['Grants', 'Housing']
     },
     'C07': {
         pos: [1961, 1589],
         type: 1,
-        labels: ['Grant', 'Policy', 'Climate', 'ETOD']
+        labels: ['Grants', 'Policy', 'Climate', 'ETOD']
     },
     'C08': {
         pos: [1832, 1326],
         type: 1,
-        labels: ['Grant', 'Health']
+        labels: ['Grants', 'Health']
     },
     'C09': {
         pos: [2029, 1465],
         type: 1,
-        labels: ['Grant', 'Racial Equity']
+        labels: ['Grants', 'Racial Equity']
     },
     'C10': {
         pos: [1996, 1510],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'C11': {
         pos: [2010, 1423],
@@ -250,12 +250,12 @@ const markersRef = {
     'D02': {
         pos: [432, 1277],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'D03': {
         pos: [417, 1239],
         type: 2,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'D04': {
         pos: [573, 1219],
@@ -275,7 +275,7 @@ const markersRef = {
     'D07': {
         pos: [382, 1358],
         type: 1,
-        labels: ['Grant']
+        labels: ['Grants']
     },
     'D08': {
         pos: [488, 1202],
@@ -291,7 +291,7 @@ const markersRef = {
     'G02': {
         pos: [1347, 1116],
         type: 2,
-        labels: ['Capital', 'Grant']
+        labels: ['Capital', 'Grants']
     },
     'G03': {
         pos: [1056, 1231],
@@ -306,12 +306,12 @@ const markersRef = {
     'G05': {
         pos: [1437, 1281],
         type: 2,
-        labels: ['Economic Empowerment']
+        labels: []
     },
     'G06': {
         pos: [1260, 1358],
         type: 2,
-        labels: ['Transporation']
+        labels: ['ETOD']
     },
     'G07': {
         pos: [1111, 1133],
@@ -331,7 +331,7 @@ const markersRef = {
     'G10': {
         pos: [1205, 1327],
         type: 2,
-        labels: ['Other']
+        labels: []
     },
     'G11': {
         pos: [1290, 1163],
@@ -341,7 +341,7 @@ const markersRef = {
     'G12': {
         pos: [1206, 1371],
         type: 2,
-        labels: ['Other']
+        labels: []
     },
     'G13': {
         pos: [1121, 1232],
@@ -351,7 +351,7 @@ const markersRef = {
     'G14': {
         pos: [1265, 1270],
         type: 2,
-        labels: ['Other']
+        labels: []
     },
     'G15': {
         pos: [1387, 1144],
@@ -361,7 +361,7 @@ const markersRef = {
     'G16': {
         pos: [1254, 1093],
         type: 0,
-        labels: ['Other']
+        labels: []
     },
 
     'L01': {
@@ -372,42 +372,42 @@ const markersRef = {
     'L02': {
         pos: [1213, 932],
         type: 1,
-        labels: ['Grant', 'Housing']
+        labels: ['Grants', 'Housing']
     },
     'L03': {
         pos: [1079, 830],
         type: 2,
-        labels: ['Grant', 'Transit']
+        labels: ['Grants', 'ETOD']
     },
     'L04': {
         pos: [1043, 939],
         type: 1,
-        labels: ['Grant', 'Housing', 'Arts & Culture']
+        labels: ['Grants', 'Housing', 'Arts & Culture']
     },
     'L05': {
         pos: [1092, 866],
         type: 1,
-        labels: ['Grant', 'Capital', 'Housing']
+        labels: ['Grants', 'Capital', 'Housing']
     },
     'L06': {
         pos: [1120, 932],
         type: 1,
-        labels: ['Grant', 'Capital', 'Housing']
+        labels: ['Grants', 'Capital', 'Housing']
     },
     'L07': {
         pos: [899, 826],
         type: 1,
-        labels: ['Grant', 'Climate', 'Housing', 'Policy']
+        labels: ['Grants', 'Climate', 'Housing', 'Policy']
     },
     'L08': {
         pos: [1060, 810],
         type: 1,
-        labels: ['Grant', 'Housing']
+        labels: ['Grants', 'Housing']
     },
     'L09': {
         pos: [1076, 893],
         type: 1,
-        labels: ['Grant', 'Policy']
+        labels: ['Grants', 'Policy']
     },
     'L10': {
         pos: [1009, 938],
