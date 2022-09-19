@@ -15,7 +15,8 @@ function generateMarkers(html) {
             const popupData = {
                 name: contentName,
                 url: contentPath,
-                el: null
+                el: null,
+                labels: markersRef[contentName].labels
             };
             if (markersRef[contentName]) {
                 popupData.x = markersRef[contentName].pos[0];
@@ -97,6 +98,7 @@ function generateMarkers(html) {
                         .translate(-gsap.getProperty(p.el, "x"), -gsap.getProperty(p.el, "y")),
                 );
 
+                deHoverMarkers();
                 deselectMarkers();
                 selectMarker(this);
 
@@ -104,6 +106,16 @@ function generateMarkers(html) {
                 updateModalContent(contentURL, p.type, islandIdx);
 
                 updatePageUrl(p.name);
+            }
+            p.el.querySelector('.clickable').onmouseenter = function () {
+                hoverMarker(this);
+                markerTitleContainer.classList.add('visible');
+                updateMarkerTitleContent(p.labels);
+                updateMarkerTitlePosition(this);
+            }
+            p.el.querySelector('.clickable').onmouseleave = function () {
+                deHoverMarkers();
+                markerTitleContainer.classList.remove('visible');
             }
         });
 
@@ -116,6 +128,14 @@ function generateMarkers(html) {
             paused: true
         });
     });
+}
+
+function updateMarkerTitlePosition(markerEl) {
+    const box = markerEl.getBoundingClientRect();
+    gsap.set(markerTitleContainer, {
+        x: box.x + box.width,
+        y: box.y
+    })
 }
 
 function deselectMarkers() {
@@ -141,6 +161,24 @@ function selectMarker(markerCircle) {
     })
 }
 
+function updateMarkerTitleContent(labels) {
+    markerLabels.innerHTML = '';
+    labels.forEach(l => {
+        const labelEl = document.createElement('div');
+        labelEl.classList.add('marker-title-label');
+        labelEl.innerHTML = l;
+        markerLabels.appendChild(labelEl);
+    })
+}
+function deHoverMarkers() {
+    Array.from(document.querySelectorAll('.marker circle.clickable.hovered')).forEach(c => {
+        c.classList.remove('hovered');
+    });
+}
+function hoverMarker(markerCircle) {
+    markerCircle.classList.add('hovered');
+}
+
 modalCloseBtn.addEventListener('click', () => {
     closeModal();
     deselectMarkers();
@@ -154,9 +192,6 @@ modalBackAll.forEach(b => {
 
 
 function updateModalContent(URL, contentType, islandIdx) {
-
-    console.log('updateModalContent');
-
 
     fetch(URL).then((response) => {
         return response.text();
@@ -257,6 +292,9 @@ function updatePageUrl(name) {
 }
 
 function openModal(islandIdx) {
+    markerTitleContainer.classList.remove('can-be-visible');
+    markerTitleContainer.classList.remove('visible');
+    
     gsap.to(islands[islandIdx].modalBack, {
         duration: .3,
         opacity: 1
@@ -279,6 +317,7 @@ function openModal(islandIdx) {
 }
 
 function closeModal() {
+    markerTitleContainer.classList.add('can-be-visible');
     gsap.to(modalBackAll, {
         duration: .3,
         opacity: 0

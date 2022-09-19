@@ -2,6 +2,9 @@ const container = document.querySelector('.full-page');
 
 const map = document.querySelector('svg.map');
 
+const markerTitleContainer = document.querySelector('.marker-title-container');
+const markerLabels = document.querySelector('.marker-labels');
+
 const modalBackAll = Array.from(document.querySelectorAll('.modal-back'));
 const modalContainer = document.querySelector('.modal-container');
 const modal = document.querySelector('.modal');

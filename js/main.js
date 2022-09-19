@@ -29,6 +29,8 @@ fetch('./website-exported/sitemap.html').then((response) => {
 
     if (markerToFocus && island) {
         view = views.i;
+        markerTitleContainer.classList.add('can-be-visible');
+
         const popup = island.popups.find(p => p.el === markerToFocus.parentElement);
 
         d3Svg.call(
@@ -71,13 +73,18 @@ d3Svg.call(zoom);
 
 function zoomed(e) {
     const t = e.transform;
-    if (view === views.m) {
-
-    } else {
+    if (view !== views.m) {
         currentZoomTransform = t;
     }
     currentSvgScale = currentZoomTransform.k;
     d3SvgMainMap.attr("transform", currentZoomTransform);
+
+    const hoveredMarkerCircle = document.querySelector('.marker circle.clickable.hovered');
+    if (hoveredMarkerCircle) {
+        updateMarkerTitlePosition(hoveredMarkerCircle);
+        markerTitleContainer.style.fontSize = (12 + .6 * (currentSvgScale - 1) + 'px');
+    }
+
 }
 
 function resetZoom(dur) {
@@ -154,6 +161,7 @@ islands.forEach((island, islandIdx) => {
 
         if (view === views.m) {
             view = views.i;
+            markerTitleContainer.classList.add('can-be-visible');
         }
     });
 })
@@ -170,6 +178,8 @@ toMapBtn.addEventListener('click', () => {
     islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
     gsap.delayedCall(.5, () => {
         view = views.m;
+        markerTitleContainer.classList.remove('can-be-visible');
+        markerTitleContainer.classList.remove('visible');
     });
     gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {
         islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
