@@ -173,7 +173,11 @@ islands.forEach((island, islandIdx) => {
                 closeModal();
                 deselectMarkers();
                 updateIslandToIslandAnimation(activeIslandIdx, islandIdx);
-                islandToIslandAnimation.play(.5);
+                if (islandIdx) {
+                    islandToIslandAnimation.play(.5);
+                } else {
+                    islandToIslandAnimation.play(0);
+                }
             }
         }
 
