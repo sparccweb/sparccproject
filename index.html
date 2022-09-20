@@ -1614,8 +1614,7 @@
 </svg>
 
 
-
-<div class="full-page">
+<div class="map-container">
     <svg class="map" xmlns="http://www.w3.org/2000/svg" viewBox="200 600 2100 1300">
         <style>
             .loader-map .round-tree {
@@ -5563,15 +5562,31 @@
         <use class="bird" xlink:href="#animated-bird-symbol" x="0" y="0" width="194" height="154"/>
     </svg>
 
-    <div class="zooming-controls">
-        <div id="go-to-map-btn">
-            <img src="./img/mini-map-sea.svg">
-            <img src="./img/mini-map-hover.svg">
-            <img src="./img/mini-map.svg">
+    <div class="marker-title-container">
+        <div class="marker-title">
         </div>
-        <div class="plus-minus-container">
-            <img id="zoom-in-btn" src="./img/plus.svg">
-            <img id="zoom-out-btn" src="./img/minus.svg">
+        <div class="marker-labels">
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="main-logo">
+            <img src="./img/SPARCC-logo.svg">
+        </div>
+        <div class="main-title">
+            <div>SPARCC</div>
+            <div>Strong Prosperous And Resilient Communities&nbsp;Challenges</div>
+        </div>
+        <div class="zooming-controls">
+            <div id="go-to-map-btn">
+                <div></div>
+                <div></div>
+                <img src="./img/mini-map.svg">
+            </div>
+            <div class="plus-minus-container">
+                <img id="zoom-in-btn" src="./img/plus.svg">
+                <img id="zoom-out-btn" src="./img/minus.svg">
+            </div>
         </div>
     </div>
 
@@ -5582,18 +5597,13 @@
         </div>
     </div>
 
-    <div class="marker-title-container">
-        <div class="marker-title">
-        </div>
-        <div class="marker-labels">
-        </div>
-    </div>
-
     <div class="test">
         <input type="checkbox" id="show-marker-names" name="tst-mark" onclick="testTest()">
         <label for="show-marker-names">show marker names</label>
     </div>
 </div>
+
+
 
 
 <!-- GSAP library -->

@@ -137,7 +137,7 @@ function addMapHidingToTimeline(tl) {
             duration: .3,
             opacity: 0
         }, 0)
-        .fromTo(container, {
+        .fromTo(document.body, {
             background: '#8cceea'
         }, {
             duration: .4,
@@ -156,13 +156,13 @@ function addMapHidingToTimeline(tl) {
         }, .3)
         .set(zoomingControls, {
             display: 'block'
-        }, 3.2)
+        }, .5)
         .fromTo(zoomingControls, {
             opacity: 0
         }, {
-            duration: .2,
+            duration: 1,
             opacity: 1
-        }, 3.2);
+        }, .5);
 }
 
 function addIslandSelectionToTimeline(tl, idx) {
@@ -290,7 +290,7 @@ function addMapShowingToTimeline(tl, idx) {
             duration: .3,
             opacity: 1
         }, .4)
-        .to(container, {
+        .to(document.body, {
             duration: .4,
             background: '#8cceea'
         }, .4)

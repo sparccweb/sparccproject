@@ -1,7 +1,10 @@
-const container = document.querySelector('.full-page');
+const container = document.querySelector('.map-container');
 
 const map = document.querySelector('svg.map');
 
+const header = document.querySelector('.header');
+const mainLogo = document.querySelector('.main-logo');
+const mainTitle = document.querySelector('.main-title');
 const markerTitleContainer = document.querySelector('.marker-title-container');
 const markerLabels = document.querySelector('.marker-labels');
 

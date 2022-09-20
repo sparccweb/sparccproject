@@ -294,7 +294,10 @@ function updatePageUrl(name) {
 function openModal(islandIdx) {
     markerTitleContainer.classList.remove('can-be-visible');
     markerTitleContainer.classList.remove('visible');
-    
+    gsap.to(header, {
+        duration: .3,
+        opacity: 0
+    });
     gsap.to(islands[islandIdx].modalBack, {
         duration: .3,
         opacity: 1
@@ -318,6 +321,10 @@ function openModal(islandIdx) {
 
 function closeModal() {
     markerTitleContainer.classList.add('can-be-visible');
+    gsap.to(header, {
+        duration: .3,
+        opacity: 1
+    });
     gsap.to(modalBackAll, {
         duration: .3,
         opacity: 0

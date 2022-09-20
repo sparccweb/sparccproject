@@ -1,9 +1,30 @@
 setupLayout();
+gsap.set(header, {
+    opacity: 1
+})
+
 window.onresize = setupLayout;
 function setupLayout() {
     gsap.set(container, {
         height: window.innerHeight
-    })
+    });
+
+    const windowRatio = window.innerWidth / window.innerHeight;
+    if (windowRatio > .8 * viewBoxRatio) {
+        gsap.set(header, {
+            height: .08 * window.innerHeight,
+            fontSize: .03 * window.innerHeight,
+            maxWidth: .88 * window.innerHeight * viewBoxRatio + 'px',
+            alignItems: 'center'
+        })
+    } else {
+        gsap.set(header, {
+            height: .5 * (window.innerHeight - window.innerWidth / viewBoxRatio),
+            fontSize: .045 * window.innerHeight,
+            maxWidth: 'none',
+            alignItems: 'start'
+        })
+    }
 }
 
 // Once the SlickPlan data is here
@@ -28,9 +49,11 @@ fetch('./website-exported/sitemap.html').then((response) => {
     const island = islands.find(i => i.popupCode.toUpperCase() === islandCode.toUpperCase());
 
     if (markerToFocus && island) {
+        
         view = views.i;
-        markerTitleContainer.classList.add('can-be-visible');
+        goToIslandView();
 
+        
         const popup = island.popups.find(p => p.el === markerToFocus.parentElement);
 
         d3Svg.call(
@@ -161,7 +184,7 @@ islands.forEach((island, islandIdx) => {
 
         if (view === views.m) {
             view = views.i;
-            markerTitleContainer.classList.add('can-be-visible');
+            goToIslandView();
         }
     });
 })
@@ -171,15 +194,16 @@ toMapBtn.addEventListener('click', () => {
     deselectMarkers();
     
     resetZoom(.5);
-
+    
     islandToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.progress(1);
     islands[activeIslandIdx].hideIslandToMapAnimation.play(0);
+
+    goToMapView();
+
     gsap.delayedCall(.5, () => {
         view = views.m;
-        markerTitleContainer.classList.remove('can-be-visible');
-        markerTitleContainer.classList.remove('visible');
     });
     gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {
         islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
@@ -188,3 +212,28 @@ toMapBtn.addEventListener('click', () => {
         updateIslandSelection();
     });
 });
+
+function goToIslandView() {
+    markerTitleContainer.classList.add('can-be-visible');
+    gsap.to(mainLogo, {
+        duration: .5,
+        backgroundColor: '#cdeff9'
+    });
+    gsap.to(mainTitle, {
+        duration: .5,
+        opacity: 0
+    });
+}
+
+function goToMapView() {
+    markerTitleContainer.classList.remove('can-be-visible');
+    markerTitleContainer.classList.remove('visible');
+    gsap.to(mainLogo, {
+        duration: .5,
+        backgroundColor: '#bde3f4'
+    });
+    gsap.to(mainTitle, {
+        duration: .5,
+        opacity: 1
+    });
+}

@@ -76,7 +76,7 @@ function addChicagoDetailsToTimeline(tl, idx) {
         .fromTo(island.detailedViewEls.ship, {
             x: 300
         }, {
-            duration: 2,
+            duration: 4,
             x: 0,
         }, 1)
         .fromTo(island.detailedViewEls.ship, {

@@ -1,26 +1,69 @@
+@font-face {
+    font-family: 'Besty';
+    src: url('../fonts/besty-font.ttf');
+}
+
 html, body {
     padding: 0;
     margin: 0;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
-    /*overscroll-behavior: none;*/
-}
-svg path {
-    /*fill: inherit;*/
+    overscroll-behavior: none;
 }
 
-svg {
-    /*display: none;*/
+body {
+    background: #8cceea;
 }
 
-.full-page {
+.map-container {
     position: relative;
     width: 100%;
     height: 100vh; /* to be overwritten with window inner height w/ JS */
-    background: #8cceea;
     overflow: hidden;
 }
-.full-page .map {
+
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0 auto;
+    opacity: 0;
+}
+.main-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Besty', sans-serif;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+}
+.main-title > div:nth-child(1) {
+    margin-top: -0.5em;
+}
+.main-title > div:nth-child(2) {
+    font-size: .5em;
+    padding-top: 0.4em;
+}
+.main-logo {
+    height: 50%;
+    max-height: 65px;
+    width: auto;
+    background-color: #bde3f4;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+.main-logo img {
+    display: block;
+    height: 100%;
+}
+.map-container .map {
     display: block;
     position: absolute;
     top: 50%;
@@ -30,11 +73,10 @@ svg {
     height: 100%;
     font-family: sans-serif;
 }
-
 .zooming-controls {
-    position: absolute;
-    top: 10px;
-    right: 10px;
+    padding: 10px;
+    height: 100%;
+    max-height: 15vw;
     display: none;
 }
 .zooming-controls .plus-minus-container {
@@ -42,38 +84,56 @@ svg {
     justify-content: right;
 }
 .zooming-controls #go-to-map-btn {
-    width: 120px;
+    height: 100%;
+    min-height: 150px;
+    max-height: 250px;
     position: relative;
 }
-.zooming-controls #go-to-map-btn > img:nth-child(1),
-.zooming-controls #go-to-map-btn > img:nth-child(2) {
+.zooming-controls #go-to-map-btn > div:nth-child(1),
+.zooming-controls #go-to-map-btn > div:nth-child(2) {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
+    border-radius: 20px;
 }
-.zooming-controls #go-to-map-btn > img:nth-child(2) {
+.zooming-controls #go-to-map-btn > div:nth-child(1) {
+    background-color: #cdeff9;
+}
+.zooming-controls #go-to-map-btn > div:nth-child(2) {
+    background-color: #ffffff;
     opacity: 0;
 }
-.zooming-controls #go-to-map-btn:hover > img:nth-child(2) {
+.zooming-controls #go-to-map-btn:hover > div:nth-child(2) {
     opacity: 1;
 }
-.zooming-controls #go-to-map-btn > img:nth-child(3) {
+.zooming-controls #go-to-map-btn > img {
+    display: block;
+    height: calc(100% - 20px);
     position: relative;
+    padding: 10px;
 }
-
 .zooming-controls #zoom-in-btn,
 .zooming-controls #zoom-out-btn {
     width: 20px;
     padding: 5px;
+    margin: 10px 5px 5px 0;
     background-color: #cdeff9;
-    border-radius: 2px;
+    border-radius: 20px;
 }
-
 .zooming-controls #zoom-in-btn:hover,
 .zooming-controls #zoom-out-btn:hover {
     background-color: #ffffff;
 }
+@media only screen and (max-width: 650px) {
+    .main-logo {
+        max-height: 6vw;
+    }
+}
+
+
+
 
 .common-symbols {
     display: block;

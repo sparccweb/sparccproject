@@ -1,4 +1,4 @@
-.full-page * {
+.map-container * {
     pointer-events: none;
 }
 .modal .modal-content,
