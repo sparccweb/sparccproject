@@ -1,37 +1,21 @@
+// ------------------------------------------------------------------
+
 setupLayout();
 gsap.set(header, {
     opacity: 1
 })
-
 window.onresize = setupLayout;
-function setupLayout() {
-    gsap.set(container, {
-        height: window.innerHeight
-    });
 
-    const windowRatio = window.innerWidth / window.innerHeight;
-    if (windowRatio > .8 * viewBoxRatio) {
-        gsap.set(header, {
-            height: .08 * window.innerHeight,
-            fontSize: .03 * window.innerHeight,
-            maxWidth: .88 * window.innerHeight * viewBoxRatio + 'px',
-            alignItems: 'center'
-        })
-    } else {
-        gsap.set(header, {
-            height: .5 * (window.innerHeight - window.innerWidth / viewBoxRatio),
-            fontSize: .045 * window.innerHeight,
-            maxWidth: 'none',
-            alignItems: 'start'
-        })
-    }
-}
 
-// Once the SlickPlan data is here
+
+// ------------------------------------------------------------------
+// Once the SlickPlan data is here, fetch popups data
 
 fetch('./website-exported/sitemap.html').then((response) => {
     return response.text();
 }).then((html) => {
+
+    // Grab data we need for markers & modals
     generateMarkers(html);
     createMapNavigationAnimations();
 
@@ -41,26 +25,25 @@ fetch('./website-exported/sitemap.html').then((response) => {
         birdAnimations[1].pause();
     });
 
+    // ------------------------------------------------------------------
     // Check if the URL contains the existing marker and go there if yes
-    const modalCodeFromUrl = window.location.hash.substring(1);
-    const islandCodeLetter = modalCodeFromUrl.slice(0, 1);
-    const islandName = modalCodeFromUrl.slice(0, 3);
-    const markerToFocus = document.querySelector('circle.clickable[data-popup-name="' + islandName + '"]');
-    const island = islands.find(i => i.popupCode.toUpperCase() === islandCodeLetter.toUpperCase());
+    const inputURL = window.location.hash.substring(1);
+    const popupData = islands.map(i => i.popups).flat().find(popup => popup.slug.toUpperCase() === inputURL.toUpperCase());
 
-    if (markerToFocus && island) {
-        
+    if (popupData) {
+        const islandCode = popupData.code;
+        const markerToFocus = document.querySelector('circle.clickable[data-popup-code="' + islandCode + '"]');
+        const island = islands.find(island => island.popups.indexOf(popupData) !== -1);
+
         view = views.i;
         goToIslandView();
-        
-        const popup = island.popups.find(p => p.el === markerToFocus.parentElement);
 
         d3Svg.call(
             zoom.transform,
             d3.zoomIdentity
                 .translate(.9 * viewBoxCenter.x, viewBoxCenter.y)
                 .scale(6)
-                .translate(-gsap.getProperty(popup.el, "x"), -gsap.getProperty(popup.el, "y")),
+                .translate(-gsap.getProperty(popupData.el, "x"), -gsap.getProperty(popupData.el, "y")),
         );
 
         island.detailedViewLoopedAnimations.forEach(tl => tl.play(0));
@@ -72,8 +55,8 @@ fetch('./website-exported/sitemap.html').then((response) => {
 
         gsap.delayedCall(loaderAnimation.duration() / loaderAnimation.timeScale(), () => {
             selectMarker(markerToFocus);
-            const contentURL = './website-exported/' + popup.url;
-            updateModalContent(contentURL, popup.type, activeIslandIdx);
+            const contentURL = './website-exported/' + popupData.slickPlanExportURL;
+            updateModalContent(contentURL, popupData.type, activeIslandIdx, popupData.slug);
         });
 
     } else {
@@ -84,8 +67,11 @@ fetch('./website-exported/sitemap.html').then((response) => {
     console.warn('Sitemap loader failed: ', err);
 });
 
- 
 
+
+
+// ------------------------------------------------------------------
+// Setup navigation (pan & zoom)
 
 const zoom = d3.zoom()
     .scaleExtent([1, 20])
@@ -106,7 +92,6 @@ function zoomed(e) {
         updateMarkerTitlePosition(hoveredMarkerCircle);
         markerTitleContainer.style.fontSize = (12 + .6 * (currentSvgScale - 1) + 'px');
     }
-
 }
 
 function resetZoom(dur) {
@@ -124,6 +109,9 @@ zoomOutBtn.addEventListener('click', () => {
 });
 
 
+
+// ------------------------------------------------------------------
+// Setup navigation (click on island)
 
 islands.forEach((island, islandIdx) => {
     island.highlight.addEventListener('click', (e) => {
@@ -192,6 +180,10 @@ islands.forEach((island, islandIdx) => {
     });
 })
 
+
+// ------------------------------------------------------------------
+// Setup navigation (back to the map view)
+
 toMapBtn.addEventListener('click', () => {
     closeModal();
     deselectMarkers();
@@ -215,28 +207,3 @@ toMapBtn.addEventListener('click', () => {
         updateIslandSelection();
     });
 });
-
-function goToIslandView() {
-    markerTitleContainer.classList.add('can-be-visible');
-    gsap.to(mainLogo, {
-        duration: .5,
-        backgroundColor: '#cdeff9'
-    });
-    gsap.to(mainTitle, {
-        duration: .5,
-        opacity: 0
-    });
-}
-
-function goToMapView() {
-    markerTitleContainer.classList.remove('can-be-visible');
-    markerTitleContainer.classList.remove('visible');
-    gsap.to(mainLogo, {
-        duration: .5,
-        backgroundColor: '#bde3f4'
-    });
-    gsap.to(mainTitle, {
-        duration: .5,
-        opacity: 1
-    });
-}

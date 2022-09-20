@@ -3,9 +3,11 @@ function generateMarkers(html) {
     const links = Array.from(doc.querySelectorAll('ul ul li a'));
     links.forEach(l => {
         const contentPath = l.getAttribute('href');
+
         const islandCodeLetter = l.innerHTML.slice(0, 1);
-        const islandName = l.innerHTML.slice(0, 3);
-        const islandTitle = l.innerHTML.substring(5)
+        const islandCode = l.innerHTML.slice(0, 3);
+        const islandTitle = l.innerHTML.substring(6)
+        const islandSlug = contentPath.substring(contentPath.indexOf('/') + 5, contentPath.lastIndexOf('.html'));
 
         const island = islands.find(i => i.popupCode.toUpperCase() === islandCodeLetter.toUpperCase());
 
@@ -14,16 +16,17 @@ function generateMarkers(html) {
             const box = island.highlight.getBBox();
 
             const popupData = {
-                name: islandName,
-                url: contentPath,
+                code: islandCode,
+                slickPlanExportURL: contentPath,
                 el: null,
-                labels: markersRef[islandName].labels,
-                title: islandTitle
+                labels: markersRef[islandCode].labels,
+                title: islandTitle,
+                slug: islandSlug
             };
-            if (markersRef[islandName]) {
-                popupData.x = markersRef[islandName].pos[0];
-                popupData.y = markersRef[islandName].pos[1];
-                popupData.type = markersRef[islandName].type;
+            if (markersRef[islandCode]) {
+                popupData.x = markersRef[islandCode].pos[0];
+                popupData.y = markersRef[islandCode].pos[1];
+                popupData.type = markersRef[islandCode].type;
             } else {
                 popupData.x = box.x + Math.random() * box.width;
                 popupData.y = box.y + Math.random() * box.height;
@@ -38,7 +41,7 @@ function generateMarkers(html) {
                 y: popupData.y
             });
             const dotClickable = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            dotClickable.setAttributeNS(null, 'data-popup-name', islandName);
+            dotClickable.setAttributeNS(null, 'data-popup-code', islandCode);
             dotClickable.setAttributeNS(null, 'cx', 0);
             dotClickable.setAttributeNS(null, 'cy', 0);
             dotClickable.setAttributeNS(null, 'r', markerSize[2]);
@@ -60,7 +63,7 @@ function generateMarkers(html) {
             dotTitle.setAttributeNS(null, 'x', 16);
             dotTitle.setAttributeNS(null, 'y', -8);
             dotTitle.setAttributeNS(null, 'fill', '#fff');
-            dotTitle.innerHTML = popupData.name;
+            dotTitle.innerHTML = popupData.code;
 
             let icon = document.createElementNS('http://www.w3.org/2000/svg', 'use');
             icon.setAttributeNS(null, 'x', -6);
@@ -97,17 +100,17 @@ function generateMarkers(html) {
                     d3.zoomIdentity
                         .translate(.9 * viewBoxCenter.x, viewBoxCenter.y)
                         .scale(currentSvgScale)
-                        .translate(-gsap.getProperty(p.el, "x"), -gsap.getProperty(p.el, "y")),
+                        .translate(-gsap.getProperty(p.el, 'x'), -gsap.getProperty(p.el, 'y')),
                 );
 
                 deHoverMarkers();
                 deselectMarkers();
                 selectMarker(this);
 
-                const contentURL = './website-exported/' + p.url;
-                updateModalContent(contentURL, p.type, islandIdx);
+                const contentURL = './website-exported/' + p.slickPlanExportURL;
+                updateModalContent(contentURL, p.type, islandIdx, p.slug);
 
-                updatePageUrl(p.name);
+                updatePageUrl(p.slug);
             }
             p.el.querySelector('.clickable').onmouseenter = function () {
                 hoverMarker(this);
@@ -195,16 +198,34 @@ modalBackAll.forEach(b => {
 })
 
 
-function updateModalContent(URL, contentType, islandIdx) {
+function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
 
-    fetch(URL).then((response) => {
+    fetch(slickPlanExportURL).then((response) => {
         return response.text();
     }).then((html) => {
 
-        modalContentContainer.innerHTML = '';
+        // Get the corresponding SlickPlan page
         const doc = parser.parseFromString(html, 'text/html');
-        const main = doc.querySelector('#main');
 
+        // Update dynamic meta tags
+        if (doc.title) {
+            document.title = doc.title;
+            document.querySelector('meta[name="og:title"]').setAttribute('content', doc.title);
+        }
+        if (doc.querySelector('meta[name="description"]')) {
+            const description = doc.querySelector('meta[name="description"]').getAttribute('content');
+            document.querySelector('meta[name="description"]').setAttribute('content', description);
+            document.querySelector('meta[name="og:description"]').setAttribute('content', description);
+        }
+        if (doc.querySelector('meta[name="keywords"]')) {
+            const keywords = doc.querySelector('meta[name="keywords"]').getAttribute('content');
+            document.querySelector('meta[name="keywords"]').setAttribute('content', keywords);
+        }
+        document.querySelector('meta[name="og:url"]').setAttribute('content', window.location.href.split("#")[0] + '#' + slug);
+
+        // Parse the page the modal HTML content
+        modalContentContainer.innerHTML = '';
+        const main = doc.querySelector('#main');
         if (contentType !== 0) {
 
             let internalHost = location.host.replace('www.', "");
@@ -282,6 +303,7 @@ function updateModalContent(URL, contentType, islandIdx) {
             modalContainer.classList.add('is-video');
         }
 
+
         modalContainer.setAttribute('data-active-island', islands[islandIdx].name);
         openModal(islandIdx);
 
@@ -291,8 +313,8 @@ function updateModalContent(URL, contentType, islandIdx) {
 }
 
 
-function updatePageUrl(name) {
-    window.location.hash = name;
+function updatePageUrl(code) {
+    window.location.hash = code;
 }
 
 function openModal(islandIdx) {

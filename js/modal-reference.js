@@ -1,4 +1,6 @@
 // -------------------------------------
+// This object only stored the data which is missing in SlickPlan export.
+// We use thins data ONLY to populate islands->popups objects
 //
 // Types:
 // 0 - video only,
