@@ -174,11 +174,21 @@ a:focus {
 .marker-title-container.visible {
     opacity: 1;
 }
+.marker-title-container .marker-title {
+    display: inline-block;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
 .marker-title-container .marker-title-label {
+    display: inline-block;
     background-color: #ffffff;
     padding: 5px 10px;
     border-radius: 30px;
-    margin: 3px;
+    margin-top: 3px;
+    margin-left: 5px;
+    font-size: .9em;
 }
 
 

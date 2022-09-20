@@ -3,25 +3,27 @@ function generateMarkers(html) {
     const links = Array.from(doc.querySelectorAll('ul ul li a'));
     links.forEach(l => {
         const contentPath = l.getAttribute('href');
-        const islandCode = l.innerHTML.slice(0, 1);
-        const contentName = l.innerHTML.slice(0, 3);
+        const islandCodeLetter = l.innerHTML.slice(0, 1);
+        const islandName = l.innerHTML.slice(0, 3);
+        const islandTitle = l.innerHTML.substring(5)
 
-        const island = islands.find(i => i.popupCode.toUpperCase() === islandCode.toUpperCase());
+        const island = islands.find(i => i.popupCode.toUpperCase() === islandCodeLetter.toUpperCase());
 
         if (island) {
             // otherwise, it should be a placeholder
             const box = island.highlight.getBBox();
 
             const popupData = {
-                name: contentName,
+                name: islandName,
                 url: contentPath,
                 el: null,
-                labels: markersRef[contentName].labels
+                labels: markersRef[islandName].labels,
+                title: islandTitle
             };
-            if (markersRef[contentName]) {
-                popupData.x = markersRef[contentName].pos[0];
-                popupData.y = markersRef[contentName].pos[1];
-                popupData.type = markersRef[contentName].type;
+            if (markersRef[islandName]) {
+                popupData.x = markersRef[islandName].pos[0];
+                popupData.y = markersRef[islandName].pos[1];
+                popupData.type = markersRef[islandName].type;
             } else {
                 popupData.x = box.x + Math.random() * box.width;
                 popupData.y = box.y + Math.random() * box.height;
@@ -36,7 +38,7 @@ function generateMarkers(html) {
                 y: popupData.y
             });
             const dotClickable = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            dotClickable.setAttributeNS(null, 'data-popup-name', contentName);
+            dotClickable.setAttributeNS(null, 'data-popup-name', islandName);
             dotClickable.setAttributeNS(null, 'cx', 0);
             dotClickable.setAttributeNS(null, 'cy', 0);
             dotClickable.setAttributeNS(null, 'r', markerSize[2]);
@@ -110,7 +112,7 @@ function generateMarkers(html) {
             p.el.querySelector('.clickable').onmouseenter = function () {
                 hoverMarker(this);
                 markerTitleContainer.classList.add('visible');
-                updateMarkerTitleContent(p.labels);
+                updateMarkerTooltipContent(p.title, p.labels);
                 updateMarkerTitlePosition(this);
             }
             p.el.querySelector('.clickable').onmouseleave = function () {
@@ -161,7 +163,9 @@ function selectMarker(markerCircle) {
     })
 }
 
-function updateMarkerTitleContent(labels) {
+function updateMarkerTooltipContent(title, labels) {
+    markerTitle.innerHTML = title;
+    
     markerLabels.innerHTML = '';
     labels.forEach(l => {
         const labelEl = document.createElement('div');

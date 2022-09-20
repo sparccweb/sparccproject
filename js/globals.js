@@ -6,6 +6,7 @@ const header = document.querySelector('.header');
 const mainLogo = document.querySelector('.main-logo');
 const mainTitle = document.querySelector('.main-title');
 const markerTitleContainer = document.querySelector('.marker-title-container');
+const markerTitle = document.querySelector('.marker-title');
 const markerLabels = document.querySelector('.marker-labels');
 
 const modalBackAll = Array.from(document.querySelectorAll('.modal-back'));

@@ -43,16 +43,15 @@ fetch('./website-exported/sitemap.html').then((response) => {
 
     // Check if the URL contains the existing marker and go there if yes
     const modalCodeFromUrl = window.location.hash.substring(1);
-    const islandCode = modalCodeFromUrl.slice(0, 1);
-    const contentName = modalCodeFromUrl.slice(0, 3);
-    const markerToFocus = document.querySelector('circle.clickable[data-popup-name="' + contentName + '"]');
-    const island = islands.find(i => i.popupCode.toUpperCase() === islandCode.toUpperCase());
+    const islandCodeLetter = modalCodeFromUrl.slice(0, 1);
+    const islandName = modalCodeFromUrl.slice(0, 3);
+    const markerToFocus = document.querySelector('circle.clickable[data-popup-name="' + islandName + '"]');
+    const island = islands.find(i => i.popupCode.toUpperCase() === islandCodeLetter.toUpperCase());
 
     if (markerToFocus && island) {
         
         view = views.i;
         goToIslandView();
-
         
         const popup = island.popups.find(p => p.el === markerToFocus.parentElement);
 
