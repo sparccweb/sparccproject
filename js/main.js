@@ -53,12 +53,10 @@ fetch('./website-exported/sitemap.html').then((response) => {
 
         island.mapToIslandAnimation.progress(1);
 
-        const contentURL = './website-exported/' + popupData.slickPlanExportURL;
-        updateModalContent(contentURL, popupData.type, activeIslandIdx, popupData.slug);
-
         gsap.delayedCall(loaderAnimation.duration() / loaderAnimation.timeScale(), () => {
             selectMarker(markerToFocus);
-            openModal(activeIslandIdx);
+            const contentURL = './website-exported/' + popupData.slickPlanExportURL;
+            updateModalContent(contentURL, popupData.type, activeIslandIdx, popupData.slug);
         });
 
     } else {
