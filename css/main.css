@@ -9,19 +9,22 @@ html, body {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     -webkit-tap-highlight-color: transparent;
     overscroll-behavior: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
 }
-
 body {
     background: #8cceea;
 }
-
+a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: inherit;
+}
 .map-container {
     position: relative;
     width: 100%;
     height: 100vh; /* to be overwritten with window inner height w/ JS */
     overflow: hidden;
 }
-
 .header {
     position: relative;
     display: flex;
@@ -71,7 +74,6 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    font-family: sans-serif;
 }
 .zooming-controls {
     padding: 10px;
@@ -126,14 +128,18 @@ body {
 .zooming-controls #zoom-out-btn:hover {
     background-color: #ffffff;
 }
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
     .main-logo {
         max-height: 6vw;
     }
 }
-
-
-
+.copyright {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: .7em;
+    font-size: 1.2vh;
+}
 
 .common-symbols {
     display: block;

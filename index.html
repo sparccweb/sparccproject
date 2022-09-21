@@ -23,17 +23,17 @@
     <meta name='og:image' content='https://sparccweb.github.io/sparccproject/sparcc.jpg' />
     <meta name='og:site_name' content='SPARCC - The Strong, Prosperous, And Resilient Communities Challenge' />
 
-<!--    &lt;!&ndash; LinkedIn Image Share&ndash;&gt;-->
-<!--    <meta property="og:image" content="/Linkedin_banner.png">-->
-<!--    &lt;!&ndash; Twitter Image Share&ndash;&gt;-->
-<!--    <meta name="twitter:image" content="/Twitter_banner.png" />-->
-<!--    <meta name="twitter:card" content="summary_large_image">-->
-<!--    -->
-<!--    &lt;!&ndash; Facebook Image Share&ndash;&gt;-->
-<!--    <meta property="og:image" content="/Facebook_banner.png">-->
-<!--    <meta property="og:image:width" content="1200"/>-->
-<!--    <meta property="og:image:height" content="630"/>-->
+    <!-- LinkedIn Image Share-->
+    <meta property="og:image" content="./social/Linkedin_banner.png">
+    <!-- Twitter Image Share-->
+    <meta name="twitter:image" content="./social/Twitter_banner.png" />
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- Facebook Image Share-->
+    <meta property="og:image" content="./social/Facebook_banner.png">
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
 
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="./favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" href="./favicons/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="./favicons/favicon-16x16.png" sizes="16x16">
@@ -41,7 +41,7 @@
     <link rel="mask-icon" href="./favicons/safari-pinned-tab.svg" color="#1ccfc9">
     <link rel="shortcut icon" href="./favicons/favicon.ico">
 
-    <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/events.css">
 
@@ -5627,6 +5627,15 @@
     <div class="test">
         <input type="checkbox" id="show-marker-names" name="tst-mark" onclick="testTest()">
         <label for="show-marker-names">show marker names</label>
+    </div>
+
+    <div class="copyright">
+        &copy; <span id="copyright-year"></span> SPARCC
+        </br>
+        Design & Development by <a href="https://millenniumweb.io/" target="_blank">Millennium Web Strategies</a>
+        <script>
+            document.getElementById('copyright-year').innerHTML = new Date().getFullYear();
+        </script>
     </div>
 </div>
 
