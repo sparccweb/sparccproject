@@ -4,6 +4,7 @@
 .modal .modal-content,
 .modal iframe,
 .modal .addthis_inline_share_toolbox *,
+.copyright a,
 .map {
     pointer-events: auto;
 }
