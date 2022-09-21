@@ -3,6 +3,7 @@
 }
 .modal .modal-content,
 .modal iframe,
+.modal .addthis_inline_share_toolbox *,
 .map {
     pointer-events: auto;
 }

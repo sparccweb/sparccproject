@@ -276,9 +276,9 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                 }
             });
 
-            const addThisEl = document.createElement('div');
-            addThisEl.classList.add('addthis_inline_share_toolbox_z8xm');
-            main.appendChild(addThisEl);
+            // const addThisEl = document.createElement('div');
+            // addThisEl.classList.add('addthis_inline_share_toolbox_by2v');
+            // main.appendChild(addThisEl);
             
             modalContentContainer.append(main);
             modalContainer.classList.remove('is-video');

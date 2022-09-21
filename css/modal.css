@@ -20,7 +20,7 @@
 .modal {
     position: relative;
     width: calc(100% - 50px);
-    max-height: calc(100% - 20px);
+    max-height: calc(100% - 50px);
     background: #FFF;
     border: 4px solid #000;
     border-radius: 30px;
@@ -99,7 +99,7 @@
 .modal #main > div,
 .modal #main > p,
 .modal #main > article {
-    padding: 0 20px;
+    padding: 0 60px 0 20px;
 }
 .modal #main figure {
     padding: 0;
@@ -439,4 +439,17 @@ a:focus {
 }
 .test * {
     pointer-events: auto !important;
+}
+
+
+
+
+
+.addthis_inline_share_toolbox {
+    position: absolute;
+    right: -5px;
+    bottom: 80px;
+}
+.at-resp-share-element .at-share-btn {
+    display: block !important;
 }
