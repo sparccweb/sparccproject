@@ -138,7 +138,8 @@ a {
     right: 0;
     bottom: 0;
     padding: .7em;
-    font-size: 1.2vh;
+    font-size: 11px;
+    z-index: 1;
 }
 
 .common-symbols {
@@ -148,6 +149,7 @@ a {
 }
 .main-map {
     opacity: 0;
+    z-index: 2;
 }
 .detailed-view {
     display: none;
