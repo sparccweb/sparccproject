@@ -453,3 +453,6 @@ a:focus {
 .at-resp-share-element .at-share-btn {
     display: block !important;
 }
+.modal-container.is-video .addthis_inline_share_toolbox {
+    display: none !important;
+}
