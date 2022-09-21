@@ -109,8 +109,6 @@ function generateMarkers(html) {
 
                 const contentURL = './website-exported/' + p.slickPlanExportURL;
                 updateModalContent(contentURL, p.type, islandIdx, p.slug);
-                openModal(islandIdx);
-                
                 updatePageUrl(p.slug);
             }
             p.el.querySelector('.clickable').onmouseenter = function () {
@@ -309,6 +307,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
         }
 
         modalContainer.setAttribute('data-active-island', islands[islandIdx].name);
+        openModal(islandIdx);
 
     }).catch((err) => {
         console.warn('Modal content loader failed: ', err);
