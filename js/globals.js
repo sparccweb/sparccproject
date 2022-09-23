@@ -100,7 +100,6 @@ let view = views.m;
 let activeIslandIdx = null;
 
 const beesAnimations = [ gsap.timeline({ repeat: -1 }), gsap.timeline({ repeat: -1 }) ];
-const mainBoatAnimation = gsap.timeline({ repeat: -1 });
 const ferrisWheelAnimation = gsap.timeline({ repeat: -1 });
 const chiTrainAnimation = gsap.timeline({ repeat: -1, yoyo: true, repeatDelay: 3 });
 const birdAnimations = [
@@ -259,8 +258,8 @@ const islands = [{
         toFade: Array.from(map.querySelectorAll('.bay .map-view .to-fade > *')),
     },
     bayTowers: Array.from(map.querySelectorAll('.island-content.bay .bay-towers')),
-    balloons: Array.from(map.querySelectorAll('.island-content.bay .balloon')),
-    balloonsTrajectories: Array.from(map.querySelectorAll('.island-content.bay .balloon-trajectory')),
+    balloon: map.querySelector('.island-content.bay .balloon'),
+    balloonTrajectory: map.querySelector('.island-content.bay .balloon-trajectory'),
     detailedViewContainer: Array.from(map.querySelectorAll('.bay .detailed-view')),
     detailedViewEls: {
         roads: map.querySelector('.bay .detailed-view .roads'),

@@ -13,18 +13,9 @@ function addBayDetailsToTimeline(tl, idx) {
             opacity: 0,
             ease: 'back.in(2)'
         }, 0)
-        .to(island.balloons[1], {
+        .to(island.balloon, {
             duration: .5,
             scale: .5,
-            transformOrigin: '50% 50%',
-            ease: 'power1.inOut'
-        }, 0)
-        .fromTo(island.balloons[0], {
-            scale: 0,
-            transformOrigin: '50% 50%',
-        }, {
-            duration: .5,
-            scale: 1,
             transformOrigin: '50% 50%',
             ease: 'power1.inOut'
         }, 0)
@@ -124,18 +115,6 @@ function hideBayDetailsToTimeline(tl, idx) {
         .set(island.detailedViewEls.plane, {
             opacity: 1
         }, '>')
-        .to(island.balloons[1], {
-            duration: .5,
-            scale: 1,
-            transformOrigin: '50% 50%',
-            ease: 'power1.inOut'
-        }, 0)
-        .to(island.balloons[0], {
-            duration: .5,
-            scale: 0,
-            transformOrigin: '50% 50%',
-            ease: 'power1.inOut'
-        }, 0)
         .to(island.bayTowers, {
             duration: 1,
             scale: 1,

@@ -105,23 +105,6 @@ birdAnimations[1]
     }, '>-.1')
 
 
-// Yellow boat
-mainBoatAnimation
-    .fromTo(mainMapBoat, {
-        x: 0,
-        y: 750
-    }, {
-        duration: 9,
-        x: 600,
-        y: 750,
-        ease: 'power1.inOut',
-    })
-    .to(mainMapBoat, {
-        duration: 6,
-        x: 0,
-        ease: 'power1.inOut',
-    })
-
 
 // Ferris Wheel (all symbols at once)
 
@@ -712,48 +695,36 @@ islands[2].detailedViewLoopedAnimations[2] = gsap.timeline({
 
 // Bay area
 
-let balloonsTravelTls = [], balloonsSwingTls = [];
-islands[3].balloons.forEach((b, idx) => {
-    let balloon = {
-        travel: b,
-        swing: b.querySelector('.balloon-swing'),
-    };
-    gsap.set(balloon.swing, {
-        transformOrigin: '50% 25%',
+islands[3].detailedViewLoopedAnimations[0] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+})
+    .to(islands[3].balloon, {
+        duration: 35,
+        motionPath: {
+            path: islands[3].balloonTrajectory,
+            align: islands[3].balloonTrajectory,
+            alignOrigin: [0.5, 0.5]
+        },
+        ease: 'none'
     });
 
-    // balloon traveling animation
-    balloonsTravelTls[idx] =
-        gsap.timeline({
-            repeat: -1,
-        })
-            .to(balloon.travel, {
-                duration: 30,
-                motionPath: {
-                    path: islands[3].balloonsTrajectories[idx],
-                    align: islands[3].balloonsTrajectories[idx],
-                    alignOrigin: [0.5, 0.5]
-                },
-                ease: 'none'
-            });
-
-    // balloon swing animation
-    balloonsSwingTls[idx] =
-        gsap.timeline({
-            repeat: -1,
-            yoyo: true,
-        })
-            .to(balloon.travel, {
-                duration: 1,
-                rotation: -5,
-                ease: 'power1.inOut'
-            })
-            .to(balloon.travel, {
-                duration: 1,
-                rotation: 5,
-                ease: 'power1.inOut'
-            }, '>');
-});
+islands[3].detailedViewLoopedAnimations[1] = gsap.timeline({
+    paused: true,
+    repeat: -1,
+    yoyo: true,
+})
+    .to(islands[3].balloon, {
+        duration: 1,
+        rotation: -5,
+        transformOrigin: '50% 25%',
+        ease: 'power1.inOut'
+    })
+    .to(islands[3].balloon, {
+        duration: 1,
+        rotation: 5,
+        ease: 'power1.inOut'
+    }, '>');
 
 
 // Memphis
