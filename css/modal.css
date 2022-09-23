@@ -54,6 +54,14 @@
     max-height: 80vh;
     padding: 70px 10px 30px 10px;
     border-color: #fff;
+    flex-direction: column-reverse;
+}
+.is-video .modal .video-title {
+    margin-top: -3.5em;
+    line-height: 3.5em;
+    font-size: 1.25em;
+    padding: 0 10px;
+    color: #ffffff;
 }
 .is-video .modal .modal-content {
     position: relative;
@@ -286,6 +294,7 @@ a:focus {
 [data-active-island="atlanta"] .modal #close-modal-btn:after {
     background-color: #ffd900;
 }
+[data-active-island="atlanta"] .modal .video-title,
 [data-active-island="atlanta"] .modal #main h1 {
     color: #333333;
 }

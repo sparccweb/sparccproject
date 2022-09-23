@@ -284,6 +284,13 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
             modalContainer.classList.remove('is-video');
 
         } else {
+
+            if (main.querySelector('h1')) {
+                const titleEl = document.createElement('div');
+                titleEl.classList.add('video-title');
+                modal.append(titleEl);
+                titleEl.innerHTML = main.querySelector('h1').innerHTML;
+            }
             
             let iframeProvided;
             if (main.querySelector('pre')) {
@@ -303,6 +310,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                 newIframe.setAttribute('frameBorder', '0');
                 modalContentContainer.append(newIframe);
             }
+            
             modalContainer.classList.add('is-video');
         }
 
