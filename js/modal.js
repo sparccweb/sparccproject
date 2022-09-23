@@ -11,7 +11,7 @@ function generateMarkers(html) {
 
         const island = islands.find(i => i.popupCode.toUpperCase() === islandCodeLetter.toUpperCase());
 
-        if (island) {
+        if (island && markersRef[islandCode]) {
             // otherwise, it should be a placeholder
             const box = island.highlight.getBBox();
 
