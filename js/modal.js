@@ -286,10 +286,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
         } else {
 
             if (main.querySelector('h1')) {
-                const titleEl = document.createElement('div');
-                titleEl.classList.add('video-title');
-                modal.append(titleEl);
-                titleEl.innerHTML = main.querySelector('h1').innerHTML;
+                modalVideoTitle.innerHTML = main.querySelector('h1').innerHTML;
             }
             
             let iframeProvided;
@@ -377,6 +374,7 @@ function closeModal() {
                 display: 'none'
             });
             modalContentContainer.innerHTML = '';
+            modalVideoTitle.innerHTML = '';
         }
     });
 

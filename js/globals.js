@@ -12,6 +12,7 @@ const markerLabels = document.querySelector('.marker-labels');
 const modalBackAll = Array.from(document.querySelectorAll('.modal-back'));
 const modalContainer = document.querySelector('.modal-container');
 const modal = document.querySelector('.modal');
+const modalVideoTitle = document.querySelector('.modal .video-title');
 const modalContentContainer = document.querySelector('.modal-content');
 const modalCloseBtn = document.querySelector('#close-modal-btn');
 

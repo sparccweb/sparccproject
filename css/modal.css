@@ -54,7 +54,7 @@
     max-height: 80vh;
     padding: 70px 10px 30px 10px;
     border-color: #fff;
-    flex-direction: column-reverse;
+    flex-direction: column;
 }
 .is-video .modal .video-title {
     margin-top: -3.5em;
