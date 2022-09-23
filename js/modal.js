@@ -288,7 +288,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
             if (main.querySelector('h1')) {
                 modalVideoTitle.innerHTML = main.querySelector('h1').innerHTML;
             } else {
-                modalVideoTitle.innerHTML = '  ';
+                modalVideoTitle.innerHTML = '&nbsp;';
             }
             
             let iframeProvided;
