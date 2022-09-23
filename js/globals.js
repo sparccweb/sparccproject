@@ -48,8 +48,6 @@ const birdWrapper = document.querySelector('.bird-symbol-wrapper');
 const birdWing = document.querySelector('.bird-wing');
 const birdTrajectories = Array.from(map.querySelectorAll('.bird-trajectories > *'));
 
-const mainMapBoat = map.querySelector('.main-map-boat');
-
 const cranes = [{
     craneHozLine: document.querySelector('#crane-symbol-right .crane-horizontal'),
     craneHookWrapper: document.querySelector('#crane-symbol-right .crane-hook-wrapper'),

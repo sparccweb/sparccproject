@@ -281,10 +281,10 @@ a:focus {
     background-color: #ffd900;
 }
 [data-active-island="atlanta"] .modal #main a {
-    color: #ffd900;
+    color: #b39800;
 }
 [data-active-island="atlanta"] a:focus {
-    border-color: #ffd900;
+    border-color: #b39800;
 }
 [data-active-island="atlanta"] .modal #close-modal-btn:before,
 [data-active-island="atlanta"] .modal #close-modal-btn:after {

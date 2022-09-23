@@ -129,7 +129,7 @@ function updateIslandToIslandAnimation(startIslandIdx, endIslandIdx) {
 
 function addMapHidingToTimeline(tl) {
     tl
-        .to([ mainMapBoat, mainMapPlane ], {
+        .to(mainMapPlane, {
             duration: .7,
             opacity: 0
         }, 0)
@@ -303,7 +303,7 @@ function addMapShowingToTimeline(tl, idx) {
             opacity: 1,
             ease: 'power1.in'
         }, .4)
-        .to([ mainMapPlane, mainMapBoat ], {
+        .to(mainMapPlane, {
             duration: .5,
             opacity: 1
         }, .5)
