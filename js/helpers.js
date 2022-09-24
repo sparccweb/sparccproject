@@ -25,19 +25,27 @@ function setupLayout() {
 
     const windowRatio = window.innerWidth / window.innerHeight;
     if (windowRatio > .8 * viewBoxRatio) {
+        console.log('1');
         gsap.set(header, {
-            height: .08 * window.innerHeight,
-            fontSize: .03 * window.innerHeight,
-            maxWidth: .88 * window.innerHeight * viewBoxRatio + 'px',
+            height: .06 * window.innerHeight,
+            fontSize: .02 * window.innerHeight,
+            maxWidth: '80%',
             alignItems: 'center'
-        })
+        });
+        gsap.set(mainTitle, {
+            paddingTop: 0,
+        });
     } else {
+        console.log('2');
         gsap.set(header, {
             height: .5 * (window.innerHeight - window.innerWidth / viewBoxRatio),
-            fontSize: .045 * window.innerHeight,
+            fontSize: .02 * window.innerHeight,
             maxWidth: 'none',
             alignItems: 'start'
-        })
+        });
+        gsap.set(mainTitle, {
+            paddingTop: mainLogo.clientHeight,
+        });
     }
 }
 function goToIslandView() {
