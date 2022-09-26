@@ -25,10 +25,9 @@ function setupLayout() {
 
     const windowRatio = window.innerWidth / window.innerHeight;
     if (windowRatio > .8 * viewBoxRatio) {
-        console.log('1');
         gsap.set(header, {
             height: .06 * window.innerHeight,
-            fontSize: .02 * window.innerHeight,
+            fontSize: .025 * window.innerHeight,
             maxWidth: '80%',
             alignItems: 'center'
         });
@@ -36,15 +35,14 @@ function setupLayout() {
             paddingTop: 0,
         });
     } else {
-        console.log('2');
         gsap.set(header, {
             height: .5 * (window.innerHeight - window.innerWidth / viewBoxRatio),
-            fontSize: .02 * window.innerHeight,
+            fontSize: Math.min(.028 * window.innerHeight, .07 * window.innerWidth),
             maxWidth: 'none',
             alignItems: 'start'
         });
         gsap.set(mainTitle, {
-            paddingTop: mainLogo.clientHeight,
+            paddingTop: 1.45 * mainLogo.clientHeight,
         });
     }
 }
