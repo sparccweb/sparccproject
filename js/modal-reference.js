@@ -311,87 +311,87 @@ const markersRef = {
     'G01': {
         pos: [1210, 1152],
         type: 3,
-        labels: ['Policy']
+        labels: ['Policy', 'Site Story']
     },
     'G02': {
         pos: [1218,1194],
         type: 3,
-        labels: ['Capital', 'Grants']
+        labels: ['Policy', 'Racial Equity', 'Housing']
     },
     'G03': {
         pos: [1056, 1231],
         type: 3,
-        labels: ['Housing']
+        labels: ['Policy', 'Housing', 'Racial Equity']
     },
     'G04': {
         pos: [1338, 1391],
         type: 3,
-        labels: ['Health']
+        labels: ['Policy', 'ETOD']
     },
     'G05': {
         pos: [1380,1210],
         type: 4,
-        labels: []
+        labels: ['Capital', 'Racial Equity']
     },
     'G06': {
         pos: [1260, 1358],
         type: 4,
-        labels: ['ETOD']
+        labels: ['Capital', 'Grants', 'Climate']
     },
     'G07': {
         pos: [1111, 1133],
         type: 4,
-        labels: ['Health', 'Climate']
+        labels: ['Capital', 'Racial Equity', 'Housing']
     },
     'G08': {
         pos: [1248, 1166],
         type: 5,
-        labels: ['Climate']
+        labels: ['Health', 'Racial Equity', 'Site Story']
     },
     'G09': {
         pos: [1268, 1202],
         type: 5,
-        labels: ['Policy']
+        labels: ['Health', 'Climate', 'Policy']
     },
     'G10': {
         pos: [1205, 1327],
         type: 6,
-        labels: []
+        labels: ['Climate', 'Health', 'Site Story']
     },
     'G11': {
         pos: [1290, 1163],
         type: 6,
-        labels: ['Capital']
+        labels: ['Climate', 'Policy', 'Racial Equity']
     },
     'G12': {
         pos: [1206, 1371],
         type: 6,
-        labels: []
+        labels: ['Climate', 'Policy', 'Site Story']
     },
     'G13': {
         pos: [1121, 1232],
         type: 6,
-        labels: ['Capital', 'Grants']
+        labels: ['Climate', 'Health', 'Capital']
     },
     'G14': {
         pos: [1085,1232],
         type: 2, // ??????????????
-        labels: []
+        labels: ['Policy', 'Site Story', 'Housing']
     },
     'G15': {
         pos: [1179, 1176],
         type: 7,
-        labels: ['Capital']
+        labels: ['Racial Equity', 'Site Story']
     },
     'G16': {
         pos: [1254, 1093],
         type: 7,
-        labels: []
+        labels: ['Racial Equity', 'Site Story']
     },
     'G17': {
         pos: [1290, 1163],
         type: 7,
-        labels: []
+        labels: ['Racial Equity', 'Site Story']
     },
     'G18': {
         pos: [1206, 1371],
@@ -401,37 +401,37 @@ const markersRef = {
     'G19': {
         pos: [1121, 1232],
         type: 8,
-        labels: []
+        labels: ['Racial Equity']
     },
     'G20': {
         pos: [1265, 1236],
         type: 8,
-        labels: []
+        labels: ['Racial Equity']
     },
     'G21': {
         pos: [1302.5, 1126],
         type: 9,
-        labels: []
+        labels: ['Racial Equity', 'Housing', 'Policy']
     },
     'G22': {
         pos: [1255, 1127],
         type: 9,
-        labels: []
+        labels: ['Capital', 'Health', 'Racial Equity']
     },
     'G23': {
         pos: [1220, 1230],
         type: 9,
-        labels: []
+        labels: ['Grants', 'Racial Equity']
     },
     'G24': {
         pos: [1310, 1200],
         type: 9,
-        labels: []
+        labels: ['Grants', 'Racial Equity', 'Capital']
     },
     'G25': {
         pos: [1202, 1117],
         type: 8,
-        labels: []
+        labels: ['Racial Equity']
     },
 
     // -------------------------------------
