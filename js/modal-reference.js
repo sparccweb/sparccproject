@@ -391,7 +391,7 @@ const markersRef = {
     'G17': {
         pos: [1290, 1163],
         type: 7,
-        labels: ['Capital']
+        labels: []
     },
     'G18': {
         pos: [1206, 1371],
@@ -401,7 +401,7 @@ const markersRef = {
     'G19': {
         pos: [1121, 1232],
         type: 8,
-        labels: ['Capital', 'Grants']
+        labels: []
     },
     'G20': {
         pos: [1265, 1236],
@@ -411,7 +411,7 @@ const markersRef = {
     'G21': {
         pos: [1302.5, 1126],
         type: 9,
-        labels: ['Capital']
+        labels: []
     },
     'G22': {
         pos: [1255, 1127],
