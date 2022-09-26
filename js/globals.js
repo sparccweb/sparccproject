@@ -86,7 +86,7 @@ const viewBoxCenter = {
     y: 1250
 }
 
-const markerSize = [ 5, 10, 20 ];
+const markerSize = [ 6, 12, 24 ];
 
 let currentSvgScale = 1;
 

@@ -7,6 +7,9 @@ gsap.set(header, {
 window.onresize = setupLayout;
 
 
+document.addEventListener('touchstart', setTouchScreenClass, true);
+
+
 
 // ------------------------------------------------------------------
 // Once the SlickPlan data is here, fetch popups data

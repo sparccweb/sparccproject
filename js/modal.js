@@ -65,21 +65,28 @@ function generateMarkers(html) {
             dotTitle.setAttributeNS(null, 'fill', '#fff');
             dotTitle.innerHTML = popupData.code;
 
+            const iconSize = popupData.type > 2 ? 8 : 12;
             let icon = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-            icon.setAttributeNS(null, 'x', -6);
-            icon.setAttributeNS(null, 'y', -6);
-            icon.setAttributeNS(null, 'width', 12);
-            icon.setAttributeNS(null, 'height', 12);
+            icon.setAttributeNS(null, 'x', -.5 * iconSize);
+            icon.setAttributeNS(null, 'y', -.5 * iconSize);
+            icon.setAttributeNS(null, 'width', iconSize);
+            icon.setAttributeNS(null, 'height', iconSize);
             icon.setAttributeNS(null, 'fill', '#fff');
 
-            if (popupData.type === 0) {
-                icon.setAttributeNS(null, 'href', '#play-icon-symbol');
-            } else if (popupData.type === 1) {
-                icon.setAttributeNS(null, 'href', '#info-icon-symbol');
-            } else {
-                icon.setAttributeNS(null, 'href', '#newspaper-icon-symbol');
-            }
-
+            const iconsReference = [
+                '#play-icon-symbol',
+                '#info-icon-symbol',
+                '#newspaper-icon-symbol',
+                '#policy-icon-symbol',
+                '#capital-icon-symbol',
+                '#health-icon-symbol',
+                '#climate-icon-symbol',
+                '#learning-icon-symbol',
+                '#evolution-icon-symbol',
+                '#partners-icon-symbol',
+            ]
+            icon.setAttributeNS(null, 'href', iconsReference[popupData.type]);
+            
             gDot.appendChild(dotClickable);
             gDot.appendChild(dot);
             gDot.appendChild(dotTitle);
@@ -275,10 +282,6 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                     f.parentNode.innerHTML = f.innerHTML;
                 }
             });
-
-            // const addThisEl = document.createElement('div');
-            // addThisEl.classList.add('addthis_inline_share_toolbox_by2v');
-            // main.appendChild(addThisEl);
             
             modalContentContainer.append(main);
             modalContainer.classList.remove('is-video');

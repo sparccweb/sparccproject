@@ -4,12 +4,25 @@
 //
 // Types:
 // 0 - video only,
-// 1 - text short
-// 2 - text long
+// 1 - text (info icon)
+// 2 - text (newspaper icon)
+//
+// 3 - policy
+// 4 - capital
+// 5 - health
+// 6 - climate
+// 7 - learning
+// 8 - evolution
+// 9 - partners
+//
+// Types 1 to  are the same thing except the icon
 // -------------------------------------
 
 
 const markersRef = {
+
+    // -------------------------------------
+
     'A01': {
         pos: [813, 1505],
         type: 2,
@@ -81,6 +94,8 @@ const markersRef = {
         labels: ['Site Story']
     },
 
+    // -------------------------------------
+
     'M01': {
         pos: [1445, 1532],
         type: 2,
@@ -137,6 +152,8 @@ const markersRef = {
         labels: ['Grants']
     },
 
+    // -------------------------------------
+
     'B01': {
         pos: [1709, 800],
         type: 2,
@@ -177,6 +194,8 @@ const markersRef = {
         type: 2,
         labels: ['Site Story']
     },
+
+    // -------------------------------------
 
     'C01': {
         pos: [1946, 1487],
@@ -243,7 +262,9 @@ const markersRef = {
         type: 2,
         labels: ['Site Story']
     },
-    
+
+    // -------------------------------------
+
     'D01': {
         pos: [407, 1212],
         type: 2,
@@ -285,86 +306,135 @@ const markersRef = {
         labels: ['Site Story']
     },
 
+    // -------------------------------------
+
     'G01': {
-        pos: [1284, 1325],
-        type: 2,
+        pos: [1210, 1152],
+        type: 3,
         labels: ['Policy']
     },
     'G02': {
-        pos: [1347, 1116],
-        type: 2,
+        pos: [1218,1194],
+        type: 3,
         labels: ['Capital', 'Grants']
     },
     'G03': {
         pos: [1056, 1231],
-        type: 2,
+        type: 3,
         labels: ['Housing']
     },
     'G04': {
         pos: [1338, 1391],
-        type: 2,
+        type: 3,
         labels: ['Health']
     },
     'G05': {
-        pos: [1437, 1281],
-        type: 2,
+        pos: [1380,1210],
+        type: 4,
         labels: []
     },
     'G06': {
         pos: [1260, 1358],
-        type: 2,
+        type: 4,
         labels: ['ETOD']
     },
     'G07': {
         pos: [1111, 1133],
-        type: 2,
+        type: 4,
         labels: ['Health', 'Climate']
     },
     'G08': {
         pos: [1248, 1166],
-        type: 2,
+        type: 5,
         labels: ['Climate']
     },
     'G09': {
-        pos: [1340, 1205],
-        type: 2,
+        pos: [1268, 1202],
+        type: 5,
         labels: ['Policy']
     },
     'G10': {
         pos: [1205, 1327],
-        type: 2,
+        type: 6,
         labels: []
     },
     'G11': {
         pos: [1290, 1163],
-        type: 2,
+        type: 6,
         labels: ['Capital']
     },
     'G12': {
         pos: [1206, 1371],
-        type: 2,
+        type: 6,
         labels: []
     },
     'G13': {
         pos: [1121, 1232],
-        type: 2,
+        type: 6,
         labels: ['Capital', 'Grants']
     },
     'G14': {
-        pos: [1265, 1270],
-        type: 2,
+        pos: [1085,1232],
+        type: 2, // ??????????????
         labels: []
     },
     'G15': {
-        pos: [1387, 1144],
-        type: 2,
+        pos: [1179, 1176],
+        type: 7,
         labels: ['Capital']
     },
     'G16': {
         pos: [1254, 1093],
-        type: 0,
+        type: 7,
         labels: []
     },
+    'G17': {
+        pos: [1290, 1163],
+        type: 7,
+        labels: ['Capital']
+    },
+    'G18': {
+        pos: [1206, 1371],
+        type: 8,
+        labels: []
+    },
+    'G19': {
+        pos: [1121, 1232],
+        type: 8,
+        labels: ['Capital', 'Grants']
+    },
+    'G20': {
+        pos: [1265, 1236],
+        type: 8,
+        labels: []
+    },
+    'G21': {
+        pos: [1302.5, 1126],
+        type: 9,
+        labels: ['Capital']
+    },
+    'G22': {
+        pos: [1255, 1127],
+        type: 9,
+        labels: []
+    },
+    'G23': {
+        pos: [1220, 1230],
+        type: 9,
+        labels: []
+    },
+    'G24': {
+        pos: [1310, 1200],
+        type: 9,
+        labels: []
+    },
+    'G25': {
+        pos: [1202, 1117],
+        type: 8,
+        labels: []
+    },
+
+    // -------------------------------------
 
     'L01': {
         pos: [1012, 846],

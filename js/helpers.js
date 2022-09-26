@@ -72,3 +72,7 @@ function goToMapView() {
         opacity: 1
     });
 }
+function setTouchScreenClass() {
+    document.body.className += ' disable-hover';
+    document.removeEventListener('touchstart', setTouchScreenClass, true);
+}

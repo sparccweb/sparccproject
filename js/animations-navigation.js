@@ -234,12 +234,12 @@ function addIslandSelectionToTimeline(tl, idx) {
             scale: 0,
             transformOrigin: '50% 50%'
         }, {
-            duration: .5,
-            stagger: .1,
+            duration: .6,
+            stagger: .05,
             scale: 1,
             transformOrigin: '50% 50%',
             ease: 'back(3).out'
-        }, 2)
+        }, 1.7)
 }
 function addIslandDeselectionToTimeline(tl, idx) {
     const island = islands[idx];
