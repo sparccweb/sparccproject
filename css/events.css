@@ -18,6 +18,10 @@
     pointer-events: auto;
     cursor: pointer;
 }
+.zooming-controls #zoom-in-btn.disabled,
+.zooming-controls #zoom-out-btn.disabled {
+    pointer-events: none;
+}
 @media (hover: hover) and (pointer: fine) {
     .map .highlight:hover {
         opacity: 1;

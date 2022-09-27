@@ -70,7 +70,7 @@ const zoomingControls = document.querySelector('.zooming-controls');
 const toMapBtn = document.querySelector('#go-to-map-btn');
 const zoomInBtn = document.querySelector('#zoom-in-btn');
 const zoomOutBtn = document.querySelector('#zoom-out-btn');
-
+const maxZoomLevel = 22;
 let currentZoomTransform = d3.zoomIdentity;
 
 const viewBox = {

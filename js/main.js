@@ -77,8 +77,9 @@ fetch('./website-exported/sitemap.html').then((response) => {
 // Setup navigation (pan & zoom)
 
 const zoom = d3.zoom()
-    .scaleExtent([1, 20])
-    .on("zoom", zoomed);
+    .scaleExtent([1, maxZoomLevel])
+    .on("zoom", zoomed)
+    .on("end", zoomEnd);
 
 d3Svg.call(zoom);
 
@@ -87,13 +88,27 @@ function zoomed(e) {
     if (view !== views.m) {
         currentZoomTransform = t;
     }
-    currentSvgScale = currentZoomTransform.k;
-    d3SvgMainMap.attr("transform", currentZoomTransform);
+    if (currentZoomTransform.k <= maxZoomLevel && currentZoomTransform.k >= 1) {
+        currentSvgScale = currentZoomTransform.k;
+        d3SvgMainMap.attr("transform", currentZoomTransform);
 
-    const hoveredMarkerCircle = document.querySelector('.marker circle.clickable.hovered');
-    if (hoveredMarkerCircle) {
-        updateMarkerTitlePosition(hoveredMarkerCircle);
-        markerTitleContainer.style.fontSize = (12 + .6 * (currentSvgScale - 1) + 'px');
+        const hoveredMarkerCircle = document.querySelector('.marker circle.clickable.hovered');
+        if (hoveredMarkerCircle) {
+            updateMarkerTitlePosition(hoveredMarkerCircle);
+            markerTitleContainer.style.fontSize = (12 + .6 * (currentSvgScale - 1) + 'px');
+        }
+    }
+}
+function zoomEnd() {
+    if (currentZoomTransform.k >= maxZoomLevel) {
+        zoomInBtn.classList.add('disabled');
+    } else {
+        zoomInBtn.classList.remove('disabled');
+    }
+    if (currentZoomTransform.k <= 1) {
+        zoomOutBtn.classList.add('disabled');
+    } else {
+        zoomOutBtn.classList.remove('disabled');
     }
 }
 

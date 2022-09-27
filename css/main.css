@@ -126,6 +126,10 @@ a {
 .zooming-controls #zoom-out-btn:hover {
     background-color: #ffffff;
 }
+.zooming-controls #zoom-in-btn.disabled,
+.zooming-controls #zoom-out-btn.disabled {
+    opacity: .3;
+}
 @media only screen and (max-width: 750px) {
     .main-logo {
         max-height: 6vw;
