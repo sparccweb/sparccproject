@@ -14,6 +14,7 @@
 // 7 - learning
 // 8 - evolution
 // 9 - partners
+// 10 - reports
 //
 // Types 1 to  are the same thing except the icon
 // -------------------------------------
@@ -375,7 +376,7 @@ const markersRef = {
     },
     'G14': {
         pos: [1085,1232],
-        type: 2, // ??????????????
+        type: 10,
         labels: ['Policy', 'Site Story', 'Housing']
     },
     'G15': {
@@ -410,12 +411,12 @@ const markersRef = {
     },
     'G21': {
         pos: [1302.5, 1126],
-        type: 9,
+        type: 0,
         labels: ['Racial Equity', 'Housing', 'Policy']
     },
     'G22': {
         pos: [1255, 1127],
-        type: 9,
+        type: 0,
         labels: ['Capital', 'Health', 'Racial Equity']
     },
     'G23': {
@@ -425,7 +426,7 @@ const markersRef = {
     },
     'G24': {
         pos: [1310, 1200],
-        type: 9,
+        type: 8,
         labels: ['Grants', 'Racial Equity', 'Capital']
     },
     'G25': {

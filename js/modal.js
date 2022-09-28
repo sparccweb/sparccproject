@@ -84,6 +84,7 @@ function generateMarkers(html) {
                 '#learning-icon-symbol',
                 '#evolution-icon-symbol',
                 '#partners-icon-symbol',
+                '#reports-icon-symbol',
             ]
             icon.setAttributeNS(null, 'href', iconsReference[popupData.type]);
             
