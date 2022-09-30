@@ -330,12 +330,12 @@ const markersRef = {
         labels: ['Policy', 'ETOD']
     },
     'G05': {
-        pos: [1380,1210],
+        pos: [1380, 1210],
         type: 4,
         labels: ['Capital', 'Racial Equity']
     },
     'G06': {
-        pos: [1260, 1358],
+        pos: [1202, 1117],
         type: 4,
         labels: ['Capital', 'Grants', 'Climate']
     },
