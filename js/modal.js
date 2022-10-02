@@ -263,10 +263,9 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                         if(!l.querySelector('img')) {
                             // For text links to pdf files we add the icon
                             // If the link itself is an image, we don't
-                            const newImage = document.createElement('img');
-                            newImage.classList.add('pdf-inline-icon');
-                            newImage.setAttribute('src', './img/pdf-icon.svg');
-                            l.parentNode.insertBefore(newImage, l);
+                            l.innerHTML = l.innerHTML.replace(/^\s*\w+/, 
+                                '<span style="white-space: nowrap"><img class="pdf-inline-icon" src="./img/pdf-icon.svg">$&</span>'
+                            );
                         }
                     }
 
