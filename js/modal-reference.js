@@ -360,17 +360,17 @@ const markersRef = {
         labels: ['Climate', 'Health', 'Site Story']
     },
     'G11': {
-        pos: [1290, 1163],
+        pos: [1338, 1425],
         type: 6,
         labels: ['Climate', 'Policy', 'Racial Equity']
     },
     'G12': {
-        pos: [1206, 1371],
+        pos: [1375, 1425],
         type: 6,
         labels: ['Climate', 'Policy', 'Site Story']
     },
     'G13': {
-        pos: [1121, 1232],
+        pos: [1375, 1391],
         type: 6,
         labels: ['Climate', 'Health', 'Capital']
     },
