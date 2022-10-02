@@ -324,6 +324,20 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
     });
 }
 
+function turnPageTagsToDefault() {
+    const titleDefault = "SPARCC's Legacy";
+    document.title = titleDefault;
+    document.querySelector('meta[name="og:title"]').setAttribute('content', titleDefault);
+
+    const description = "";
+    document.querySelector('meta[name="description"]').setAttribute('content', description);
+    document.querySelector('meta[name="og:description"]').setAttribute('content', description);
+    
+    const keywords = "";
+    document.querySelector('meta[name="keywords"]').setAttribute('content', keywords);
+        
+    document.querySelector('meta[name="og:url"]').setAttribute('content', "");
+}
 
 function updatePageUrl(code) {
     window.location.hash = code;
@@ -384,6 +398,6 @@ function closeModal() {
     });
 
     updatePageUrl('');
-
+    turnPageTagsToDefault()
     islands[activeIslandIdx].markerPulsingTween.play();
 }
