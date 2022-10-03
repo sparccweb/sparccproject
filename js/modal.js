@@ -252,8 +252,9 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                     // Weird but that's how it comes from SlickPlan
                     if (l.nextSibling.tagName) {
                         if (l.nextSibling.tagName.toUpperCase() === 'BR') {
-                            newImage.setAttribute('alt', l.nextSibling.nextSibling);
+                            newImage.setAttribute('alt', l.nextSibling.nextSibling.textContent);
                             l.nextSibling.nextSibling.remove();
+                            l.nextSibling.remove();
                         }
                     }
                     l.parentNode.replaceChild(newImage, l);
