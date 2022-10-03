@@ -232,6 +232,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
 
         // Parse the page the modal HTML content
         modalContentContainer.innerHTML = '';
+        modalContentContainer.scrollTop = 0;
         const main = doc.querySelector('#main');
         if (contentType !== 0) {
 
