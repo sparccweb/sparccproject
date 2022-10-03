@@ -246,7 +246,11 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                 if (isImgLink(linkURL)) {
                     // Replace links to image files with proper images
                     const newImage = document.createElement('img');
-                    newImage.setAttribute('src', './website-exported/' + linkURL);
+                    if (linkURL.startsWith('assets')) {
+                        newImage.setAttribute('src', './website-exported/' + linkURL);
+                    } else {
+                        newImage.setAttribute('src', linkURL);
+                    }
 
                     // If there is a text under the image link separated by /br line
                     // we consider that text as alt.
