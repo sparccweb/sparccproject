@@ -195,6 +195,11 @@ const markersRef = {
         type: 2,
         labels: ['Site Story']
     },
+    'B09': {
+        pos: [1630, 800],
+        type: 2,
+        labels: ['Housing', 'Capital', 'Grants']
+    },
 
     // -------------------------------------
 
@@ -262,6 +267,36 @@ const markersRef = {
         pos: [1975, 1482],
         type: 2,
         labels: ['Site Story']
+    },
+    'C14': {
+        pos: [1750, 1320],
+        type: 0,
+        labels: ['Site Story', 'ETOD']
+    },
+    'C15': {
+        pos: [1950, 1300],
+        type: 0,
+        labels: ['Site Story', 'ETOD']
+    },
+    'C16': {
+        pos: [2080, 1730],
+        type: 0,
+        labels: ['Site Story', 'ETOD']
+    },
+    'C17': {
+        pos: [1930, 1670],
+        type: 0,
+        labels: ['Site Story', 'ETOD']
+    },
+    'C18': {
+        pos: [2000, 1690],
+        type: 0,
+        labels: ['Site Story', 'ETOD']
+    },
+    'C19': {
+        pos: [2030, 1610],
+        type: 0,
+        labels: ['Site Story', 'ETOD']
     },
 
     // -------------------------------------
