@@ -2,6 +2,7 @@ const loaderAnimation = gsap.timeline({
     paused: true,
     onComplete: () => {
         map.classList.add('loaded');
+        openModal(null, true);
     }
 })
     .timeScale(1.5)

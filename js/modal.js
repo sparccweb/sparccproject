@@ -290,7 +290,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
             });
             
             modalContentContainer.append(main);
-            modalContainer.classList.remove('is-video');
+            modalContainer.classList.remove('is-centralised');
 
         } else {
 
@@ -319,7 +319,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
                 modalContentContainer.append(newIframe);
             }
             
-            modalContainer.classList.add('is-video');
+            modalContainer.classList.add('is-centralised');
         }
 
         modalContainer.setAttribute('data-active-island', islands[islandIdx].name);
@@ -349,21 +349,31 @@ function updatePageUrl(code) {
     window.location.hash = code;
 }
 
-function openModal(islandIdx) {
+function openModal(islandIdx, isIntoMessage = false) {
     markerTitleContainer.classList.remove('can-be-visible');
     markerTitleContainer.classList.remove('visible');
     gsap.to(header, {
         duration: .3,
         opacity: 0
     });
-    gsap.to(islands[islandIdx].modalBack, {
-        duration: .3,
-        opacity: 1
-    });
-    gsap.set(islands[islandIdx].modalBack, {
-        pointerEvents: 'auto'
-    });
-    islands[islandIdx].markerPulsingTween.pause();
+    if (!isIntoMessage) {
+        gsap.to(islands[islandIdx].modalBack, {
+            duration: .3,
+            opacity: 1
+        });
+        gsap.set(islands[islandIdx].modalBack, {
+            pointerEvents: 'auto'
+        });
+        islands[islandIdx].markerPulsingTween.pause();
+    } else {
+        gsap.to(islands[0].modalBack, {
+            duration: .3,
+            opacity: 1
+        });
+        gsap.set(islands[0].modalBack, {
+            pointerEvents: 'auto'
+        });
+    }
     gsap.set(modal, {
         display: 'flex'
     });
@@ -378,6 +388,7 @@ function openModal(islandIdx) {
 }
 
 function closeModal() {
+    modalContainer.classList.remove('is-intro');
     markerTitleContainer.classList.add('can-be-visible');
     gsap.to(header, {
         duration: .3,

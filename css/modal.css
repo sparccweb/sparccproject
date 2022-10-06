@@ -27,14 +27,14 @@
     border-radius: 30px;
     display: none;
 }
-.modal-container:not(.is-video) .modal {
+.modal-container:not(.is-centralised) .modal {
     min-height: 400px;
 }
 @media only screen and (min-aspect-ratio: 1/1) and (min-width: 600px) and (min-height: 300px) {
-    .modal-container:not(.is-video) {
+    .modal-container:not(.is-centralised) {
         justify-content: right;
     }
-    .modal-container:not(.is-video) .modal {
+    .modal-container:not(.is-centralised) .modal {
         width: calc(40% - 50px);
         margin-right: 20px;
     }
@@ -46,13 +46,13 @@
     border-radius: 24px;
     overflow-y: auto;
 }
-.is-video .modal iframe {
+.is-centralised .modal iframe {
     border-radius: 24px;
 }
 
 
 
-.is-video .modal {
+.is-centralised .modal {
     width: calc(100% - 50px);
     max-width: 100vh;
     max-height: 80vh;
@@ -60,22 +60,36 @@
     border-color: #fff;
     flex-direction: column;
 }
-.is-video .modal .video-title {
+.is-centralised.is-intro .modal {
+    width: calc(100% - 250px);
+    max-width: 600px;
+    background-color: #0f7173;
+    color: #ffffff;
+    padding: 30px 50px;
+    text-align: center;
+}
+.is-centralised.is-intro .modal .intro-title {
+    font-size: 1.5em;
+}
+.is-centralised.is-intro .modal .modal-content {
+    border-radius: 0;
+}
+.is-centralised:not(.is-intro) .modal .video-title {
     margin-top: -3.5em;
     line-height: 3.5em;
     font-size: 1.25em;
     padding: 0 10px;
     color: #ffffff;
 }
-.modal-container:not(.is-video) .modal .video-title {
+.modal-container:not(.is-centralised) .modal .video-title {
     display: none;
 }
-.is-video .modal .modal-content {
+.is-centralised:not(.is-intro) .modal .modal-content {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
     height: 0;
 }
-.is-video .modal iframe {
+.is-centralised .modal iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -159,6 +173,7 @@ a:focus {
     content: ' ';
     height: 29px;
     width: 4px;
+    background-color: #0f7173;
 }
 .modal #close-modal-btn:before {
     transform: rotate(45deg);
@@ -217,7 +232,7 @@ a:focus {
 [data-active-island="central"] .modal {
     border-color: #472C00;
 }
-[data-active-island="central"].is-video .modal {
+[data-active-island="central"].is-centralised .modal {
     background: #472C00;
 }
 [data-active-island="central"] .modal #main h1 {
@@ -253,7 +268,7 @@ a:focus {
 [data-active-island="bay"] .modal {
     border-color: #34292b;
 }
-[data-active-island="bay"].is-video .modal {
+[data-active-island="bay"].is-centralised .modal {
     background: #34292b;
 }
 [data-active-island="bay"] .modal #main h1 {
@@ -292,7 +307,7 @@ a:focus {
 [data-active-island="atlanta"] .modal {
     border-color: #ffd900;
 }
-[data-active-island="atlanta"].is-video .modal {
+[data-active-island="atlanta"].is-centralised .modal {
     background: #ffd900;
 }
 [data-active-island="atlanta"] .modal #main h1 {
@@ -330,7 +345,7 @@ a:focus {
 [data-active-island="memphis"] .modal {
     border-color: #3962ab;
 }
-[data-active-island="memphis"].is-video .modal {
+[data-active-island="memphis"].is-centralised .modal {
     background: #3962ab;
 }
 [data-active-island="memphis"] .modal #main h1 {
@@ -363,7 +378,7 @@ a:focus {
 [data-active-island="LA"] .modal {
     border-color: #ee251d;
 }
-[data-active-island="LA"].is-video .modal {
+[data-active-island="LA"].is-centralised .modal {
     background: #ee251d;
 }
 [data-active-island="LA"] .modal #main h1 {
@@ -396,7 +411,7 @@ a:focus {
 [data-active-island="chicago"] .modal {
     border-color: #2c554f;
 }
-[data-active-island="chicago"].is-video .modal {
+[data-active-island="chicago"].is-centralised .modal {
     background: #2c554f;
 }
 [data-active-island="chicago"] .modal #main h1 {
@@ -435,7 +450,7 @@ a:focus {
 [data-active-island="denver"] .modal {
     border-color: #e65a59;
 }
-[data-active-island="denver"].is-video .modal {
+[data-active-island="denver"].is-centralised .modal {
     background: #e65a59;
 }
 [data-active-island="denver"] .modal #main h1 {
@@ -490,6 +505,6 @@ a:focus {
 .at-resp-share-element .at-share-btn {
     display: block !important;
 }
-.modal-container.is-video .addthis_inline_share_toolbox {
+.modal-container.is-centralised .addthis_inline_share_toolbox {
     display: none !important;
 }
