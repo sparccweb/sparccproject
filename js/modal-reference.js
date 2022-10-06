@@ -379,11 +379,11 @@ const markersRef = {
         type: 10,
         labels: ['Policy', 'Site Story', 'Housing']
     },
-    'G15': {
-        pos: [1179, 1176],
-        type: 7,
-        labels: ['Racial Equity', 'Site Story']
-    },
+    // 'G15': {
+    //     pos: [1179, 1176],
+    //     type: 7,
+    //     labels: ['Racial Equity', 'Site Story']
+    // },
     'G16': {
         pos: [1254, 1093],
         type: 7,
@@ -414,21 +414,21 @@ const markersRef = {
         type: 0,
         labels: ['Racial Equity', 'Housing', 'Policy']
     },
-    'G22': {
-        pos: [1255, 1127],
-        type: 0,
-        labels: ['Capital', 'Health', 'Racial Equity']
-    },
-    'G23': {
-        pos: [1220, 1230],
-        type: 9,
-        labels: ['Grants', 'Racial Equity']
-    },
-    'G24': {
-        pos: [1310, 1200],
-        type: 8,
-        labels: ['Grants', 'Racial Equity', 'Capital']
-    },
+    // 'G22': {
+    //     pos: [1255, 1127],
+    //     type: 0,
+    //     labels: ['Capital', 'Health', 'Racial Equity']
+    // },
+    // 'G23': {
+    //     pos: [1220, 1230],
+    //     type: 9,
+    //     labels: ['Grants', 'Racial Equity']
+    // },
+    // 'G24': {
+    //     pos: [1310, 1200],
+    //     type: 8,
+    //     labels: ['Grants', 'Racial Equity', 'Capital']
+    // },
     'G25': {
         pos: [1202, 1117],
         type: 8,
