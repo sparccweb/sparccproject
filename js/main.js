@@ -38,6 +38,8 @@ fetch('./website-exported/sitemap.html').then((response) => {
         const markerToFocus = document.querySelector('circle.clickable[data-popup-code="' + islandCode + '"]');
         const island = islands.find(island => island.popups.indexOf(popupData) !== -1);
 
+        modalContainer.classList.remove('is-intro');
+
         view = views.i;
         goToIslandView();
 
