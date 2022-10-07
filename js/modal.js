@@ -435,6 +435,7 @@ function closeModal() {
             gsap.set(modal, {
                 display: 'none'
             });
+            modalContentContainer.scrollTop = 0;
             modalContainer.classList.remove('is-intro');
             modalContentContainer.innerHTML = '';
             modalVideoTitle.innerHTML = '';
