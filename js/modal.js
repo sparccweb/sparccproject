@@ -233,6 +233,7 @@ modalBackAll.forEach(b => {
 
 
 function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
+    modalContentContainer.scrollTop = 0;
 
     fetch(slickPlanExportURL).then((response) => {
         return response.text();
@@ -259,7 +260,6 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
 
         // Parse the page the modal HTML content
         modalContentContainer.innerHTML = '';
-        modalContentContainer.scrollTop = 0;
         const main = doc.querySelector('#main');
         if (contentType !== 0) {
 
@@ -317,6 +317,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
             });
             
             modalContentContainer.append(main);
+
             modalContainer.classList.remove('is-centralised');
 
         } else {
@@ -432,10 +433,10 @@ function closeModal() {
         y: 100,
         opacity: 0,
         onComplete: () => {
+            modalContentContainer.scrollTop = 0;
             gsap.set(modal, {
                 display: 'none'
             });
-            modalContentContainer.scrollTop = 0;
             modalContainer.classList.remove('is-intro');
             modalContentContainer.innerHTML = '';
             modalVideoTitle.innerHTML = '';
