@@ -416,5 +416,7 @@ function closeModal() {
 
     updatePageUrl('');
     turnPageTagsToDefault()
-    islands[activeIslandIdx].markerPulsingTween.play();
+    if (islands[activeIslandIdx]) {
+        islands[activeIslandIdx].markerPulsingTween.play();
+    }
 }
