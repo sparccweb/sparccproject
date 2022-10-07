@@ -185,33 +185,27 @@ a:focus {
 
 
 .marker-title-container {
-    position: fixed;
-    transition: opacity .2s ease-in-out;
-    font-size: 12px;
-    opacity: 0;
     display: none;
+}
+.marker-title-container .marker-title-wrapper {
+    opacity: 0;
+    /*transform: translate(0, -10%);*/
+    transition: all .2s ease-in-out;
+}
+.marker-title-container .marker-title-container-back {
+    opacity: .8;
+    fill: #ffffff;
+}
+.marker-title-container .marker-title,
+.marker-title-container .marker-labels {
+    fill: #111111;
 }
 .marker-title-container.can-be-visible {
     display: block;
 }
-.marker-title-container.visible {
+.marker-title-container.visible .marker-title-wrapper {
+    /*transform: translate(0, 0);*/
     opacity: 1;
-}
-.marker-title-container .marker-title {
-    display: inline-block;
-    background-color: #000000;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 30px;
-}
-.marker-title-container .marker-title-label {
-    display: inline-block;
-    background-color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 30px;
-    margin-top: 3px;
-    margin-left: 5px;
-    font-size: .9em;
 }
 .disable-hover .marker-title-container {
     display: none !important;

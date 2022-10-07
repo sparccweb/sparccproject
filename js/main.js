@@ -93,12 +93,6 @@ function zoomed(e) {
     if (currentZoomTransform.k <= maxZoomLevel && currentZoomTransform.k >= 1) {
         currentSvgScale = currentZoomTransform.k;
         d3SvgMainMap.attr("transform", currentZoomTransform);
-
-        const hoveredMarkerCircle = document.querySelector('.marker circle.clickable.hovered');
-        if (hoveredMarkerCircle) {
-            updateMarkerTitlePosition(hoveredMarkerCircle);
-            markerTitleContainer.style.fontSize = (12 + .6 * (currentSvgScale - 1) + 'px');
-        }
     }
 }
 function zoomEnd() {
@@ -208,7 +202,7 @@ toMapBtn.addEventListener('click', () => {
     closeModal();
     deselectMarkers();
     
-    resetZoom(.5);
+    resetZoom(.25);
     
     islandToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.pause();
@@ -217,7 +211,7 @@ toMapBtn.addEventListener('click', () => {
 
     goToMapView();
 
-    gsap.delayedCall(.5, () => {
+    gsap.delayedCall(.25, () => {
         view = views.m;
     });
     gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {

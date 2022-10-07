@@ -6,6 +6,9 @@ const header = document.querySelector('.header');
 const mainLogo = document.querySelector('.main-logo');
 const mainTitle = document.querySelector('.main-title');
 const markerTitleContainer = document.querySelector('.marker-title-container');
+const markerTitleContainerBack = document.querySelector('.marker-title-container-back');
+const markerTitleContainerBackRect = document.querySelector('.marker-title-container-back rect');
+const markerTitleContainerBackArrow = document.querySelector('.marker-title-container-back path');
 const markerTitle = document.querySelector('.marker-title');
 const markerLabels = document.querySelector('.marker-labels');
 
@@ -92,6 +95,7 @@ let currentSvgScale = 1;
 
 const views = {
     m: 'map',
+    mTr: 'map-transition',
     i: 'island'
 }
 let view = views.m;

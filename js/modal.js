@@ -143,10 +143,9 @@ function generateMarkers(html) {
 }
 
 function updateMarkerTitlePosition(markerEl) {
-    const box = markerEl.getBoundingClientRect();
     gsap.set(markerTitleContainer, {
-        x: box.x + box.width,
-        y: box.y
+        x: gsap.getProperty(markerEl.parentElement, 'x'),
+        y: gsap.getProperty(markerEl.parentElement, 'y')
     })
 }
 
@@ -175,14 +174,42 @@ function selectMarker(markerCircle) {
 
 function updateMarkerTooltipContent(title, labels) {
     markerTitle.innerHTML = title;
-    
     markerLabels.innerHTML = '';
-    labels.forEach(l => {
-        const labelEl = document.createElement('div');
-        labelEl.classList.add('marker-title-label');
+    let tooltipTotalWidth = markerTitle.getBBox().width + 15;
+    let labelsWidthArray = [];
+    labels.forEach((l, lIdx) => {
+        const labelEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
         labelEl.innerHTML = l;
+        labelEl.setAttribute('text-anchor', 'middle');
         markerLabels.appendChild(labelEl);
+        labelsWidthArray[lIdx] = labelEl.getBBox().width;
+        labelsWidthArray[lIdx] += 5;
+    });
+    const labelsWidthSum = labelsWidthArray.reduce((a, b) => a + b, 0);
+    let labelOffset = -.5 * labelsWidthSum;
+    Array.from(markerLabels.querySelectorAll('text')).forEach((lEl, lIdx) => {
+        if (lIdx) {
+            labelOffset += .5 * labelsWidthArray[lIdx - 1];
+        }
+        labelOffset += .5 * labelsWidthArray[lIdx];
+        gsap.set(lEl, {
+            attr: { x: labelOffset }
+        })
     })
+    tooltipTotalWidth = Math.max(tooltipTotalWidth, labelsWidthSum);
+    gsap.set(markerTitleContainerBack, {
+        x: -.5 * tooltipTotalWidth,
+    });
+    gsap.set(markerTitleContainerBackRect, {
+        attr: {
+            width: tooltipTotalWidth
+        } 
+    });
+    gsap.set(markerTitleContainerBackArrow, {
+        attr: {
+            d: 'M' + (.5 * tooltipTotalWidth - 4) + ',-30.2 l 4,6 l4,-6'
+        } 
+    });
 }
 function deHoverMarkers() {
     Array.from(document.querySelectorAll('.marker circle.clickable.hovered')).forEach(c => {
