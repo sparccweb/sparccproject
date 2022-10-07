@@ -388,7 +388,6 @@ function openModal(islandIdx, isIntoMessage = false) {
 }
 
 function closeModal() {
-    modalContainer.classList.remove('is-intro');
     markerTitleContainer.classList.add('can-be-visible');
     gsap.to(header, {
         duration: .3,
@@ -409,6 +408,7 @@ function closeModal() {
             gsap.set(modal, {
                 display: 'none'
             });
+            modalContainer.classList.remove('is-intro');
             modalContentContainer.innerHTML = '';
             modalVideoTitle.innerHTML = '';
         }
