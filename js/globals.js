@@ -3,6 +3,8 @@ const container = document.querySelector('.map-container');
 const map = document.querySelector('svg.map');
 
 const header = document.querySelector('.header');
+const footer = document.querySelector('.footer');
+const mapLegend = document.querySelector('.map-legend');
 const mainLogo = document.querySelector('.main-logo');
 const mainTitle = document.querySelector('.main-title');
 const markerTitleContainer = document.querySelector('.marker-title-container');

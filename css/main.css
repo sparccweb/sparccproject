@@ -157,3 +157,39 @@ a {
 .detailed-view {
     display: none;
 }
+
+.footer {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 100%;
+}
+.map-legend {
+    position: absolute;
+    right: 10px;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, .6);
+    border: #2c554f solid 3px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 10px 5px;
+    line-height: 1.1;
+    display: none;
+}
+.map-legend > div {
+    display: flex;
+}
+.map-legend svg {
+    flex: 0 0 20px;
+    padding: 7px 10px;
+}
+.map-legend > div > div {
+    display: flex;
+    align-items: center;
+    min-width: 8em;
+}

@@ -31,6 +31,9 @@ function setupLayout() {
             maxWidth: '80%',
             alignItems: 'center'
         });
+        gsap.set(footer, {
+            maxWidth: '80%',
+        });
         gsap.set(mainTitle, {
             paddingTop: 0,
         });
@@ -40,6 +43,9 @@ function setupLayout() {
             fontSize: Math.min(.028 * window.innerHeight, .07 * window.innerWidth),
             maxWidth: 'none',
             alignItems: 'start'
+        });
+        gsap.set(footer, {
+            maxWidth: 'none',
         });
         gsap.set(mainTitle, {
             paddingTop: 1.45 * mainLogo.clientHeight,

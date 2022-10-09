@@ -154,15 +154,15 @@ function addMapHidingToTimeline(tl) {
             duration: .3,
             attr: {opacity: .5}
         }, .3)
-        .set(zoomingControls, {
+        .set([zoomingControls, mapLegend], {
             display: 'block'
         }, .5)
-        .fromTo(zoomingControls, {
+        .fromTo([zoomingControls, mapLegend], {
             opacity: 0
         }, {
             duration: 1,
             opacity: 1
-        }, .5);
+        }, .5)
 }
 
 function addIslandSelectionToTimeline(tl, idx) {
@@ -274,13 +274,13 @@ function addMapShowingToTimeline(tl, idx) {
         .set([ craneFstColoredElements, craneScdColoredElements ], {
             attr: { fill: 'auto' }
         }, .3)
-        .fromTo(zoomingControls, {
+        .fromTo([zoomingControls, mapLegend], {
             opacity: 1
         }, {
             duration: .2,
             opacity: 0
         }, 0)
-        .set(zoomingControls, {
+        .set([zoomingControls, mapLegend], {
             display: 'none'
         }, '>')
         .set(islands.map(v => v.highlight), {
@@ -307,7 +307,7 @@ function addMapShowingToTimeline(tl, idx) {
             duration: .5,
             opacity: 1
         }, .5)
-
+        
         .to(islands[idx].sea, {
             duration: .3,
             attr: {opacity: 0}
