@@ -402,6 +402,10 @@ function openModal(islandIdx, isIntoMessage = false) {
             pointerEvents: 'auto'
         });
     }
+    gsap.to(mapLegend, {
+        duration: .3,
+        opacity: 0
+    });
     gsap.set(modal, {
         display: 'flex'
     });
@@ -427,6 +431,10 @@ function closeModal() {
     });
     gsap.set(modalBackAll, {
         pointerEvents: 'none'
+    });
+    gsap.to(mapLegend, {
+        duration: .3,
+        opacity: 1
     });
     gsap.to(modal, {
         duration: .25,

@@ -28,11 +28,13 @@ function setupLayout() {
         gsap.set(header, {
             height: .06 * window.innerHeight,
             fontSize: .025 * window.innerHeight,
-            maxWidth: '80%',
+            width: '95%',
+            maxWidth: 800,
             alignItems: 'center'
         });
         gsap.set(footer, {
-            maxWidth: '80%',
+            width: '95%',
+            maxWidth: 800,
         });
         gsap.set(mainTitle, {
             paddingTop: 0,
@@ -41,10 +43,12 @@ function setupLayout() {
         gsap.set(header, {
             height: .5 * (window.innerHeight - window.innerWidth / viewBoxRatio),
             fontSize: Math.min(.028 * window.innerHeight, .07 * window.innerWidth),
+            width: 'auto',
             maxWidth: 'none',
             alignItems: 'start'
         });
         gsap.set(footer, {
+            width: '100%',
             maxWidth: 'none',
         });
         gsap.set(mainTitle, {
@@ -54,10 +58,6 @@ function setupLayout() {
 }
 function goToIslandView() {
     markerTitleContainer.classList.add('can-be-visible');
-    gsap.to(mainLogo, {
-        duration: .5,
-        backgroundColor: '#cdeff9'
-    });
     gsap.to(mainTitle, {
         duration: .5,
         opacity: 0
@@ -67,10 +67,6 @@ function goToIslandView() {
 function goToMapView() {
     markerTitleContainer.classList.remove('can-be-visible');
     markerTitleContainer.classList.remove('visible');
-    gsap.to(mainLogo, {
-        duration: .5,
-        backgroundColor: '#bde3f4'
-    });
     gsap.to(mainTitle, {
         duration: .5,
         opacity: 1

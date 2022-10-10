@@ -202,7 +202,7 @@ toMapBtn.addEventListener('click', () => {
     closeModal();
     deselectMarkers();
     
-    resetZoom(.3);
+    resetZoom(.1);
     
     islandToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.pause();
