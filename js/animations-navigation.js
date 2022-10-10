@@ -134,8 +134,11 @@ function addMapHidingToTimeline(tl) {
             opacity: 0
         }, 0)
         .to(mapBack, {
-            duration: .3,
+            duration: .5,
             opacity: 0
+        }, 0)
+        .set(mapBack, {
+            pointerEvents: 'none'
         }, 0)
         .fromTo(document.body, {
             background: '#8cceea'
@@ -286,10 +289,13 @@ function addMapShowingToTimeline(tl, idx) {
         .set(islands.map(v => v.highlight), {
             attr: {'stroke-width': 20}
         }, .2)
+        .set(mapBack, {
+            pointerEvents: 'auto'
+        }, 0)
         .to(mapBack, {
             duration: .3,
             opacity: 1
-        }, .4)
+        }, .5)
         .to(document.body, {
             duration: .4,
             background: '#8cceea'

@@ -202,8 +202,11 @@ toMapBtn.addEventListener('click', () => {
     closeModal();
     deselectMarkers();
     
-    resetZoom(.1);
-    
+    resetZoom(.6);
+    gsap.delayedCall(.6, () => {
+        view = views.m;
+    });
+
     islandToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.pause();
     islands[activeIslandIdx].mapToIslandAnimation.progress(1);
@@ -211,13 +214,8 @@ toMapBtn.addEventListener('click', () => {
 
     goToMapView();
 
-    gsap.delayedCall(.25, () => {
-        view = views.m;
-    });
-    gsap.delayedCall(islands[activeIslandIdx].hideIslandToMapAnimation.duration() * .5, () => {
-        islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
-        islands[activeIslandIdx].markerPulsingTween.pause();
-        activeIslandIdx = null;
-        updateIslandSelection();
-    });
+    islands[activeIslandIdx].detailedViewLoopedAnimations.forEach(tl => tl.pause());
+    islands[activeIslandIdx].markerPulsingTween.pause();
+    activeIslandIdx = null;
+    updateIslandSelection();
 });
