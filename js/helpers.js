@@ -29,12 +29,12 @@ function setupLayout() {
             height: .06 * window.innerHeight,
             fontSize: .025 * window.innerHeight,
             width: '95%',
-            maxWidth: '1100px',
+            maxWidth: '1300px',
             alignItems: 'center'
         });
         gsap.set(footer, {
             width: '95%',
-            maxWidth: '1100px',
+            maxWidth: '1300px',
         });
         gsap.set(mainTitle, {
             paddingTop: 0,
