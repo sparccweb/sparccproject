@@ -56,15 +56,6 @@ function generateMarkers(html) {
             dot.setAttributeNS(null, 'r', markerSize[0]);
             dot.classList.add('visible');
 
-            const dotTitle = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-            dotTitle.setAttributeNS(null, 'text-anchor', 'middle');
-            dotTitle.setAttributeNS(null, 'font-size', '6');
-            dotTitle.setAttributeNS(null, 'font-weight', '600');
-            dotTitle.setAttributeNS(null, 'x', 16);
-            dotTitle.setAttributeNS(null, 'y', -8);
-            dotTitle.setAttributeNS(null, 'fill', '#fff');
-            dotTitle.innerHTML = popupData.code;
-
             const iconSize = popupData.type > 2 ? 8 : 12;
             let icon = document.createElementNS('http://www.w3.org/2000/svg', 'use');
             icon.setAttributeNS(null, 'x', -.5 * iconSize);
@@ -90,7 +81,6 @@ function generateMarkers(html) {
             
             gDot.appendChild(dotClickable);
             gDot.appendChild(dot);
-            gDot.appendChild(dotTitle);
             gDot.appendChild(icon);
 
             popupData.el = gDot;
