@@ -84,11 +84,11 @@ const markersRef = {
         labels: ['Site Story'],
         type: 0,
     },
-    'A13': {
-        pos: [840, 1600],
-        type: 0,
-        labels: ['Site Story']
-    },
+    // 'A13': {
+    //     pos: [840, 1600],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
     'A14': {
         pos: [840, 1470],
         type: 2,
@@ -180,16 +180,16 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
-    'B06': {
-        pos: [1676, 1069],
-        type: 0,
-        labels: ['Site Story']
-    },
-    'B07': {
-        pos: [1796, 1159],
-        type: 0,
-        labels: ['Site Story']
-    },
+    // 'B06': {
+    //     pos: [1676, 1069],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
+    // 'B07': {
+    //     pos: [1796, 1159],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
     'B08': {
         pos: [1735, 937],
         type: 2,
@@ -326,11 +326,11 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
-    'D06': {
-        pos: [640, 1138],
-        type: 0,
-        labels: ['Site Story']
-    },
+    // 'D06': {
+    //     pos: [640, 1138],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
     'D07': {
         pos: [382, 1358],
         type: 1,
@@ -429,11 +429,11 @@ const markersRef = {
         type: 7,
         labels: ['Racial Equity', 'Site Story']
     },
-    'G18': {
-        pos: [1206, 1371],
-        type: 8,
-        labels: []
-    },
+    // 'G18': {
+    //     pos: [1206, 1371],
+    //     type: 8,
+    //     labels: []
+    // },
     'G19': {
         pos: [1121, 1232],
         type: 8,
@@ -522,16 +522,16 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
-    'L11': {
-        pos: [1077, 1024],
-        type: 0,
-        labels: ['Site Story']
-    },
-    'L12': {
-        pos: [1239, 880],
-        type: 0,
-        labels: ['Site Story']
-    },
+    // 'L11': {
+    //     pos: [1077, 1024],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
+    // 'L12': {
+    //     pos: [1239, 880],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
     'L13': {
         pos: [1325, 905],
         type: 2,
