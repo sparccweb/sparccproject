@@ -365,7 +365,7 @@ const markersRef = {
         labels: ['Policy', 'ETOD']
     },
     'G05': {
-        pos: [1380, 1210],
+        pos: [1202, 1117],
         type: 4,
         labels: ['Capital', 'Racial Equity']
     },
@@ -375,7 +375,7 @@ const markersRef = {
         labels: ['Capital', 'Grants', 'Climate']
     },
     'G07': {
-        pos: [1111, 1133],
+        pos: [1179, 1176],
         type: 4,
         labels: ['Capital', 'Racial Equity', 'Housing']
     },
@@ -415,7 +415,7 @@ const markersRef = {
         labels: ['Policy', 'Site Story', 'Housing']
     },
     // 'G15': {
-    //     pos: [1179, 1176],
+    //     pos: [1111, 1133],
     //     type: 7,
     //     labels: ['Racial Equity', 'Site Story']
     // },
@@ -465,9 +465,9 @@ const markersRef = {
     //     labels: ['Grants', 'Racial Equity', 'Capital']
     // },
     'G25': {
-        pos: [1202, 1117],
-        type: 8,
-        labels: ['Racial Equity']
+        pos: [1380, 1210],
+        type: 1,
+        labels: ['&hearts;']
     },
 
     // -------------------------------------
