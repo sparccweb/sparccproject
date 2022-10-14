@@ -76,20 +76,32 @@
     max-height: calc(100vh - 170px);
     background-color: #0f7173;
     color: #ffffff;
-    padding: 65px 20px 40px 20px;
+    padding: 20px 10px;
     text-align: center;
-}
-.is-centralised.is-intro .modal .intro-title {
-    font-size: 1.5em;
 }
 .is-centralised.is-intro .modal .modal-content {
     border-radius: 0;
 }
+.is-centralised.is-intro .modal .modal-content > div:nth-child(1),
+.is-centralised.is-intro .modal .modal-content > div:nth-child(2) {
+    font-size: 1.8em;
+}
+.is-centralised.is-intro .modal .modal-content > div:nth-child(3) {
+    font-size: .9em;
+}
+.is-centralised.is-intro .modal .modal-content > div:nth-child(7) {
+    font-size: 1.3em;
+}
+.is-centralised.is-intro .modal .modal-content > div:nth-child(4),
+.is-centralised.is-intro .modal .modal-content > div:nth-child(5),
+.is-centralised.is-intro .modal .modal-content > div:nth-child(6) {
+    padding-bottom: 15px;
+}
 .is-centralised:not(.is-intro) .modal .video-title {
     margin-top: -3.5em;
-    height: 3.5em;
+    height: 2.5em;
     font-size: 1.25em;
-    padding: 0 10px;
+    padding: 0 50px 0 10px;
     color: #ffffff;
 }
 .modal-container:not(.is-centralised) .modal .video-title {
