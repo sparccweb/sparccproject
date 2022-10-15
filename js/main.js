@@ -6,6 +6,22 @@ gsap.set(header, {
 })
 window.onresize = setupLayout;
 
+function orientationChanged() {
+    const timeout = 120;
+    return new window.Promise(function(resolve) {
+        const go = (i, height0) => {
+            window.innerHeight !== height0 || i >= timeout ?
+                resolve() :
+                window.requestAnimationFrame(() => go(i + 1, height0));
+        };
+        go(0, window.innerHeight);
+    });
+}
+window.addEventListener('orientationchange', function () {
+    orientationChanged().then(function() {
+        setupLayout();
+    });
+});
 
 document.addEventListener('touchstart', setTouchScreenClass, true);
 
