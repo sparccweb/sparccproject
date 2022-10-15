@@ -232,22 +232,6 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
         // Get the corresponding SlickPlan page
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Update dynamic meta tags
-        if (doc.title) {
-            document.title = doc.title;
-            document.querySelector('meta[name="og:title"]').setAttribute('content', doc.title);
-        }
-        if (doc.querySelector('meta[name="description"]')) {
-            const description = doc.querySelector('meta[name="description"]').getAttribute('content');
-            document.querySelector('meta[name="description"]').setAttribute('content', description);
-            document.querySelector('meta[name="og:description"]').setAttribute('content', description);
-        }
-        if (doc.querySelector('meta[name="keywords"]')) {
-            const keywords = doc.querySelector('meta[name="keywords"]').getAttribute('content');
-            document.querySelector('meta[name="keywords"]').setAttribute('content', keywords);
-        }
-        document.querySelector('meta[name="og:url"]').setAttribute('content', window.location.href.split("#")[0] + '#' + slug);
-
         // Parse the page the modal HTML content
         modalContentContainer.innerHTML = '';
         const main = doc.querySelector('#main');
@@ -348,21 +332,6 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
     });
 }
 
-function turnPageTagsToDefault() {
-    const titleDefault = "SPARCC's Legacy";
-    document.title = titleDefault;
-    document.querySelector('meta[name="og:title"]').setAttribute('content', titleDefault);
-
-    const description = "";
-    document.querySelector('meta[name="description"]').setAttribute('content', description);
-    document.querySelector('meta[name="og:description"]').setAttribute('content', description);
-    
-    const keywords = "";
-    document.querySelector('meta[name="keywords"]').setAttribute('content', keywords);
-        
-    document.querySelector('meta[name="og:url"]').setAttribute('content', "");
-}
-
 function updatePageUrl(code) {
     window.location.hash = code;
 }
@@ -442,7 +411,6 @@ function closeModal() {
     });
 
     updatePageUrl('');
-    turnPageTagsToDefault()
     if (islands[activeIslandIdx]) {
         islands[activeIslandIdx].markerPulsingTween.play();
     }
