@@ -20,8 +20,8 @@
 }
 .modal {
     position: relative;
-    width: calc(100% - 100px);
-    max-height: calc(100% - 85px);
+    width: calc(100% - 60px);
+    max-height: calc(100% - 50px);
     background: #FFF;
     border: 4px solid #000;
     border-radius: 30px;
@@ -30,7 +30,7 @@
 .modal-container:not(.is-centralised) .modal {
     min-height: 400px;
 }
-@media only screen and (min-aspect-ratio: 1/1) and (min-width: 600px) and (min-height: 300px) {
+@media only screen and (min-aspect-ratio: 1/1) and (min-width: 600px) and (min-height: 450px) {
     .modal-container:not(.is-centralised) {
         justify-content: right;
     }
@@ -501,4 +501,9 @@ a:focus {
 }
 .modal-container.is-centralised .addthis_inline_share_toolbox {
     display: none !important;
+}
+@media only screen and (max-height: 500px) {
+    .addthis_inline_share_toolbox {
+        bottom: 35px;
+    }
 }
