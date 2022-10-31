@@ -81,6 +81,9 @@ fetch('./website-exported/sitemap.html').then((response) => {
         });
 
     } else {
+        gsap.delayedCall(loaderAnimation.duration() / loaderAnimation.timeScale(), () => {
+            openModal(null, true);
+        });
         updatePageUrl('');
     }
 
