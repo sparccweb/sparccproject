@@ -360,7 +360,7 @@ const markersRef = {
         labels: ['Policy', 'Housing', 'Racial Equity']
     },
     'G04': {
-        pos: [1338, 1391],
+        pos: [1205, 1327],
         type: 3,
         labels: ['Policy', 'ETOD']
     },
@@ -390,7 +390,7 @@ const markersRef = {
         labels: ['Health', 'Climate', 'Policy']
     },
     'G10': {
-        pos: [1205, 1327],
+        pos: [1338, 1391],
         type: 6,
         labels: ['Climate', 'Health', 'Site Story']
     },
