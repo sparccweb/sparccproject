@@ -197,7 +197,7 @@ const markersRef = {
     },
     'B09': {
         pos: [1630, 800],
-        type: 2,
+        type: 1,
         labels: ['Housing', 'Capital', 'Grants']
     },
 
@@ -484,7 +484,7 @@ const markersRef = {
     },
     'L03': {
         pos: [1079, 830],
-        type: 2,
+        type: 1,
         labels: ['Grants', 'ETOD']
     },
     'L04': {
