@@ -84,11 +84,11 @@ const markersRef = {
         labels: ['Site Story'],
         type: 0,
     },
-    // 'A13': {
-    //     pos: [840, 1600],
-    //     type: 0,
-    //     labels: ['Site Story']
-    // },
+    'A13': {
+        pos: [860, 1660],
+        type: 0,
+        labels: ['Site Story']
+    },
     'A14': {
         pos: [840, 1470],
         type: 2,
@@ -149,6 +149,11 @@ const markersRef = {
     },
     'M11': {
         pos: [1490, 1705],
+        type: 1,
+        labels: ['Grants']
+    },
+    'M12': {
+        pos: [1510, 1480],
         type: 1,
         labels: ['Grants']
     },
@@ -298,6 +303,12 @@ const markersRef = {
         type: 0,
         labels: ['Site Story', 'ETOD']
     },
+    // 'C20': {
+    //     pos: // TBD
+    //     type: 0,
+    //     labels: ['ETOD', 'Policy', 'Site Story']
+    // },
+
 
     // -------------------------------------
 
@@ -360,7 +371,7 @@ const markersRef = {
         labels: ['Policy', 'Housing', 'Racial Equity']
     },
     'G04': {
-        pos: [1338, 1391],
+        pos: [1205, 1327],
         type: 3,
         labels: ['Policy', 'ETOD']
     },
@@ -390,7 +401,7 @@ const markersRef = {
         labels: ['Health', 'Climate', 'Policy']
     },
     'G10': {
-        pos: [1205, 1327],
+        pos: [1338, 1391],
         type: 6,
         labels: ['Climate', 'Health', 'Site Story']
     },
@@ -449,11 +460,11 @@ const markersRef = {
         type: 0,
         labels: ['Racial Equity', 'Housing', 'Policy']
     },
-    // 'G22': {
-    //     pos: [1255, 1127],
-    //     type: 0,
-    //     labels: ['Capital', 'Health', 'Racial Equity']
-    // },
+    'G22': {
+        pos: [1255, 1127],
+        type: 0,
+        labels: ['Policy']
+    },
     // 'G23': {
     //     pos: [1220, 1230],
     //     type: 9,
@@ -468,6 +479,16 @@ const markersRef = {
         pos: [1380, 1210],
         type: 1,
         labels: ['&hearts;']
+    },
+    'G26': {
+        pos: [1180, 1327],
+        type: 0,
+        labels: ['Policy', 'ETOD']
+    },
+    'G27': {
+        pos: [1155, 1327],
+        type: 10,
+        labels: ['Policy', 'ETOD', 'Housing']
     },
 
     // -------------------------------------
@@ -517,11 +538,11 @@ const markersRef = {
         type: 1,
         labels: ['Grants', 'Policy']
     },
-    'L10': {
-        pos: [1009, 938],
-        type: 0,
-        labels: ['Site Story']
-    },
+    // 'L10': {
+    //     pos: [1009, 938],
+    //     type: 0,
+    //     labels: ['Site Story']
+    // },
     // 'L11': {
     //     pos: [1077, 1024],
     //     type: 0,
