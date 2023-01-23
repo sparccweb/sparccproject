@@ -222,7 +222,7 @@ modalBackAll.forEach(b => {
 })
 
 
-function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
+function updateModalContent(slickPlanExportURL, contentType, islandIdx) {
     modalContentContainer.scrollTop = 0;
 
     fetch(slickPlanExportURL).then((response) => {
@@ -235,6 +235,7 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
         // Parse the page the modal HTML content
         modalContentContainer.innerHTML = '';
         const main = doc.querySelector('#main');
+
         if (contentType !== 0) {
 
             let internalHost = location.host.replace('www.', "");
@@ -295,7 +296,6 @@ function updateModalContent(slickPlanExportURL, contentType, islandIdx, slug) {
             modalContainer.classList.remove('is-centralised');
 
         } else {
-
             if (main.querySelector('h1')) {
                 modalVideoTitle.innerHTML = main.querySelector('h1').innerHTML;
             } else {

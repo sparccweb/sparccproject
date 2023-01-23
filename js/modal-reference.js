@@ -185,16 +185,16 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
-    // 'B06': {
-    //     pos: [1676, 1069],
-    //     type: 0,
-    //     labels: ['Site Story']
-    // },
-    // 'B07': {
-    //     pos: [1796, 1159],
-    //     type: 0,
-    //     labels: ['Site Story']
-    // },
+    'B06': {
+        pos: [1676, 1069],
+        type: 0,
+        labels: ['Site Story']
+    },
+    'B07': {
+        pos: [1796, 1159],
+        type: 0,
+        labels: ['Site Story']
+    },
     'B08': {
         pos: [1735, 937],
         type: 2,
@@ -337,11 +337,11 @@ const markersRef = {
         type: 0,
         labels: ['Site Story']
     },
-    // 'D06': {
-    //     pos: [640, 1138],
-    //     type: 0,
-    //     labels: ['Site Story']
-    // },
+    'D06': {
+        pos: [640, 1138],
+        type: 0,
+        labels: ['Site Story']
+    },
     'D07': {
         pos: [382, 1358],
         type: 1,
