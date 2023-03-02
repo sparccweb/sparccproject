@@ -303,11 +303,11 @@ const markersRef = {
         type: 0,
         labels: ['Site Story', 'ETOD']
     },
-    // 'C20': {
-    //     pos: // TBD
-    //     type: 0,
-    //     labels: ['ETOD', 'Policy', 'Site Story']
-    // },
+    'C20': {
+        pos: [1850, 1270],
+        type: 0,
+        labels: [ 'Site Story' ]
+    },
 
 
     // -------------------------------------
@@ -381,7 +381,7 @@ const markersRef = {
         labels: ['Capital', 'Racial Equity']
     },
     'G06': {
-        pos: [1202, 1117],
+        pos: [1310, 1200],
         type: 4,
         labels: ['Capital', 'Grants', 'Climate']
     },
@@ -465,11 +465,11 @@ const markersRef = {
         type: 0,
         labels: ['Policy']
     },
-    // 'G23': {
-    //     pos: [1220, 1230],
-    //     type: 9,
-    //     labels: ['Grants', 'Racial Equity']
-    // },
+    'G23': {
+        pos: [1220, 1230],
+        type: 2,
+        labels: ['Housing', 'Racial Equity']
+    },
     // 'G24': {
     //     pos: [1310, 1200],
     //     type: 8,
@@ -538,16 +538,16 @@ const markersRef = {
         type: 1,
         labels: ['Grants', 'Policy']
     },
-    // 'L10': {
-    //     pos: [1009, 938],
-    //     type: 0,
-    //     labels: ['Site Story']
-    // },
-    // 'L11': {
-    //     pos: [1077, 1024],
-    //     type: 0,
-    //     labels: ['Site Story']
-    // },
+    'L10': {
+        pos: [1009, 938],
+        type: 0,
+        labels: ['Site Story']
+    },
+    'L11': {
+        pos: [1077, 1024],
+        type: 0,
+        labels: ['Site Story']
+    },
     // 'L12': {
     //     pos: [1239, 880],
     //     type: 0,
